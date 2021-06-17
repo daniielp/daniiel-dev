@@ -1,6 +1,9 @@
 const withImages = require('next-images')
 
-module.exports = {
+module.exports = withImages({
+    images: {
+        disableStaticImages: true
+    },
     async redirects() {
         return [
             {
@@ -10,6 +13,4 @@ module.exports = {
             },
         ]
     },
-}
-
-module.exports = withImages()
+})
