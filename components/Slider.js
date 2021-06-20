@@ -10,11 +10,15 @@ const useStyles = makeStyles(theme => ({
     container: {
         height: '100%',
         display: 'flex',
-        alignItems: 'center'
+        alignItems: 'center',
+
     },
     bold: {
         fontWeight: 'bold',
         zIndex: theme.zIndex.appBar,
+    },
+    alignment: {
+        height: 'inherit',
     }
 }))
 
@@ -23,7 +27,7 @@ const Slider = () => {
     return (
         <section className={classes.backdrop}>
             <Container maxWidth="xl" className={classes.container}>
-                <Grid container spacing={5}>
+                <Grid container spacing={5} className={classes.alignment}>
                     <Grid item md={6}>
                         <Typography variant="h3" component="h3" color="textSecondary">- Introduktion</Typography>
                         <Typography variant="h2" component="h2">UI/UX Designer og Developer, baseret i Aarhus.</Typography>
