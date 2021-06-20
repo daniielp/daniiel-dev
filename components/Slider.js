@@ -6,12 +6,12 @@ const useStyles = makeStyles(theme => ({
     backdrop: {
         backgroundColor: theme.palette.secondary.dark,
         height: '100%',
+        [theme.breakpoints.down('sm')]: {
+            height: 'auto',
+        }
     },
     container: {
         height: '100%',
-        display: 'flex',
-        alignItems: 'center',
-
     },
     bold: {
         fontWeight: 'bold',
@@ -19,6 +19,8 @@ const useStyles = makeStyles(theme => ({
     },
     alignment: {
         height: 'inherit',
+        display: 'flex',
+        alignContent: 'center',
     }
 }))
 
