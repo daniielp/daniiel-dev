@@ -1,5 +1,6 @@
 import { makeStyles } from '@material-ui/core'
 import Slider from '../components/Slider';
+import Features from '../components/Features';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -25,6 +26,7 @@ export default function Home() {
   return (
     <main className={classes.root}>
       <Slider />
+      <Features />
       {/* <section className={classes.fullHeight}>
       </section> */}
     </main>

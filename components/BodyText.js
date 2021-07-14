@@ -1,10 +1,10 @@
-import {makeStyles, Typography} from '@material-ui/core'
+import { makeStyles, Typography } from '@material-ui/core'
 
 const useStyles = makeStyles((theme) => ({
     bodyText: {
         color: theme.palette.text.hint
     }
-  }));
+}));
 
 const BodyText = (props) => {
     const classes = useStyles()

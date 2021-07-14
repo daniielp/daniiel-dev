@@ -32,7 +32,7 @@ const Header = (props) => {
 
   return (
     <AppBar position="sticky" color="secondary">
-      <Container maxWidth="xl">
+      <Container maxWidth="lg">
         <Toolbar className={classes.toolbar}>
           <Link href="/">
             <Button
