@@ -5,8 +5,8 @@ import PropTypes from 'prop-types'
 const TextBundle = ({title, subtitle, text}) => {
     return (
         <>
-            <Typography variant="h3" component="h3" color="textSecondary">- {subtitle}</Typography>
-            <Typography variant="h2" component="h2">{title}</Typography>
+            <Typography variant="h3" component="h3" color="textSecondary" gutterBottom>- {subtitle}</Typography>
+            <Typography variant="h2" component="h2" gutterBottom>{title}</Typography>
             <BodyText>{text}</BodyText>
         </>
     )

@@ -13,6 +13,10 @@ body {
     width: 100%;
     height: 100vh;
 }
+
+p {
+  font-family: 'Roboto';
+}
   
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

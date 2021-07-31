@@ -27,8 +27,22 @@ const theme = createMuiTheme({
     typography: {
         fontFamily: [
             'Anonymous Pro',
-            'monospace'
-        ]
+            'monospace',
+        ],
+        body1: {
+            fontFamily: [
+                "Roboto",
+                "Helvetica",
+                'sans-serif',
+            ],
+        },
+        body2: {
+            fontFamily: [
+                "Roboto",
+                "Helvetica",
+                'sans-serif',
+            ],
+        },
     }
 })
 

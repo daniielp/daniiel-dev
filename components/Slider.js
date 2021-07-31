@@ -1,47 +1,110 @@
-import { Container, Grid, makeStyles, Typography } from '@material-ui/core'
-import BodyText from './BodyText'
+import { Container, Grid, makeStyles, Tab, Tabs, Typography, Hidden } from '@material-ui/core'
 import TextBundle from './TextBundle'
-import React from 'react'
+import React, { useState } from 'react'
+import { Box } from '@material-ui/core'
+import { Breadcrumbs } from '@material-ui/core'
+import { TabContext, TabPanel } from '@material-ui/lab';
 
 const useStyles = makeStyles(theme => ({
-    backdrop: {
+    grow: {
+        paddingTop: theme.spacing(10),
+        paddingBottom: theme.spacing(10),
         backgroundColor: theme.palette.secondary.dark,
-        height: '100%',
+
         [theme.breakpoints.down('sm')]: {
-            height: 'auto',
+            paddingTop: theme.spacing(5),
+            paddingBottom: theme.spacing(5),
         }
     },
-    container: {
-        height: '100%',
+    Indicator: {
+        bottom: 'unset',
+        top: 0,
+        height: 10,
     },
-    bold: {
-        fontWeight: 'bold',
-        zIndex: theme.zIndex.appBar,
+    Tab: {
+        borderTop: '10px solid' + theme.palette.grey[500],
+        marginLeft: theme.spacing(2),
+        marginRight: theme.spacing(2)
     },
-    alignment: {
-        height: 'inherit',
+    breadcrumb: {
+        color: theme.palette.text.primary,
+        fontSize: theme.typography.h4.fontSize,
+    },
+    highlighted: {
+        color: theme.palette.primary.main
+    },
+    noPadding: {
+        padding: 0,
+    },
+    controls: {
         display: 'flex',
-        alignContent: 'center',
+        paddingTop: theme.spacing(5),
     }
 }))
 
 const Slider = () => {
     const classes = useStyles();
+    const [index, setIndex] = useState(0);
+    // const [storage, setStorage] = useLocalStorage('slider', 0);
+
+    const handleChange = (_event, newIndex) => {
+        setIndex(newIndex);
+    }
+
     return (
-        <section className={classes.backdrop}>
-            <Container maxWidth="lg" className={classes.container}>
-                <Grid container spacing={5} className={classes.alignment}>
-                    <Grid item md={6}>
-                        <TextBundle title="UI/UX Designer og Developer, baseret i Aarhus." subtitle="Introduktion" text="Med en kombination af uddannelsen som webudvikler, og med et skarpt øje for design og UI/UX, skaber vækst og gør mig i stand til at arbejde helhjertet med frontend-development. På den måde styrker jeg brandets position med at være de bedste når det kommer til frontend-development, og samtidig skaber værdifulde resultater, som i sidste ende giver bedre købeklare leads." />
-                        {/* <Typography variant="h3" component="h3" color="textSecondary">- Introduktion</Typography> */}
-                        {/* <Typography variant="h2" component="h2">UI/UX Designer og Developer, baseret i Aarhus.</Typography> */}
-                        {/* <BodyText>Med en kombination af uddannelsen som webudvikler, og med et skarpt øje for design og UI/UX, skaber vækst og gør mig i stand til at arbejde helhjertet med frontend-development. På den måde styrker jeg brandets position med at være de bedste når det kommer til frontend-development, og samtidig skaber værdifulde resultater, som i sidste ende giver bedre købeklare leads.</BodyText> */}
-                    </Grid>
-                    <Grid item md={6} className={classes.bold}>
-                        <Typography variant="h1" component="h1" className={classes.bold}>Daniel</Typography>
-                        <Typography variant="h1" component="h1" color="primary" className={classes.bold}>Pedersen</Typography>
-                    </Grid>
-                </Grid>
+        <section className={classes.grow}>
+            <Container maxWidth="lg">
+                <TabContext value={index.toString()}>
+                    <TabPanel value={"0"} className={classes.noPadding}>
+                        <Grid container spacing={4}>
+                            <Grid item md={6}>
+                                <TextBundle title="UI/UX Designer og Developer, baseret i Aarhus." subtitle="Introduktion" text="Med en kombination af uddannelsen som webudvikler, og med et skarpt øje for design og UI/UX, skaber vækst og gør mig i stand til at arbejde helhjertet med frontend-development. På den måde styrker jeg brandets position med at være de bedste når det kommer til frontend-development, og samtidig skaber værdifulde resultater, som i sidste ende giver bedre købeklare leads." />
+                                {/* <Link href="/omkring">
+                                    <Button variant="text" color="primary" endIcon={<ArrowForwardIosIcon />}>Min historie</Button>
+                                </Link> */}
+                            </Grid>
+                            <Grid item md={6}>
+                                <Typography variant="h1" component="h1" className={classes.bold}>Daniel</Typography>
+                                <Typography variant="h1" component="h1" color="primary" className={classes.bold}>Pedersen</Typography>
+                            </Grid>
+                        </Grid>
+                    </TabPanel>
+                    <TabPanel value={"1"} className={classes.noPadding}>
+                        <Grid container spacing={5}>
+                            <Grid item md={6}>
+                                <TextBundle title="Hedder du rigtigt Daniiel med dobbelt i?" subtitle="Historien bag" text="Med en kombination af uddannelsen som webudvikler, og med et skarpt øje for design og UI/UX, skaber vækst og gør mig i stand til at arbejde helhjertet med frontend-development. På den måde styrker jeg brandets position med at være de bedste når det kommer til frontend-development, og samtidig skaber værdifulde resultater, som i sidste ende giver bedre købeklare leads." />
+                            </Grid>
+                            <Grid item md={6}>
+                                <Typography variant="h1" component="h1" className={classes.bold}>Daniel</Typography>
+                                <Typography variant="h1" component="h1" color="primary" className={classes.bold}>Pedersen</Typography>
+                            </Grid>
+                        </Grid>
+                    </TabPanel>
+                    <TabPanel value={"2"} className={classes.noPadding}>
+                        <Grid container spacing={5}>
+                            <Grid item md={6}>
+                                <TextBundle title="Du er altid velkommen til at kontakte mig" subtitle="Kontakt" text="Med en kombination af uddannelsen som webudvikler, og med et skarpt øje for design og UI/UX, skaber vækst og gør mig i stand til at arbejde helhjertet med frontend-development. På den måde styrker jeg brandets position med at være de bedste når det kommer til frontend-development, og samtidig skaber værdifulde resultater, som i sidste ende giver bedre købeklare leads." />
+                            </Grid>
+                            <Grid item md={6}>
+                                <Typography variant="h1" component="h1" className={classes.bold}>Daniel</Typography>
+                                <Typography variant="h1" component="h1" color="primary" className={classes.bold}>Pedersen</Typography>
+                            </Grid>
+                        </Grid>
+                    </TabPanel>
+                </TabContext>
+                <Box display="flex" className={classes.controls}>
+                    <Hidden smDown>
+                        <Breadcrumbs className={classes.breadcrumb}>
+                            <Typography variant="h4" component="p" className={classes.highlighted}>{index + 1}</Typography>
+                            <Typography variant="h4" component="p">3</Typography>
+                        </Breadcrumbs>
+                    </Hidden>
+                    <Tabs value={index} onChange={handleChange} classes={{ indicator: classes.Indicator }} indicatorColor="primary" textColor="primary" variant="scrollable" scrollButtons="auto">
+                        <Tab label="Introduktion" className={classes.Tab}></Tab>
+                        <Tab label="Historien bag" className={classes.Tab}></Tab>
+                        <Tab label="Kontakt" className={classes.Tab}></Tab>
+                    </Tabs>
+                </Box>
             </Container>
         </section>
     )
