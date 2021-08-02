@@ -1,11 +1,12 @@
 import { Container, Grid, makeStyles, Tab, Tabs, Typography, Hidden } from '@material-ui/core'
+import { Theme } from '@material-ui/core/styles'
 import TextBundle from './TextBundle'
 import React, { useState } from 'react'
 import { Box } from '@material-ui/core'
 import { Breadcrumbs } from '@material-ui/core'
 import { TabContext, TabPanel } from '@material-ui/lab';
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme: Theme) => ({
     grow: {
         paddingTop: theme.spacing(10),
         paddingBottom: theme.spacing(10),
@@ -47,7 +48,7 @@ const Slider = () => {
     const [index, setIndex] = useState(0);
     // const [storage, setStorage] = useLocalStorage('slider', 0);
 
-    const handleChange = (_event, newIndex) => {
+    const handleChange = (_event: any, newIndex: React.SetStateAction<number>) => {
         setIndex(newIndex);
     }
 
@@ -64,8 +65,8 @@ const Slider = () => {
                                 </Link> */}
                             </Grid>
                             <Grid item md={6}>
-                                <Typography variant="h1" component="h1" className={classes.bold}>Daniel</Typography>
-                                <Typography variant="h1" component="h1" color="primary" className={classes.bold}>Pedersen</Typography>
+                                <Typography variant="h1" component="h1" >Daniel</Typography>
+                                <Typography variant="h1" component="h1" color="primary" >Pedersen</Typography>
                             </Grid>
                         </Grid>
                     </TabPanel>
@@ -75,8 +76,8 @@ const Slider = () => {
                                 <TextBundle title="Hedder du rigtigt Daniiel med dobbelt i?" subtitle="Historien bag" text="Med en kombination af uddannelsen som webudvikler, og med et skarpt øje for design og UI/UX, skaber vækst og gør mig i stand til at arbejde helhjertet med frontend-development. På den måde styrker jeg brandets position med at være de bedste når det kommer til frontend-development, og samtidig skaber værdifulde resultater, som i sidste ende giver bedre købeklare leads." />
                             </Grid>
                             <Grid item md={6}>
-                                <Typography variant="h1" component="h1" className={classes.bold}>Daniel</Typography>
-                                <Typography variant="h1" component="h1" color="primary" className={classes.bold}>Pedersen</Typography>
+                                <Typography variant="h1" component="h1">Daniel</Typography>
+                                <Typography variant="h1" component="h1" color="primary">Pedersen</Typography>
                             </Grid>
                         </Grid>
                     </TabPanel>
@@ -86,8 +87,8 @@ const Slider = () => {
                                 <TextBundle title="Du er altid velkommen til at kontakte mig" subtitle="Kontakt" text="Med en kombination af uddannelsen som webudvikler, og med et skarpt øje for design og UI/UX, skaber vækst og gør mig i stand til at arbejde helhjertet med frontend-development. På den måde styrker jeg brandets position med at være de bedste når det kommer til frontend-development, og samtidig skaber værdifulde resultater, som i sidste ende giver bedre købeklare leads." />
                             </Grid>
                             <Grid item md={6}>
-                                <Typography variant="h1" component="h1" className={classes.bold}>Daniel</Typography>
-                                <Typography variant="h1" component="h1" color="primary" className={classes.bold}>Pedersen</Typography>
+                                <Typography variant="h1" component="h1">Daniel</Typography>
+                                <Typography variant="h1" component="h1" color="primary">Pedersen</Typography>
                             </Grid>
                         </Grid>
                     </TabPanel>

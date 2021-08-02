@@ -1,6 +1,7 @@
 import {Container, Grid, makeStyles} from '@material-ui/core'
 import TextBundle from './TextBundle';
 import PropTypes from 'prop-types'
+import ProjectCard from './ProjectCard';
 
 
 const useStyles = makeStyles(theme => ({
@@ -15,9 +16,12 @@ const useStyles = makeStyles(theme => ({
     },
 }))
 
-const Project = ({isFrontpage}) => {
+interface project {
+    isFrontpage: boolean
+}
+
+const Project = ({isFrontpage}: project) => {
     const classes = useStyles();
-    console.log(isFrontpage)
     return (
         <section className={classes.grow}>
             <Container maxWidth="lg">
@@ -30,7 +34,7 @@ const Project = ({isFrontpage}) => {
                     </Grid>
                 </Grid>
                 <Grid container>
-                    
+                    {/* <ProjectCard /> */}
                 </Grid>
             </Container>
         </section>

@@ -6,7 +6,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-const BodyText = (props) => {
+const BodyText = (props : any) => {
     const classes = useStyles()
     return (
         <Typography {...props} className={classes.bodyText}>{props.children}</Typography>

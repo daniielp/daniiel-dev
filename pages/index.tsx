@@ -6,8 +6,6 @@ export default function Home() {
     <main>
       <Slider />
       <Project isFrontpage />
-      {/* <section className={classes.fullHeight}>
-      </section> */}
     </main>
   )
 }

@@ -9,7 +9,7 @@ import '../styles/global.css'
 
 import theme from '../utils/theme'
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps }: {Component : any, pageProps: any}) {
   const { pathname } = useRouter();
   const lang = pathname.startsWith("/da") ? "da" : "en";
   useEffect(() => {
@@ -27,9 +27,8 @@ function MyApp({ Component, pageProps }) {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Head>
-        <title>Daniel Pedersen - Webdeveloper</title>
-        <meta name="description" content="With a background as a web developer and a good eye to UI/UX. Daniel Pedersen create groth and is dedicated to frontend development." />
-
+        <title>Daniel Pedersen - Dashboard</title>
+        <meta name="robots" content="noindex" />
       </Head>
       <RouteWithLayout Layout={MainLayout} Component={Component} pageProps={pageProps} />
     </ThemeProvider>
