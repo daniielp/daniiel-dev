@@ -21,7 +21,7 @@ const Features = () => {
     return (
         <section>
             <Container maxWidth="lg">
-                <Grid container justify="flex-end" spacing={2} className={classes.container}>
+                <Grid container justify="flex-end" spacing={2}>
                     <Grid item md={2} className={classes.card}>
                         hejsa
                     </Grid>
