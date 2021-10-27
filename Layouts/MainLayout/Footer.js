@@ -1,13 +1,20 @@
-import { Button, Container, Grid, makeStyles, TextField, Typography } from "@material-ui/core";
+import {
+  Button,
+  Container,
+  Grid,
+  makeStyles,
+  TextField,
+  Typography,
+} from "@material-ui/core";
 import TextBundle from "../../components/TextBundle";
-import Image from 'next/image';
-import EmailIcon from '../../assets/Icons/email.svg';
+import Image from "next/image";
+import EmailIcon from "../../assets/Icons/email.svg";
 import { Alert } from "@material-ui/lab";
 
 const useStyles = makeStyles((theme) => ({
   footer: {
     paddingTop: theme.spacing(10),
-    paddingBottom: theme.spacing(10),
+    // paddingBottom: theme.spacing(10),
     backgroundColor: theme.palette.secondary.dark,
 
     [theme.breakpoints.down("sm")]: {
@@ -20,8 +27,8 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2),
   },
   formContainer: {
-    display: 'flex',
-    flexDirection: 'column',
+    display: "flex",
+    flexDirection: "column",
   },
   form: {
     backgroundColor: theme.palette.secondary.main,
@@ -29,17 +36,26 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2),
   },
   emailIcon: {
-      display: 'flex',
-      alignItems: 'center',
+    display: "flex",
+    alignItems: "center",
   },
   FullWidth: {
-      width: "100%",
-      display: 'flex',
-      flexDirection: 'column',
+    width: "100%",
+    display: "flex",
+    flexDirection: "column",
   },
   input: {
-      marginTop: theme.spacing(2),
-      marginBottom: theme.spacing(2)
+    marginTop: theme.spacing(2),
+    marginBottom: theme.spacing(2),
+  },
+  copyrightNotice: {
+    borderTop: "1px solid " + theme.palette.secondary.light,
+    marginTop: theme.spacing(5),
+    paddingTop: theme.spacing(5),
+    paddingBottom: theme.spacing(5),
+  },
+  bold: {
+      fontWeight: 'bold',
   }
 }));
 
@@ -71,17 +87,57 @@ const Footer = () => {
             </Grid>
             <div className={classes.form}>
               <form className={classes.FullWidth}>
-                <TextField className={classes.input} fullwidth placeholder="Navn" variant="outlined" color="secondary" />
-                <TextField className={classes.input} fullwidth placeholder="Email" variant="outlined" />
-                <TextField className={classes.input} fullwidth placeholder="Emne" variant="outlined" />
-                <TextField className={classes.input} fullwidth placeholder="Besked" multiline variant="outlined" />
-                <Button disabled variant="contained" color="primary" type="submit">Send</Button>
-                <Alert severity="warning">Denne formular er midlertidig deaktiveret</Alert>
+                <TextField
+                  className={classes.input}
+                  fullwidth
+                  placeholder="Navn"
+                  variant="outlined"
+                  color="secondary"
+                />
+                <TextField
+                  className={classes.input}
+                  fullwidth
+                  placeholder="Email"
+                  variant="outlined"
+                />
+                <TextField
+                  className={classes.input}
+                  fullwidth
+                  placeholder="Emne"
+                  variant="outlined"
+                />
+                <TextField
+                  className={classes.input}
+                  fullwidth
+                  placeholder="Besked"
+                  multiline
+                  variant="outlined"
+                />
+                <Button
+                  disabled
+                  variant="contained"
+                  color="primary"
+                  type="submit"
+                >
+                  Send
+                </Button>
+                <Alert severity="warning">
+                  Denne formular er midlertidig deaktiveret
+                </Alert>
               </form>
             </div>
           </Grid>
         </Grid>
       </Container>
+      <section className={classes.copyrightNotice}>
+        <Container>
+          <Grid container>
+            <Typography variant="h7">
+              <Typography variant="h6" component="span" className={classes.bold}>© 2021 Daniel Bøgh Pedersen</Typography>. Alle rettigheder forbeholdes.
+            </Typography>
+          </Grid>
+        </Container>
+      </section>
     </footer>
   );
 };

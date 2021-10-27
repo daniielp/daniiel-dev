@@ -1,14 +1,12 @@
 import React from 'react'
 import { AppBar, Avatar, Container, makeStyles, Toolbar, Typography, Button } from '@material-ui/core';
+import Image from 'next/image';
 import Logo from '../../assets/images/logo.svg'
 import Link from 'next/link'
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-  },
-  logo: {
-    width: 25,
   },
   clicableButton: {
     background: 'transparent',
@@ -37,7 +35,7 @@ const Header = (props) => {
           <Link href="/">
             <Button
               variant="contained"
-              startIcon={<img className={classes.logo} src={Logo} />}
+              startIcon={<Image src={Logo} width={45} height={45} />}
               className={classes.clicableButton}
               disableRipple
             >
