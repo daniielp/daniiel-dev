@@ -64,7 +64,7 @@ const Footer = () => {
   return (
     <footer className={classes.footer}>
       <Container>
-        <Grid container maxWidth="lg" spacing={5}>
+        <Grid container maxwidth="lg" spacing={5}>
           <Grid item md={6}>
             <TextBundle
               title="Har du nogle spørgsmål?"
@@ -89,25 +89,25 @@ const Footer = () => {
               <form className={classes.FullWidth}>
                 <TextField
                   className={classes.input}
-                  fullwidth
+                  fullWidth={true}
                   label="Navn"
                   variant="outlined"
                 />
                 <TextField
                   className={classes.input}
-                  fullwidth
+                  fullWidth={true}
                   label="Email"
                   variant="outlined"
                 />
                 <TextField
                   className={classes.input}
-                  fullwidth
+                  fullWidth={true}
                   label="Emne"
                   variant="outlined"
                 />
                 <TextField
                   className={classes.input}
-                  fullwidth
+                  fullWidth={true}
                   label="Besked"
                   multiline
                   variant="outlined"
@@ -131,7 +131,7 @@ const Footer = () => {
       <section className={classes.copyrightNotice}>
         <Container>
           <Grid container>
-            <Typography variant="h7">
+            <Typography variant="body2">
               <Typography
                 variant="h6"
                 component="span"

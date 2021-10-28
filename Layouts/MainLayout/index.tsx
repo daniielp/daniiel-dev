@@ -2,7 +2,7 @@ import React from 'react'
 import Header from './Header'
 import Footer from './Footer'
 
-function index(props) {
+function index(props: any) {
     return (
         <React.Fragment>
             <Header />
