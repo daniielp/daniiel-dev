@@ -55,8 +55,8 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: theme.spacing(5),
   },
   bold: {
-      fontWeight: 'bold',
-  }
+    fontWeight: "bold",
+  },
 }));
 
 const Footer = () => {
@@ -90,26 +90,25 @@ const Footer = () => {
                 <TextField
                   className={classes.input}
                   fullwidth
-                  placeholder="Navn"
-                  variant="outlined"
-                  color="secondary"
-                />
-                <TextField
-                  className={classes.input}
-                  fullwidth
-                  placeholder="Email"
+                  label="Navn"
                   variant="outlined"
                 />
                 <TextField
                   className={classes.input}
                   fullwidth
-                  placeholder="Emne"
+                  label="Email"
                   variant="outlined"
                 />
                 <TextField
                   className={classes.input}
                   fullwidth
-                  placeholder="Besked"
+                  label="Emne"
+                  variant="outlined"
+                />
+                <TextField
+                  className={classes.input}
+                  fullwidth
+                  label="Besked"
                   multiline
                   variant="outlined"
                 />
@@ -133,7 +132,14 @@ const Footer = () => {
         <Container>
           <Grid container>
             <Typography variant="h7">
-              <Typography variant="h6" component="span" className={classes.bold}>© 2021 Daniel Bøgh Pedersen</Typography>. Alle rettigheder forbeholdes.
+              <Typography
+                variant="h6"
+                component="span"
+                className={classes.bold}
+              >
+                © 2021 Daniel Bøgh Pedersen
+              </Typography>
+              . Alle rettigheder forbeholdes.
             </Typography>
           </Grid>
         </Container>
