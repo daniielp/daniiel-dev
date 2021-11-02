@@ -1,6 +1,5 @@
 import { Typography } from '@material-ui/core'
 import BodyText from './BodyText'
-import PropTypes from 'prop-types'
 
 interface textBunde {
     title: string,

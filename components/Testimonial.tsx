@@ -1,15 +1,17 @@
-import { Button, Grid } from '@material-ui/core';
+import { Button, Grid, Typography } from '@material-ui/core';
 import { Container, makeStyles} from '@material-ui/core';
 import { Theme } from '@material-ui/core/styles'
 import TextBundle from './TextBundle';
 import Image from 'next/image'
 import BodyText from './BodyText';
+import { BorderBottom } from '@material-ui/icons';
 
 const useStyles = makeStyles((theme: Theme) => ({
     testimonial: {
         backgroundColor: theme.palette.secondary.dark,
         paddingTop: theme.spacing(10),
-        paddingBottom: theme.spacing(10)
+        paddingBottom: theme.spacing(10),
+        borderBottom: "1px solid " + theme.palette.secondary.light,
     },
     button: {
         color: theme.palette.primary.main,
@@ -34,7 +36,7 @@ const Testimonial = () => {
                                 {/* <Image alt="Author" /> */}
                             </Grid>
                             <Grid item md={8}>
-                                <BodyText>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Amet nisl purus in mollis nunc sed. Eu turpis egestas pretium aenean pharetra. Porttitor leo a diam sollicitudin tempor id eu. Consequat interdum varius sit amet mattis vulputate enim nulla. </BodyText>
+                                <Typography variant="body1" component="p">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Amet nisl purus in mollis nunc sed. Eu turpis egestas pretium aenean pharetra. Porttitor leo a diam sollicitudin tempor id eu. Consequat interdum varius sit amet mattis vulputate enim nulla. </Typography>
                             </Grid>
                         </Grid>
                     </Grid>

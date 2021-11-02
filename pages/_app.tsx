@@ -11,10 +11,6 @@ import theme from '../utils/theme'
 
 function MyApp({ Component, pageProps }: {Component : any, pageProps: any}) {
   const { pathname } = useRouter();
-  const lang = pathname.startsWith("/da") ? "da" : "en";
-  useEffect(() => {
-    document.documentElement.lang = lang;
-  }, [lang]);
 
   useEffect(() => {
     const jssStyles = document.querySelector('#jss-server-side');

@@ -7,15 +7,12 @@ import theme from '../utils/theme'
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
     const initialProps = await Document.getInitialProps(ctx);
-    const { pathname } = ctx;
-    const lang = pathname.startsWith("/da") ? "da" : "en";
-    return { ...initialProps, lang };
+    return { ...initialProps };
   }
 
   render() {
-    const { lang } = this.props;
     return (
-      <Html lang={lang}>
+      <Html lang="da">
         <Head >
           <link rel="icon" href="/favicon.ico" />
           <meta charSet="utf-8" />

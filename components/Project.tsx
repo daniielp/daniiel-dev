@@ -1,8 +1,6 @@
 import {Container, Grid, makeStyles} from '@material-ui/core'
 import TextBundle from './TextBundle';
 import PropTypes from 'prop-types'
-import ProjectCard from './ProjectCard';
-
 
 const useStyles = makeStyles(theme => ({
     grow: {
