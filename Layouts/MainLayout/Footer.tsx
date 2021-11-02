@@ -8,6 +8,7 @@ import {
 } from "@material-ui/core";
 import TextBundle from "../../components/TextBundle";
 import Image from "next/image";
+// @ts-ignore
 import EmailIcon from "../../assets/Icons/email.svg";
 import { Alert } from "@material-ui/lab";
 
@@ -64,7 +65,7 @@ const Footer = () => {
   return (
     <footer className={classes.footer}>
       <Container>
-        <Grid container maxwidth="lg" spacing={5}>
+        <Grid container spacing={5}>
           <Grid item md={6}>
             <TextBundle
               title="Har du nogle spørgsmål?"

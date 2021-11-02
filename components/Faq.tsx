@@ -2,6 +2,7 @@ import { Container, Grid, makeStyles } from '@material-ui/core';
 import { Theme } from '@material-ui/core/styles'
 import TextBundle from './TextBundle';
 import Image from 'next/image'
+// @ts-ignore
 import Illustration from '../assets/images/question.svg'
 const useStyles = makeStyles((theme: Theme) => ({
     faqContainer: {
