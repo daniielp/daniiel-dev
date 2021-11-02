@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const Header = (props) => {
+const Header = (props: any) => {
   const classes = useStyles();
   const { pages } = props;
 
