@@ -8,7 +8,6 @@ import {
 } from "@material-ui/core";
 import TextBundle from "../../components/TextBundle";
 import Image from "next/image";
-// @ts-ignore
 import EmailIcon from "../../assets/Icons/email.svg";
 import { Alert } from "@material-ui/lab";
 
