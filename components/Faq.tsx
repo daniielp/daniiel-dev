@@ -3,9 +3,8 @@ import { Theme } from '@material-ui/core/styles'
 import TextBundle from './Typography/TextBundle';
 import Image from 'next/image'
 import Illustration from '../assets/images/question.svg'
-import ArrowDownIcon from '../assets/icons/down.svg'
+import ArrowDownIcon from '../assets/Icons/down.svg'
 import BodyText from './Typography/BodyText';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 const useStyles = makeStyles((theme: Theme) => ({
     faqContainer: {
         paddingTop: theme.spacing(10),
