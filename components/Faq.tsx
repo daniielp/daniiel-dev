@@ -43,7 +43,7 @@ const Faq = () => {
                                 <BodyText>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. A diam maecenas sed enim. In massa tempor nec feugiat.</BodyText>
                             </AccordionDetails>
                             <AccordionActions>
-                                <Button color="primary" disabled>Læs mere</Button>
+                                <Button color="primary" disabled>Læs historien bag</Button>
                             </AccordionActions>
                         </Accordion>
                         <Accordion className={classes.accordionContainer}>
