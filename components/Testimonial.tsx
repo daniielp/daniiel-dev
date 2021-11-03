@@ -1,9 +1,9 @@
 import { Button, Grid, Typography } from '@material-ui/core';
 import { Container, makeStyles} from '@material-ui/core';
 import { Theme } from '@material-ui/core/styles'
-import TextBundle from './TextBundle';
+import TextBundle from './Typography/TextBundle';
 import Image from 'next/image'
-import BodyText from './BodyText';
+import BodyText from './Typography/BodyText';
 import { BorderBottom } from '@material-ui/icons';
 
 const useStyles = makeStyles((theme: Theme) => ({

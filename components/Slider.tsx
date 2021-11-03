@@ -1,6 +1,6 @@
 import { Container, Grid, makeStyles, Tab, Tabs, Typography, Hidden } from '@material-ui/core'
 import { Theme } from '@material-ui/core/styles'
-import TextBundle from './TextBundle'
+import TextBundle from './Typography/TextBundle'
 import React, { useState } from 'react'
 import { Box } from '@material-ui/core'
 import { Breadcrumbs } from '@material-ui/core'

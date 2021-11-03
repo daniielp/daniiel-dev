@@ -1,5 +1,5 @@
 import {Container, Grid, makeStyles} from '@material-ui/core'
-import TextBundle from './TextBundle';
+import TextBundle from './Typography/TextBundle';
 import PropTypes from 'prop-types'
 
 const useStyles = makeStyles(theme => ({

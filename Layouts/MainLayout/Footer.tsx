@@ -5,8 +5,9 @@ import {
   makeStyles,
   TextField,
   Typography,
+  Link
 } from "@material-ui/core";
-import TextBundle from "../../components/TextBundle";
+import TextBundle from "../../components/Typography/TextBundle";
 import Image from "next/image";
 import EmailIcon from "../../assets/Icons/email.svg";
 import { Alert } from "@material-ui/lab";
@@ -57,6 +58,19 @@ const useStyles = makeStyles((theme) => ({
   bold: {
     fontWeight: "bold",
   },
+  tos: {
+    color: theme.palette.text.hint,
+    padding: "0 " + theme.spacing(1) + "px",
+
+    "&:last-child": {
+      paddingRight: theme.spacing(0),
+    }
+  },
+  legalContainer: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: 'flex-end'
+  }
 }));
 
 const Footer = () => {
@@ -131,16 +145,23 @@ const Footer = () => {
       <section className={classes.copyrightNotice}>
         <Container>
           <Grid container>
-            <Typography variant="body2">
-              <Typography
-                variant="h6"
-                component="span"
-                className={classes.bold}
-              >
-                © 2021 Daniel Bøgh Pedersen
+            <Grid item md={6}>
+              <Typography variant="body2">
+                <Typography
+                  variant="h6"
+                  component="span"
+                  className={classes.bold}
+                >
+                  © 2021 Daniel Bøgh Pedersen
+                </Typography>
+                . Alle rettigheder forbeholdes.
               </Typography>
-              . Alle rettigheder forbeholdes.
-            </Typography>
+            </Grid>
+            <Grid item md={6} className={classes.legalContainer}>
+              <Link href="#" className={classes.tos}>Brugeraftale</Link>
+              <Link href="#" className={classes.tos}>Privatlivspolitik</Link>
+              <Link href="#" className={classes.tos}>Cookies</Link>
+            </Grid>
           </Grid>
         </Container>
       </section>
