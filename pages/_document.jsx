@@ -1,10 +1,7 @@
 import React from 'react'
 import Document, { Html, Head, Main, NextScript } from "next/document";
-import { ThemeProvider, StyledEngineProvider } from '@mui/material/styles';
 
 import ServerStyleSheets from '@mui/styles/ServerStyleSheets';
-
-import theme from '../utils/theme'
 
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -18,7 +15,7 @@ class MyDocument extends Document {
         <Head >
           <link rel="icon" href="/favicon.ico" />
           <meta charSet="utf-8" />
-          <meta name="theme-color" content={theme.palette.primary.main} />
+          <meta name="theme-color" content="#f5d027" />
         </Head>
         <body>
           <Main />
