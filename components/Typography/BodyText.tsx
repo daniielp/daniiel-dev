@@ -10,6 +10,7 @@ const useStyles = makeStyles((theme: Theme) => ({
 
 type bodyProps = {
     children: React.ReactNode;
+    gutterBottom?: boolean;
 }
 
 const BodyText = (props : bodyProps) => {
