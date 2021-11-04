@@ -3,11 +3,59 @@ import RouteWithLayout from '../Layouts/RouteWithLayout'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import React, { useEffect } from "react";
-import { CssBaseline, ThemeProvider } from '@material-ui/core'
-
+import { CssBaseline, ThemeProvider, StyledEngineProvider } from '@mui/material';
+import { createTheme, responsiveFontSizes } from '@mui/material/styles';
 import '../styles/global.css'
 
-import theme from '../utils/theme'
+
+
+
+let theme = createTheme({
+    palette: {
+        mode: "dark",
+        primary: {
+            light: "#f7d952",
+            main: '#f5d027',
+            dark: "#EEB200",
+            contrastText: '#272c3a',
+        },
+        secondary: {
+            light: "#5f6576",
+            main: '#383f54',
+            dark: "#272c3a",
+            contrastText: "#bdbdbd",
+        },
+        text: {
+            primary: "#fefefe",
+            secondary: "#707070",
+        },
+        background: {
+            default: "#383f54",
+        },
+    },
+    typography: {
+        fontFamily: [
+            'Anonymous Pro',
+            'monospace',
+        ].join(","),
+        body1: {
+            fontFamily: [
+                "Roboto",
+                "Helvetica",
+                'sans-serif',
+            ].join(","),
+        },
+        body2: {
+            fontFamily: [
+                "Roboto",
+                "Helvetica",
+                'sans-serif',
+            ].join(","),
+        },
+    }
+});
+
+theme = responsiveFontSizes(theme);
 
 function MyApp({ Component, pageProps }: {Component : any, pageProps: any}) {
   const { pathname } = useRouter();
@@ -20,29 +68,31 @@ function MyApp({ Component, pageProps }: {Component : any, pageProps: any}) {
   }, [])
 
   if (pathname.startsWith("/admin")) return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <Head>
-        <title>Daniel Pedersen - Dashboard</title>
-        <meta name="robots" content="noindex" />
-      </Head>
-      <RouteWithLayout Layout={MainLayout} Component={Component} pageProps={pageProps} />
-    </ThemeProvider>
-  )
+      <StyledEngineProvider injectFirst>
+          <ThemeProvider theme={theme}>
+            <CssBaseline />
+            <Head>
+              <title>Daniel Pedersen - Dashboard</title>
+              <meta name="robots" content="noindex" />
+            </Head>
+            <RouteWithLayout Layout={MainLayout} Component={Component} pageProps={pageProps} />
+          </ThemeProvider>
+      </StyledEngineProvider>
+  );
 
-  return (
-    <>
-      <Head>
-        <title>Daniel Pedersen - Webdeveloper</title>
-        <link rel="icon" href="/favicon.ico" />
-        <meta name="description" content="With a background as a web developer and a good eye to UI/UX. Daniel Pedersen create groth and is dedicated to frontend development." />
-      </Head>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <RouteWithLayout Layout={MainLayout} Component={Component} pageProps={pageProps} />
-      </ThemeProvider>
-    </>
-  )
+  return <>
+    <Head>
+      <title>Daniel Pedersen - Webdeveloper</title>
+      <link rel="icon" href="/favicon.ico" />
+      <meta name="description" content="With a background as a web developer and a good eye to UI/UX. Daniel Pedersen create groth and is dedicated to frontend development." />
+    </Head>
+    <StyledEngineProvider injectFirst>
+        <ThemeProvider theme={theme}>
+          <CssBaseline />
+          <RouteWithLayout Layout={MainLayout} Component={Component} pageProps={pageProps} />
+        </ThemeProvider>
+    </StyledEngineProvider>
+  </>;
 }
 
 export default MyApp

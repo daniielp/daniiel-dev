@@ -1,6 +1,8 @@
 import React from 'react'
 import Document, { Html, Head, Main, NextScript } from "next/document";
-import { ServerStyleSheets, ThemeProvider } from '@material-ui/core/styles';
+import { ThemeProvider, StyledEngineProvider } from '@mui/material/styles';
+
+import ServerStyleSheets from '@mui/styles/ServerStyleSheets';
 
 import theme from '../utils/theme'
 

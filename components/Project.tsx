@@ -1,13 +1,14 @@
-import {Container, Grid, makeStyles} from '@material-ui/core'
+import { Container, Grid, Theme } from '@mui/material';
+import makeStyles from '@mui/styles/makeStyles';
 import TextBundle from './Typography/TextBundle';
 import PropTypes from 'prop-types'
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme: Theme) => ({
     grow: {
         paddingTop: theme.spacing(10),
         paddingBottom: theme.spacing(10),
 
-        [theme.breakpoints.down('sm')]: {
+        [theme.breakpoints.down('md')]: {
             paddingTop: theme.spacing(5),
             paddingBottom: theme.spacing(5),
         }

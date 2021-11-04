@@ -1,10 +1,11 @@
-import { Container, Grid, makeStyles, Tab, Tabs, Typography, Hidden } from '@material-ui/core'
-import { Theme } from '@material-ui/core/styles'
+import { Container, Grid, Tab, Tabs, Typography, Hidden } from '@mui/material';
+import makeStyles from '@mui/styles/makeStyles';
+import { Theme } from '@mui/material/styles'
 import TextBundle from './Typography/TextBundle'
 import React, { useState } from 'react'
-import { Box } from '@material-ui/core'
-import { Breadcrumbs } from '@material-ui/core'
-import { TabContext, TabPanel } from '@material-ui/lab';
+import { Box } from '@mui/material'
+import { Breadcrumbs } from '@mui/material'
+import { TabContext, TabPanel } from '@mui/lab';
 
 const useStyles = makeStyles((theme: Theme) => ({
     grow: {
@@ -12,7 +13,7 @@ const useStyles = makeStyles((theme: Theme) => ({
         paddingBottom: theme.spacing(10),
         backgroundColor: theme.palette.secondary.dark,
 
-        [theme.breakpoints.down('sm')]: {
+        [theme.breakpoints.down('md')]: {
             paddingTop: theme.spacing(5),
             paddingBottom: theme.spacing(5),
         }
@@ -94,7 +95,7 @@ const Slider = () => {
                     </TabPanel>
                 </TabContext>
                 <Box display="flex" className={classes.controls}>
-                    <Hidden smDown>
+                    <Hidden mdDown>
                         <Breadcrumbs className={classes.breadcrumb}>
                             <Typography variant="h4" component="p" className={classes.highlighted}>{index + 1}</Typography>
                             <Typography variant="h4" component="p">3</Typography>
@@ -108,7 +109,7 @@ const Slider = () => {
                 </Box>
             </Container>
         </section>
-    )
+    );
 }
 
 export default Slider

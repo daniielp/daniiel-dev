@@ -1,12 +1,13 @@
 import React from 'react'
-import { AppBar, Avatar, Container, makeStyles, Toolbar, Typography, Button } from '@material-ui/core';
+import { AppBar, Avatar, Container, Toolbar, Typography, Button, Theme } from '@mui/material';
+import makeStyles from '@mui/styles/makeStyles';
 import Image from 'next/image';
 import Logo from '../../assets/images/logo.svg'
 import Link from 'next/link'
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
+const useStyles = makeStyles((theme: Theme) => ({
+  background: {
+    backgroundColor: theme.palette.secondary.main,
   },
   clicableButton: {
     background: 'transparent',
@@ -29,7 +30,7 @@ const Header = (props: any) => {
   const { pages } = props;
 
   return (
-    <AppBar position="sticky" color="secondary">
+    <AppBar position="sticky" className={classes.background}>
       <Container maxWidth="lg">
         <Toolbar className={classes.toolbar}>
           <Link href="/">

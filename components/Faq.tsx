@@ -1,5 +1,16 @@
-import { Accordion, AccordionActions, AccordionDetails, AccordionSummary, Button, Container, Grid, Link, makeStyles, SvgIcon, Typography } from '@material-ui/core';
-import { Theme } from '@material-ui/core/styles'
+import {
+    Accordion,
+    AccordionActions,
+    AccordionDetails,
+    AccordionSummary,
+    Button,
+    Container,
+    Grid,
+    Link,
+    Typography,
+} from '@mui/material';
+import makeStyles from '@mui/styles/makeStyles';
+import { Theme } from '@mui/material/styles'
 import TextBundle from './Typography/TextBundle';
 import Image from 'next/image'
 import Illustration from '../assets/images/question.svg'

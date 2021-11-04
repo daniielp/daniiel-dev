@@ -1,8 +1,10 @@
-import { makeStyles, Typography } from '@material-ui/core'
+import { Typography, Theme } from '@mui/material';
 
-const useStyles = makeStyles((theme) => ({
+import makeStyles from '@mui/styles/makeStyles';
+
+const useStyles = makeStyles((theme: Theme) => ({
     bodyText: {
-        color: theme.palette.text.hint
+        color: "#BDBDBD"
     }
 }));
 

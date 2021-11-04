@@ -1,24 +1,17 @@
-import {
-  Button,
-  Container,
-  Grid,
-  makeStyles,
-  TextField,
-  Typography,
-  Link
-} from "@material-ui/core";
+import { Button, Container, Grid, TextField, Typography, Link, Theme } from "@mui/material";
+import makeStyles from '@mui/styles/makeStyles';
 import TextBundle from "../../components/Typography/TextBundle";
 import Image from "next/image";
 import EmailIcon from "../../assets/Icons/email.svg";
-import { Alert } from "@material-ui/lab";
+import { Alert } from '@mui/material';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles((theme: Theme) => ({
   footer: {
     paddingTop: theme.spacing(10),
     // paddingBottom: theme.spacing(10),
     backgroundColor: theme.palette.secondary.dark,
 
-    [theme.breakpoints.down("sm")]: {
+    [theme.breakpoints.down('md')]: {
       paddingTop: theme.spacing(5),
       paddingBottom: theme.spacing(5),
     },
@@ -59,8 +52,9 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: "bold",
   },
   tos: {
-    color: theme.palette.text.hint,
-    padding: "0 " + theme.spacing(1) + "px",
+    color: "#BDBDBD",
+    padding: "0 " + theme.spacing(1),
+    textDecoration: "none",
 
     "&:last-child": {
       paddingRight: theme.spacing(0),
