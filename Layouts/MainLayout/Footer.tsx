@@ -152,9 +152,9 @@ const Footer = () => {
               </Typography>
             </Grid>
             <Grid item md={6} className={classes.legalContainer}>
-              <Link href="#" className={classes.tos}>Brugeraftale</Link>
-              <Link href="#" className={classes.tos}>Privatlivspolitik</Link>
-              <Link href="#" className={classes.tos}>Cookies</Link>
+              <Link href="/policies/brugeraftale" rel="nofollow" className={classes.tos}>Brugeraftale</Link>
+              <Link href="/policies/privatlivspolitik" rel="nofollow" className={classes.tos}>Privatlivspolitik</Link>
+              <Link href="/policies/cookies" rel="nofollow" className={classes.tos}>Cookies</Link>
             </Grid>
           </Grid>
         </Container>

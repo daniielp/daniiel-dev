@@ -1,6 +1,7 @@
 const withImages = require('next-images')
 
 module.exports = withImages({
+    hostname: "daniiel.dev",
     images: {
         disableStaticImages: true,
     },

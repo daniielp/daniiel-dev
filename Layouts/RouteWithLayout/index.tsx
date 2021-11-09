@@ -1,6 +1,4 @@
-import MainLayout from '../MainLayout'
-
-function RouteWithLayout(props) {
+function RouteWithLayout(props: any) {
   const {Layout, Component, pageProps} = props
   return (
     <Layout>
