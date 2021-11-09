@@ -1,4 +1,4 @@
-import { Container, Theme, Grid, Typography, Link } from '@mui/material'
+import { Container, Theme, Grid, Typography, Link, Stack } from '@mui/material'
 import { makeStyles } from "@mui/styles"
 
 const useStyles = makeStyles((theme: Theme) => ({
@@ -24,6 +24,11 @@ const useStyles = makeStyles((theme: Theme) => ({
         display: "flex",
         alignItems: "center",
         justifyContent: 'flex-end'
+    },
+    copyright: {
+        [theme.breakpoints.down('md')]: {
+            textAlign: 'center',
+        }
     }
 }))
 
@@ -34,7 +39,7 @@ const Footer = () => {
             <Container maxWidth="lg">
                 <Grid container>
                     <Grid item md={6}>
-                        <Typography variant="body2">
+                        <Typography variant="body2" className={classes.copyright}>
                             <Typography
                                 variant="h6"
                                 component="span"
@@ -46,9 +51,13 @@ const Footer = () => {
                         </Typography>
                     </Grid>
                     <Grid item md={6} className={classes.legalContainer}>
-                        <Link href="/policies/brugeraftale" rel="nofollow" className={classes.tos}>Brugeraftale</Link>
-                        <Link href="/policies/privatlivspolitik" rel="nofollow" className={classes.tos}>Privatlivspolitik</Link>
-                        <Link href="/policies/cookies" rel="nofollow" className={classes.tos}>Cookies</Link>
+                        <Stack spacing={2} direction={{ xs: 'column', sm: 'row' }} >
+                            <Link href="/policies/brugeraftale" rel="nofollow" className={classes.tos}>Brugeraftale</Link>
+                            <Link href="/policies/privatlivspolitik" rel="nofollow" className={classes.tos}>Privatlivspolitik</Link>
+                            <Link href="/policies/cookies" rel="nofollow" className={classes.tos}>Cookies</Link>
+                        </Stack>
+
+
                     </Grid>
                 </Grid>
             </Container>

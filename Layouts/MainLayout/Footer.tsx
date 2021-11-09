@@ -1,4 +1,4 @@
-import { Button, Container, Grid, TextField, Typography, Link, Theme } from "@mui/material";
+import { Button, Container, Grid, TextField, Typography, Link, Theme, Stack } from "@mui/material";
 import makeStyles from '@mui/styles/makeStyles';
 import TextBundle from "../../components/Typography/TextBundle";
 import Image from "next/image";
@@ -64,6 +64,11 @@ const useStyles = makeStyles((theme: Theme) => ({
     display: "flex",
     alignItems: "center",
     justifyContent: 'flex-end'
+  },
+  copyright: {
+    [theme.breakpoints.down('md')]: {
+      textAlign: 'center',
+    }
   }
 }));
 
@@ -140,7 +145,7 @@ const Footer = () => {
         <Container>
           <Grid container>
             <Grid item md={6}>
-              <Typography variant="body2">
+              <Typography variant="body2" className={classes.copyright}>
                 <Typography
                   variant="h6"
                   component="span"
@@ -152,9 +157,13 @@ const Footer = () => {
               </Typography>
             </Grid>
             <Grid item md={6} className={classes.legalContainer}>
-              <Link href="/policies/brugeraftale" rel="nofollow" className={classes.tos}>Brugeraftale</Link>
-              <Link href="/policies/privatlivspolitik" rel="nofollow" className={classes.tos}>Privatlivspolitik</Link>
-              <Link href="/policies/cookies" rel="nofollow" className={classes.tos}>Cookies</Link>
+              <Stack spacing={2} direction={{ xs: 'column', sm: 'row' }} >
+                <Link href="/policies/brugeraftale" rel="nofollow" className={classes.tos}>Brugeraftale</Link>
+                <Link href="/policies/privatlivspolitik" rel="nofollow" className={classes.tos}>Privatlivspolitik</Link>
+                <Link href="/policies/cookies" rel="nofollow" className={classes.tos}>Cookies</Link>
+              </Stack>
+
+
             </Grid>
           </Grid>
         </Container>

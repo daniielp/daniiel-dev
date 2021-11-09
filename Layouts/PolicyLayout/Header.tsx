@@ -59,7 +59,7 @@ const Header = (props: any) => {
           </NextLink>
         </Toolbar>
         <Toolbar className={classes.toolbar}>
-          <Stack direction="row" spacing={2}>
+          <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2}>
             <Link href="/policies" className={clsx(classes.link, router.pathname === path ? classes.linkActive : "")}>Oversigt</Link>
             <Link href="/policies/brugeraftale" className={clsx(classes.link, router.pathname === path + "/brugeraftale" ? classes.linkActive : "")}>Brugeraftale</Link>
             <Link href="/policies/privatlivspolitik" className={clsx(classes.link, router.pathname === path + "/privatlivspolitik" ? classes.linkActive : "")}>Privatlivspolitik</Link>
