@@ -82,7 +82,7 @@ const Footer = () => {
             <TextBundle
               title="Har du nogle spørgsmål?"
               subtitle="Kontakt mig"
-              text="Hvis du skulle stå og have nogle spørgsmål, eller har brug for hjælp og vejledning til din hjemmeside. Så er du altid velkommen til at kontakte mig enten over email på daniel.horsens@gmail.com eller ved at bruge kontaktformularen I højre side."
+              text={"Hvis du skulle stå og have nogle spørgsmål, eller har brug for hjælp og vejledning til din hjemmeside. Så er du altid velkommen til at kontakte mig enten over email på daniel.horsens@gmail.com eller ved at bruge kontaktformularen I højre side."}
             />
           </Grid>
           <Grid item md={6} className={classes.formContainer}>
