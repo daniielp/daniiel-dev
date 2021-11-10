@@ -1,4 +1,4 @@
-import { Container, Grid, Tab, Tabs, Typography, Hidden, Link } from '@mui/material';
+import { Container, Grid, Link } from '@mui/material';
 import makeStyles from '@mui/styles/makeStyles';
 import { Theme } from '@mui/material/styles'
 import TextBundle from './Typography/TextBundle'
@@ -15,30 +15,6 @@ const useStyles = makeStyles((theme: Theme) => ({
             paddingBottom: theme.spacing(5),
         }
     },
-    Indicator: {
-        bottom: 'unset',
-        top: 0,
-        height: 10,
-    },
-    Tab: {
-        borderTop: '10px solid' + theme.palette.grey[500],
-        marginLeft: theme.spacing(2),
-        marginRight: theme.spacing(2)
-    },
-    breadcrumb: {
-        color: theme.palette.text.primary,
-        fontSize: theme.typography.h4.fontSize,
-    },
-    highlighted: {
-        color: theme.palette.primary.main
-    },
-    noPadding: {
-        padding: 0,
-    },
-    controls: {
-        display: 'flex',
-        paddingTop: theme.spacing(5),
-    }
 }))
 
 const Hero = () => {

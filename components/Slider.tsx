@@ -101,7 +101,7 @@ const Slider = () => {
                             <Typography variant="h4" component="p">3</Typography>
                         </Breadcrumbs>
                     </Hidden>
-                    <Tabs value={index} onChange={handleChange} classes={{ indicator: classes.Indicator }} indicatorColor="primary" textColor="primary" variant="scrollable" scrollButtons="auto">
+                    <Tabs value={index} onChange={handleChange} classes={{ indicator: classes.Indicator }} indicatorColor="primary" textColor="primary" variant="scrollable" scrollButtons="auto" allowScrollButtonsMobile>
                         <Tab label="Introduktion" className={classes.Tab}></Tab>
                         <Tab label="Historien bag" className={classes.Tab}></Tab>
                         <Tab label="Kontakt" className={classes.Tab}></Tab>
