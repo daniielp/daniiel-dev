@@ -3,7 +3,7 @@ import { Container } from '@mui/material';
 import makeStyles from '@mui/styles/makeStyles';
 import { Theme } from '@mui/material/styles'
 import TextBundle from './Typography/TextBundle';
-import TestimonialSlider from './TestimonialSlider';
+import TestimonialSlider from './Tabs/TestimonialSlider';
 
 const useStyles = makeStyles((theme: Theme) => ({
     testimonial: {

@@ -65,7 +65,9 @@ const Header = (props: any) => {
           </Link>
           <Hidden smDown>
             <nav>
-              <Button variant="text">Om mig</Button>
+              <Link href="/om-mig">
+                <Button variant="text" >Om mig</Button>
+              </Link>
             </nav>
           </Hidden>
           <Hidden mdUp>

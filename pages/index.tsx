@@ -1,4 +1,4 @@
-import Slider from '../components/Slider';
+import Slider from '../components/Tabs/Slider';
 import Project from '../components/Project';
 import Testimonial from '../components/Testimonial';
 import Faq from '../components/Faq';
