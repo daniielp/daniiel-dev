@@ -14,7 +14,7 @@ import { Theme } from '@mui/material/styles'
 import TextBundle from './Typography/TextBundle';
 import Image from 'next/image'
 import Illustration from '../assets/images/question.svg'
-import ArrowDownIcon from '../assets/icons/down.svg'
+import ArrowDownIcon from '../assets/Icons/down.svg'
 import BodyText from './Typography/BodyText'
 
 const useStyles = makeStyles((theme: Theme) => ({
