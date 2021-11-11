@@ -71,13 +71,6 @@ theme = responsiveFontSizes(theme);
 function MyApp({ Component, pageProps }: { Component: any, pageProps: any }) {
   const { pathname } = useRouter();
 
-  useEffect(() => {
-    const jssStyles = document.querySelector('#jss-server-side');
-    if (jssStyles && jssStyles.parentElement) {
-      jssStyles.parentElement.removeChild(jssStyles);
-    }
-  }, [])
-
   if (pathname.startsWith("/admin")) return (
     <StyledEngineProvider injectFirst>
       <ThemeProvider theme={theme}>
