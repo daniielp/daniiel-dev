@@ -47,8 +47,6 @@ const Header = (props: any) => {
   const { pages } = props;
   const [drawer, setDrawer] = useState(false);
 
-  console.log(drawer)
-
   return (
     <AppBar position="sticky" className={classes.background}>
       <Container maxWidth="lg">
