@@ -11,11 +11,11 @@ import {
 } from '@mui/material';
 import makeStyles from '@mui/styles/makeStyles';
 import { Theme } from '@mui/material/styles'
-import TextBundle from './typography/TextBundle';
+import TextBundle from './Typography/TextBundle';
 import Image from 'next/image'
 import Illustration from '../assets/images/question.svg'
 import ArrowDownIcon from '../assets/icons/down.svg'
-import BodyText from './typography/BodyText'
+import BodyText from './Typography/BodyText'
 
 const useStyles = makeStyles((theme: Theme) => ({
     faqContainer: {

@@ -2,7 +2,7 @@ import { Button, Grid } from '@mui/material';
 import { Container } from '@mui/material';
 import makeStyles from '@mui/styles/makeStyles';
 import { Theme } from '@mui/material/styles'
-import TextBundle from './typography/TextBundle';
+import TextBundle from './Typography/TextBundle';
 import TestimonialSlider from './TestimonialSlider';
 
 const useStyles = makeStyles((theme: Theme) => ({

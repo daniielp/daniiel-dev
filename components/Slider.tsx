@@ -1,7 +1,7 @@
 import { Container, Grid, Tab, Tabs, Typography, Hidden } from '@mui/material';
 import makeStyles from '@mui/styles/makeStyles';
 import { Theme } from '@mui/material/styles'
-import TextBundle from './typography/TextBundle'
+import TextBundle from './Typography/TextBundle'
 import React, { useState } from 'react'
 import { Box } from '@mui/material'
 import { Breadcrumbs } from '@mui/material'

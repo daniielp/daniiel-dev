@@ -1,6 +1,6 @@
 import { Container, Grid, Link, Typography, Theme } from '@mui/material';
 import makeStyles from '@mui/styles/makeStyles';
-import BodyText from '../../components/typography/BodyText';
+import BodyText from '../../components/Typography/BodyText';
 
 const useStyles = makeStyles((theme: Theme) => ({
     container: {

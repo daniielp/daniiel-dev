@@ -1,6 +1,6 @@
 import { Container, Grid, Theme } from '@mui/material';
 import makeStyles from '@mui/styles/makeStyles';
-import TextBundle from './typography/TextBundle';
+import TextBundle from './Typography/TextBundle';
 import PropTypes from 'prop-types'
 
 const useStyles = makeStyles((theme: Theme) => ({
