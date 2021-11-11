@@ -4,24 +4,14 @@ import RouteWithLayout from '../Layouts/RouteWithLayout'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import React, { useEffect } from "react";
-import { CssBaseline, ThemeProvider, Theme, StyledEngineProvider } from '@mui/material';
-import { createTheme, responsiveFontSizes, adaptV4Theme } from '@mui/material/styles';
+import { CssBaseline, ThemeProvider, StyledEngineProvider } from '@mui/material';
+import { createTheme, responsiveFontSizes } from '@mui/material/styles';
 import '../styles/global.css'
 
 
 
 
-
-declare module '@mui/styles/defaultTheme' {
-  // eslint-disable-next-line @typescript-eslint/no-empty-interface
-  interface DefaultTheme extends Theme {}
-}
-
-
-
-
-
-let theme = createTheme(adaptV4Theme({
+let theme = createTheme({
   palette: {
     mode: "dark",
     primary: {
@@ -64,7 +54,7 @@ let theme = createTheme(adaptV4Theme({
       ].join(","),
     },
   }
-}));
+});
 
 theme = responsiveFontSizes(theme);
 
