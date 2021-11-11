@@ -3,8 +3,8 @@ import { AppBar, Container, Toolbar, Typography, Button, Theme, Hidden, IconButt
 import makeStyles from '@mui/styles/makeStyles';
 import Image from 'next/image';
 import Logo from '../../assets/images/logo.svg'
-import Menu from '../../assets/Icons/menu.svg'
-import Close from '../../assets/Icons/close.svg'
+import Menu from '../../assets/icons/menu.svg'
+import Close from '../../assets/icons/close.svg'
 import Link from 'next/link'
 import { useState } from 'react';
 

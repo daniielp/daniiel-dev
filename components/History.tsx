@@ -1,7 +1,7 @@
 import { Container, Grid } from '@mui/material';
 import makeStyles from '@mui/styles/makeStyles';
 import { Theme } from '@mui/material/styles'
-import TextBundle from './Typography/TextBundle'
+import TextBundle from './typography/TextBundle'
 import Image from 'next/image'
 import HistoryImage from '../assets/images/history.svg'
 

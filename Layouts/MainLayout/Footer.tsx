@@ -1,8 +1,8 @@
 import { Button, Container, Grid, TextField, Typography, Link, Theme, Stack } from "@mui/material";
 import makeStyles from '@mui/styles/makeStyles';
-import TextBundle from "../../components/Typography/TextBundle";
+import TextBundle from "../../components/typography/TextBundle";
 import Image from "next/image";
-import EmailIcon from "../../assets/Icons/email.svg";
+import EmailIcon from "../../assets/icons/email.svg";
 import { Alert } from '@mui/material';
 
 const useStyles = makeStyles((theme: Theme) => ({

@@ -4,7 +4,7 @@ import makeStyles from '@mui/styles/makeStyles';
 import Image from 'next/image'
 import { useState } from "react";
 import Avatar from '../assets/images/avatar.svg'
-import BodyText from "./Typography/BodyText"
+import BodyText from "./typography/BodyText"
 
 const useStyles = makeStyles((theme: Theme) => ({
     placement: {

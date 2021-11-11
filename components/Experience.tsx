@@ -1,10 +1,10 @@
 import { Container, Grid, Link, Tab, Tabs, Typography } from '@mui/material';
 import makeStyles from '@mui/styles/makeStyles';
 import { Theme } from '@mui/material/styles'
-import TextBundle from './Typography/TextBundle'
+import TextBundle from './typography/TextBundle'
 import { TabContext, TabPanel } from '@mui/lab';
 import { useState } from 'react'
-import BodyText from './Typography/BodyText';
+import BodyText from './typography/BodyText'
 
 const useStyles = makeStyles((theme: Theme) => ({
     grow: {

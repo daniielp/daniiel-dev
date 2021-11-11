@@ -1,6 +1,6 @@
 import { Container, Grid, Typography, Theme } from '@mui/material';
 import makeStyles from '@mui/styles/makeStyles';
-import BodyText from '../../components/Typography/BodyText';
+import BodyText from '../../components/typography/BodyText';
 import { useRouter } from 'next/router';
 
 const useStyles = makeStyles((theme: Theme) => ({

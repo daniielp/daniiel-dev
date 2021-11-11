@@ -1,7 +1,7 @@
 import { Container, Grid, Link } from '@mui/material';
 import makeStyles from '@mui/styles/makeStyles';
 import { Theme } from '@mui/material/styles'
-import TextBundle from './Typography/TextBundle'
+import TextBundle from './typography/TextBundle'
 import React, { useState } from 'react'
 
 const useStyles = makeStyles((theme: Theme) => ({
