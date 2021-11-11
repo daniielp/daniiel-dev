@@ -110,12 +110,12 @@ function MyApp({ Component, pageProps }: { Component: any, pageProps: any }) {
       <link rel="icon" href="/favicon.ico" />
       <meta name="description" content="With a background as a web developer and a good eye to UI/UX. Daniel Pedersen create groth and is dedicated to frontend development." />
     </Head>
-    <StyledEngineProvider injectFirst>
+    {/* <StyledEngineProvider injectFirst> */}
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <RouteWithLayout Layout={MainLayout} Component={Component} pageProps={pageProps} />
       </ThemeProvider>
-    </StyledEngineProvider>
+    {/* </StyledEngineProvider> */}
   </>;
 }
 
