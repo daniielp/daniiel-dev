@@ -1,44 +1,25 @@
-import { Button, Grid } from '@mui/material';
+import {Box, Button, Grid} from '@mui/material';
 import { Container } from '@mui/material';
-import makeStyles from '@mui/styles/makeStyles';
-import { Theme } from '@mui/material/styles'
 import TextBundle from './Typography/TextBundle';
 import TestimonialSlider from './Tabs/TestimonialSlider';
 
-const useStyles = makeStyles((theme: Theme) => ({
-    testimonial: {
-        backgroundColor: theme.palette.secondary.dark,
-        paddingTop: theme.spacing(10),
-        paddingBottom: theme.spacing(10),
-        borderBottom: "1px solid " + theme.palette.secondary.light,
-    },
-    button: {
-        color: theme.palette.primary.main,
-        fontWeight: 'bold'
-    },
-    testimonailPlacement: {
-        display: "flex",
-        justifyContent: "center"
-    }
-}))
 
 const Testimonial = () => {
-    const classes = useStyles();
 
     return (
-        <section className={classes.testimonial}>
+        <Box sx={{bgcolor: 'secondary.dark', p: 10, borderTop: 1, borderBottom: 1, borderColor: 'secondary.light'}} component="section">
             <Container maxWidth="lg">
                 <Grid container spacing={2}>
                     <Grid item md={6}>
                         <TextBundle title="Hvad siger folk?" subtitle="Anmeldelser" text="Jeg har haft muligheden for at arbejde med nogle helt fantastiske mennesker, og tænkte jeg lige ville dele hvad de har sagt om mig." />
-                        <Button className={classes.button}>Se mere</Button>
+                        <Button sx={{color: 'primary.main', fontWeight: 'bold'}}>Se mere</Button>
                     </Grid>
-                    <Grid item md={6} className={classes.testimonailPlacement}>
+                    <Grid item md={6} sx={{display: 'flex', justifyContent: 'center'}}>
                         <TestimonialSlider />
                     </Grid>
                 </Grid>
             </Container>
-        </section>
+        </Box>
     )
 }
 

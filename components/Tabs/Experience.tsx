@@ -1,60 +1,11 @@
-import { Container, Grid, Link, Tab, Tabs, Typography } from '@mui/material';
-import makeStyles from '@mui/styles/makeStyles';
-import { Theme } from '@mui/material/styles'
+import {Box, Container, Grid, Link, Tab, Tabs, Typography} from '@mui/material';
 import TextBundle from '../Typography/TextBundle'
 import { TabContext, TabPanel } from '@mui/lab';
 import { useState } from 'react'
 import BodyText from '../Typography/BodyText'
-
-const useStyles = makeStyles((theme: Theme) => ({
-    grow: {
-        paddingTop: theme.spacing(10),
-        paddingBottom: theme.spacing(10),
-
-        [theme.breakpoints.down('md')]: {
-            paddingTop: theme.spacing(5),
-            paddingBottom: theme.spacing(5),
-        }
-    },
-    introduction: {
-        backgroundColor: theme.palette.secondary.dark,
-        padding: theme.spacing(2)
-    },
-    description: {
-        padding: theme.spacing(2),
-        borderTop: "2px solid " + theme.palette.primary.main,
-        borderRight: "2px solid " + theme.palette.primary.main,
-        borderBottom: "2px solid " + theme.palette.primary.main,
-
-        [theme.breakpoints.down('md')]: {
-            borderLeft: "2px solid " + theme.palette.primary.main,
-        }
-    },
-    highlight: {
-        fontWeight: 'bold',
-        color: theme.palette.primary.main,
-    },
-    mobileReverse: {
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-
-        [theme.breakpoints.down('sm')]: {
-            flexDirection: "column-reverse",
-        }
-    },
-    Indicator: {
-        bottom: 'unset',
-        top: 0,
-        height: 10,
-    },
-    tabs: {
-        paddingTop: theme.spacing(2),
-    }
-}))
+import {Theme} from "@mui/material/styles";
 
 const Hero = () => {
-    const classes = useStyles();
     const [tabIndex, setTabIndex] = useState(0);
 
     const handleChange = (_event: React.SyntheticEvent, newValue: number) => {
@@ -62,7 +13,7 @@ const Hero = () => {
     };
 
     return (
-        <section className={classes.grow}>
+        <Box sx={{py: [5, 5, 10]}}>
             <Container maxWidth="lg">
 
                 <Grid container spacing={5}>
@@ -72,44 +23,44 @@ const Hero = () => {
                             Se mere
                         </Link>
                     </Grid>
-                    <Grid item md={6} className={classes.mobileReverse}>
+                    <Grid item md={6} sx={{display: 'flex', flexDirection: ['column-reverse', 'column-reverse', 'column'], justifyContent: "center",}} >
                         <TabContext value={tabIndex.toString()}>
                             <TabPanel value="0" sx={{padding: 0}}>
                                 <Grid container spacing={0}>
-                                    <Grid item md={6} className={classes.introduction}>
+                                    <Grid item md={6} sx={{bgcolor: 'secondary.dark', p:2}}>
                                         <Typography variant="h6" component="h4">Fullstack udvikler</Typography>
                                         <Typography variant="subtitle1" component="h4">Admill.dk</Typography>
                                         <BodyText>Hos admill var jeg en del af et større team, som havde til ansvar at holde styr på deres I alt 20+ sider.</BodyText>
                                     </Grid>
-                                    <Grid item md={6} className={classes.description}>
+                                    <Grid item md={6} sx={{p: 2, borderTop: 2, borderRight: 2, borderBottom: 2, borderColor: 'primary.main', borderLeft: [2, 2, 0]}}>
                                         <Typography variant="h6" component="h4" gutterBottom>Udviklingsværktøjer</Typography>
-                                        <Typography variant="body2">En stor del af det vi arbejdede med hos Admill var været med <Typography variant="body2" component="span" className={classes.highlight}>ASP.NET MVC</Typography>, både indenfor at <Typography variant="body2" component="span" className={classes.highlight}>Performance Optimize</Typography>, tilføjelse af <Typography variant="body2" component="span" className={classes.highlight}>ekstra funktionaliteter</Typography> indenfor <Typography variant="body2" component="span" className={classes.highlight}>SEO</Typography> og <Typography variant="body2" component="span" className={classes.highlight}>Content writing/creation</Typography>. Dertil har jeg også arbejdet med <Typography variant="body2" component="span" className={classes.highlight}>React</Typography> og styring af states til <Typography variant="body2" component="span" className={classes.highlight}>multistep forms</Typography>, og til <Typography variant="body2" component="span" className={classes.highlight}>administrationspaneler</Typography>.</Typography>
+                                        <Typography variant="body2">En stor del af det vi arbejdede med hos Admill var været med <Typography variant="body2" component="span" sx={{fontWeight: 'bold', color: 'primary.main'}}>ASP.NET MVC</Typography>, både indenfor at <Typography variant="body2" component="span" sx={{fontWeight: 'bold', color: 'primary.main'}}>Performance Optimize</Typography>, tilføjelse af <Typography variant="body2" component="span" sx={{fontWeight: 'bold', color: 'primary.main'}}>ekstra funktionaliteter</Typography> indenfor <Typography variant="body2" component="span" sx={{fontWeight: 'bold', color: 'primary.main'}}>SEO</Typography> og <Typography variant="body2" component="span" sx={{fontWeight: 'bold', color: 'primary.main'}}>Content writing/creation</Typography>. Dertil har jeg også arbejdet med <Typography variant="body2" component="span" sx={{fontWeight: 'bold', color: 'primary.main'}}>React</Typography> og styring af states til <Typography variant="body2" component="span" sx={{fontWeight: 'bold', color: 'primary.main'}}>multistep forms</Typography>, og til <Typography variant="body2" component="span" sx={{fontWeight: 'bold', color: 'primary.main'}}>administrationspaneler</Typography>.</Typography>
                                     </Grid>
                                 </Grid>
                             </TabPanel>
                             <TabPanel value="1" sx={{padding: 0}}>
                                 <Grid container spacing={0}>
-                                    <Grid item md={6} className={classes.introduction}>
+                                    <Grid item md={6} sx={{bgcolor: 'secondary.dark', p:2}}>
                                         <Typography variant="h6" component="h4">Skoleprojekt (UI/UX)</Typography>
                                         <Typography variant="subtitle1" component="h4">Novicell.dk</Typography>
                                         <BodyText>Som en del af mit skoleprojekt som webudvikler. Fik jeg til opgave at skulle redesign deres side.</BodyText>
                                     </Grid>
-                                    <Grid item md={6} className={classes.description}>
+                                    <Grid item md={6} sx={{p: 2, borderTop: 2, borderRight: 2, borderBottom: 2, borderColor: 'primary.main', borderLeft: [2, 2, 0]}}>
                                         <Typography variant="h6" component="h4" gutterBottom>Udviklingsværktøjer</Typography>
-                                        <Typography variant="body2">En stor del af det forløb bestod i <Typography variant="body2" component="span" className={classes.highlight}>UI/UX</Typography>, med både at komme op med nogle nye <Typography variant="body2" component="span" className={classes.highlight}>komponenter</Typography>. Dertil fik jeg også arbejdet med design programmet <Typography variant="body2" component="span" className={classes.highlight}>Adobe XD</Typography>.</Typography>
+                                        <Typography variant="body2">En stor del af det forløb bestod i <Typography variant="body2" component="span" sx={{fontWeight: 'bold', color: 'primary.main'}}>UI/UX</Typography>, med både at komme op med nogle nye <Typography variant="body2" component="span" sx={{fontWeight: 'bold', color: 'primary.main'}}>komponenter</Typography>. Dertil fik jeg også arbejdet med design programmet <Typography variant="body2" component="span" sx={{fontWeight: 'bold', color: 'primary.main'}}>Adobe XD</Typography>.</Typography>
                                     </Grid>
                                 </Grid>
                             </TabPanel>
                         </TabContext>
-                        <Tabs value={tabIndex} classes={{ indicator: classes.Indicator }} className={classes.tabs} onChange={handleChange} allowScrollButtonsMobile>
-                            <Tab label="Admill" />
-                            <Tab label="Novicell" />
+                        <Tabs value={tabIndex} onChange={handleChange} sx={{pt: 2}} TabIndicatorProps={{style: {bottom: 'unset', top: 0, height: 10}}} indicatorColor="primary" textColor="primary" variant="scrollable" scrollButtons="auto" allowScrollButtonsMobile>
+                            <Tab label="Admill" sx={{borderTop: 10, borderColor: (theme : Theme) => theme.palette.grey[500], mx: 2}}/>
+                            <Tab label="Novicell" sx={{borderTop: 10, borderColor: (theme : Theme) => theme.palette.grey[500], mx: 2}}/>
                         </Tabs>
                     </Grid>
                 </Grid>
 
             </Container>
-        </section>
+        </Box>
     );
 }
 

@@ -1,27 +1,13 @@
-import { Container, Grid } from '@mui/material';
-import makeStyles from '@mui/styles/makeStyles';
-import { Theme } from '@mui/material/styles'
+import {Box, Container, Grid} from '@mui/material';
 import TextBundle from './Typography/TextBundle'
 import Image from 'next/image'
 import HistoryImage from '../assets/images/history.svg'
 
-const useStyles = makeStyles((theme: Theme) => ({
-    grow: {
-        paddingTop: theme.spacing(10),
-        paddingBottom: theme.spacing(10),
-
-        [theme.breakpoints.down('md')]: {
-            paddingTop: theme.spacing(5),
-            paddingBottom: theme.spacing(5),
-        }
-    },
-}))
 
 const Hero = () => {
-    const classes = useStyles();
 
     return (
-        <section className={classes.grow}>
+        <Box sx={{py: [5, 5, 10]}}>
             <Container maxWidth="lg">
 
                 <Grid container spacing={5}>
@@ -34,7 +20,7 @@ const Hero = () => {
                 </Grid>
 
             </Container>
-        </section>
+        </Box>
     );
 }
 

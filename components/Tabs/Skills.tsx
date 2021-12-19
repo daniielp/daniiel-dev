@@ -1,33 +1,12 @@
-import { Container, Grid, Tab, Tabs, Typography } from '@mui/material';
-import makeStyles from '@mui/styles/makeStyles';
-import { Theme } from '@mui/material/styles'
+import {Box, Container, Grid, Tab, Tabs, Typography} from '@mui/material';
 import TextBundle from '../Typography/TextBundle'
 import React, { useState } from 'react'
 import { TabContext, TabPanel } from '@mui/lab';
 import BodyText from '../Typography/BodyText';
 
 
-const useStyles = makeStyles((theme: Theme) => ({
-    grow: {
-        paddingTop: theme.spacing(10),
-        paddingBottom: theme.spacing(10),
-        backgroundColor: theme.palette.secondary.dark,
-
-        [theme.breakpoints.down('md')]: {
-            paddingTop: theme.spacing(5),
-            paddingBottom: theme.spacing(5),
-        }
-    },
-    alignment: {
-        display: 'flex',
-        [theme.breakpoints.down('md')]: {
-            flexDirection: "column"
-        }
-    }
-}))
 
 const Skills = () => {
-    const classes = useStyles();
     const [tabIndex, setTabIndex] = useState(1);
 
     const handleChange = (_event: React.SyntheticEvent, newValue: number) => {
@@ -35,10 +14,10 @@ const Skills = () => {
     };
 
     return (
-        <section className={classes.grow}>
+        <Box sx={{py: [5, 5, 10], bgcolor: 'secondary.dark'}}>
             <Container maxWidth="lg">
                 <Grid container spacing={5}>
-                    <Grid item md={6} className={classes.alignment}>
+                    <Grid item md={6} sx={{display: 'flex', flexDirection: ['column', 'column', 'column', 'row']}} >
                         <Tabs
                             orientation="vertical"
                             variant="scrollable"
@@ -85,7 +64,7 @@ const Skills = () => {
                 </Grid>
 
             </Container>
-        </section>
+        </Box>
     );
 }
 

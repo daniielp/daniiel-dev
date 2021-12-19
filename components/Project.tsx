@@ -1,28 +1,10 @@
-import { Container, Grid, Theme } from '@mui/material';
-import makeStyles from '@mui/styles/makeStyles';
+import {Box, Container, Grid} from '@mui/material';
 import TextBundle from './Typography/TextBundle';
 import PropTypes from 'prop-types'
 
-const useStyles = makeStyles((theme: Theme) => ({
-    grow: {
-        paddingTop: theme.spacing(10),
-        paddingBottom: theme.spacing(10),
-
-        [theme.breakpoints.down('md')]: {
-            paddingTop: theme.spacing(5),
-            paddingBottom: theme.spacing(5),
-        }
-    },
-}))
-
-interface project {
-    isFrontpage: boolean
-}
-
-const Project = ({isFrontpage}: project) => {
-    const classes = useStyles();
+const Project = () => {
     return (
-        <section className={classes.grow}>
+        <Box sx={{py: [5, 5, 10]}} component="section">
             <Container maxWidth="lg">
                 <Grid container>
                     <Grid item md={6}>
@@ -36,7 +18,7 @@ const Project = ({isFrontpage}: project) => {
                     {/* <ProjectCard /> */}
                 </Grid>
             </Container>
-        </section>
+        </Box>
     )
 }
 

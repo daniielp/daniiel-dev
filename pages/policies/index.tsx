@@ -1,21 +1,13 @@
-import { Container, Grid, Link, Typography, Theme } from '@mui/material';
-import makeStyles from '@mui/styles/makeStyles';
+import { Container, Grid, Link, Typography } from '@mui/material';
 import BodyText from '../../components/Typography/BodyText';
 
-const useStyles = makeStyles((theme: Theme) => ({
-    container: {
-        paddingTop: theme.spacing(10),
-        paddingBottom: theme.spacing(10),
-    },
-}))
 
 
 const index = () => {
-    const classes = useStyles();
 
     return (
         <section>
-            <Container maxWidth="lg" className={classes.container}>
+            <Container maxWidth="lg" sx={{py: [5, 5, 10]}}>
                 <Grid container spacing={10}>
                     <Grid item sm={12}>
                         <Typography align="center" variant="h3" component="h1" gutterBottom>Privatliv & betingelser</Typography>

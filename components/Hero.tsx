@@ -1,28 +1,10 @@
-import { Container, Grid, Link } from '@mui/material';
-import makeStyles from '@mui/styles/makeStyles';
-import { Theme } from '@mui/material/styles'
+import {Box, Container, Grid, Link} from '@mui/material';
 import TextBundle from './Typography/TextBundle'
-import React, { useState } from 'react'
-
-const useStyles = makeStyles((theme: Theme) => ({
-    grow: {
-        paddingTop: theme.spacing(10),
-        paddingBottom: theme.spacing(10),
-        backgroundColor: theme.palette.secondary.dark,
-
-        [theme.breakpoints.down('md')]: {
-            paddingTop: theme.spacing(5),
-            paddingBottom: theme.spacing(5),
-        }
-    },
-}))
 
 const Hero = () => {
-    const classes = useStyles();
-    const [index, setIndex] = useState(0);
 
     return (
-        <section className={classes.grow}>
+        <Box sx={{py: [5, 5, 10], bgcolor: 'secondary.dark' }} component="section">
             <Container maxWidth="lg">
 
                 <Grid container spacing={5}>
@@ -38,7 +20,7 @@ const Hero = () => {
                 </Grid>
 
             </Container>
-        </section>
+        </Box>
     );
 }
 

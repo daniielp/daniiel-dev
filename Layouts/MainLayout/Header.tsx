@@ -1,6 +1,18 @@
 import React from 'react'
-import { AppBar, Container, Toolbar, Typography, Button, Theme, Hidden, IconButton, Drawer, List, ListItem, ListItemText } from '@mui/material';
-import makeStyles from '@mui/styles/makeStyles';
+import {
+  AppBar,
+  Container,
+  Toolbar,
+  Typography,
+  Button,
+  Hidden,
+  IconButton,
+  Drawer,
+  List,
+  ListItem,
+  ListItemText,
+  Box
+} from '@mui/material';
 import Image from 'next/image';
 import Logo from '../../assets/images/logo.svg'
 import Menu from '../../assets/Icons/menu.svg'
@@ -8,54 +20,18 @@ import Close from '../../assets/Icons/close.svg'
 import Link from 'next/link'
 import { useState } from 'react';
 
-const useStyles = makeStyles((theme: Theme) => ({
-  background: {
-    backgroundColor: theme.palette.secondary.main,
-  },
-  clicableButton: {
-    background: 'transparent',
-    boxShadow: 'none',
-    margin: 0,
-    padding: 0,
-
-    '&:hover': {
-      boxShadow: 'none',
-      background: 'transparent',
-    }
-  },
-  toolbar: {
-    padding: 0,
-    display: 'flex',
-    justifyContent: 'space-between'
-  },
-  drawer: {
-    width: '100%',
-    backgroundColor: theme.palette.secondary.dark,
-    backgroundImage: 'none',
-  },
-  closeMenu: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    paddingTop: theme.spacing(1),
-    paddingBottom: theme.spacing(1),
-    borderBottom: '1px solid ' + theme.palette.secondary.light
-  }
-}));
-
-const Header = (props: any) => {
-  const classes = useStyles();
-  const { pages } = props;
+const Header = () => {
   const [drawer, setDrawer] = useState(false);
 
   return (
-    <AppBar position="sticky" className={classes.background}>
+    <AppBar position="sticky" sx={{bgcolor: 'secondary.main'}}>
       <Container maxWidth="lg">
-        <Toolbar className={classes.toolbar}>
+        <Toolbar sx={{p: [0,0,0,0,0], display: 'flex', justifyContent: 'space-between'}}>
           <Link href="/">
             <Button
               variant="contained"
               startIcon={<Image src={Logo} width={45} height={45} />}
-              className={classes.clicableButton}
+              sx={{bgcolor: 'transparent', boxShadow: 'none', m: 0, p: 0, '&:hover': {boxShadow: 'none', background: 'transparent'}}}
               disableRipple
             >
               <Typography variant="h6" component="h1" color="textPrimary">
@@ -72,14 +48,14 @@ const Header = (props: any) => {
           </Hidden>
           <Hidden mdUp>
             <IconButton color="inherit" aria-label="Main Menu" onClick={() => setDrawer(prevState => !prevState)}><Image src={Menu} width={35} height={35} alt="menu" /></IconButton>
-            <Drawer anchor="left" open={drawer} onClose={() => setDrawer(prevState => !prevState)} PaperProps={{ className: classes.drawer }}>
+            <Drawer anchor="left" open={drawer} onClose={() => setDrawer(prevState => !prevState)} PaperProps={{style: {width: '100%', backgroundColor: '#272c3a', backgroundImage: 'none'}}}>
               <Container maxWidth="lg">
-                <div className={classes.closeMenu}>
+                <Box sx={{display: 'flex', justifyContent: 'space-between', py: 1,borderBottom: 1, borderColor: 'secondary.light'}}>
                   <Link href="/">
                     <Button
                       variant="contained"
                       startIcon={<Image src={Logo} width={45} height={45} />}
-                      className={classes.clicableButton}
+                      sx={{bgcolor: 'transparent', boxShadow: 'none', m: 0, p: 0, '&:hover': {boxShadow: 'none', background: 'transparent'}}}
                       disableRipple
                     >
                       <Typography variant="h6" component="h1" color="textPrimary">
@@ -88,7 +64,7 @@ const Header = (props: any) => {
                     </Button>
                   </Link>
                   <IconButton color="inherit" aria-label="Close menu" onClick={() => setDrawer(prevState => !prevState)}><Image src={Close} width={35} height={35} alt="menu" /></IconButton>
-                </div>
+                </Box>
 
                 <List component="nav" aria-labelledby="menu list">
                   <ListItem>

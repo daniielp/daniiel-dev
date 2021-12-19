@@ -1,12 +1,5 @@
-import { Typography, Theme } from '@mui/material';
+import { Typography } from '@mui/material';
 
-import makeStyles from '@mui/styles/makeStyles';
-
-const useStyles = makeStyles((theme: Theme) => ({
-    bodyText: {
-        color: "#BDBDBD"
-    }
-}));
 
 type bodyProps = {
     children: React.ReactNode;
@@ -14,9 +7,8 @@ type bodyProps = {
 }
 
 const BodyText = (props : bodyProps) => {
-    const classes = useStyles()
     return (
-        <Typography {...props} className={classes.bodyText}>{props.children}</Typography>
+        <Typography {...props} sx={{color: '#BDBDBD'}}>{props.children}</Typography>
     )
 }
 

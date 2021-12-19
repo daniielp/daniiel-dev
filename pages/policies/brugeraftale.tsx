@@ -1,25 +1,11 @@
-import { Container, Grid, Typography, Theme } from '@mui/material';
-import makeStyles from '@mui/styles/makeStyles';
+import {Container, Grid, Typography, Box} from '@mui/material';
 import BodyText from '../../components/Typography/BodyText';
-import { useRouter } from 'next/router';
 
-const useStyles = makeStyles((theme: Theme) => ({
-    section: {
-        backgroundColor: theme.palette.secondary.dark,
-    },
-    container: {
-        paddingTop: theme.spacing(10),
-        paddingBottom: theme.spacing(10),
-    },
-}))
-
-function brugeraftale(props: any) {
-    const classes = useStyles();
-    const router = useRouter();
+function brugeraftale() {
 
     return (
-        <section className={classes.section}>
-            <Container maxWidth="lg" className={classes.container}>
+        <Box component="section" sx={{bgcolor: 'secondary.dark', py: [5, 5, 10]}}>
+            <Container maxWidth="lg">
                 <Grid container>
                     {/* <Grid item md={3}>
                         
@@ -36,7 +22,7 @@ function brugeraftale(props: any) {
                     </Grid>
                 </Grid>
             </Container>
-        </section>
+        </Box>
     )
 }
 

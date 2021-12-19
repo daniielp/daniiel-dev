@@ -2,43 +2,30 @@ import {
     Accordion,
     AccordionActions,
     AccordionDetails,
-    AccordionSummary,
+    AccordionSummary, Box,
     Button,
     Container,
     Grid,
     Link,
     Typography,
 } from '@mui/material';
-import makeStyles from '@mui/styles/makeStyles';
-import { Theme } from '@mui/material/styles'
 import TextBundle from './Typography/TextBundle';
 import Image from 'next/image'
 import Illustration from '../assets/images/question.svg'
 import ArrowDownIcon from '../assets/Icons/down.svg'
 import BodyText from './Typography/BodyText'
 
-const useStyles = makeStyles((theme: Theme) => ({
-    faqContainer: {
-        paddingTop: theme.spacing(10),
-        paddingBottom: theme.spacing(10),
-    },
-    accordionContainer: {
-        marginTop: theme.spacing(4),
-        backgroundColor: theme.palette.secondary.dark
-    },
-}))
 
 const Faq = () => {
-    const classes = useStyles();
     return (
-        <section className={classes.faqContainer}>
+        <Box sx={{py: [5, 5, 10]}} component="section">
             <Container maxWidth="lg">
                 <Grid container>
                     <Grid item md={6}>
                         <TextBundle title="Nu er du snart ved at være ved ende." subtitle="FAQ" text="Så er du velkommen til at sende mig en besked, og så vil jeg vende tilbage indenfor 1-2 dage." />
                         <Link href="mailto:daniel.horsens@gmail.com?subject=FAQ - daniiel.dev" color="primary">daniel.horsens@gmail.com</Link>
 
-                        <Accordion className={classes.accordionContainer} defaultExpanded={true}>
+                        <Accordion sx={{mt: 4, bgcolor: 'secondary.dark'}}  defaultExpanded={true}>
                             <AccordionSummary expandIcon={<Image src={ArrowDownIcon} width={32} height={32} />}>
                                 <Typography variant="h4" component="h3">Hvem er jeg</Typography>
                             </AccordionSummary>
@@ -46,7 +33,7 @@ const Faq = () => {
                                 <BodyText>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. A diam maecenas sed enim. In massa tempor nec feugiat.</BodyText>
                             </AccordionDetails>
                         </Accordion>
-                        <Accordion className={classes.accordionContainer}>
+                        <Accordion sx={{mt: 4, bgcolor: 'secondary.dark'}}>
                             <AccordionSummary expandIcon={<Image src={ArrowDownIcon} width={32} height={32} />}>
                                 <Typography variant="h4" component="h3">Hvorfor daniiel med 2 i'er</Typography>
                             </AccordionSummary>
@@ -57,7 +44,7 @@ const Faq = () => {
                                 <Button color="primary" disabled>Læs historien bag</Button>
                             </AccordionActions>
                         </Accordion>
-                        <Accordion className={classes.accordionContainer}>
+                        <Accordion sx={{mt: 4, bgcolor: 'secondary.dark'}}>
                             <AccordionSummary expandIcon={<Image src={ArrowDownIcon} width={32} height={32} />}>
                                 <Typography variant="h4" component="h3">Fremtidsplaner</Typography>
                             </AccordionSummary>
@@ -71,7 +58,7 @@ const Faq = () => {
                     </Grid>
                 </Grid>
             </Container>
-        </section>
+        </Box>
     )
 }
 
