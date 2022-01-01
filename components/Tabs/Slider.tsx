@@ -27,8 +27,7 @@ const Slider = () => {
                                 </Link> */}
                             </Grid>
                             <Grid item md={6}>
-                                <Typography variant="h1" component="h1" >Daniel</Typography>
-                                <Typography variant="h1" component="h1" color="primary" >Pedersen</Typography>
+                                <Typography variant="h1" component="h1">Daniel <Typography variant="h1" component="span" color="primary">Pedersen</Typography> </Typography>
                             </Grid>
                         </Grid>
                     </TabPanel>
@@ -38,8 +37,7 @@ const Slider = () => {
                                 <TextBundle title="Hedder du rigtigt Daniiel med dobbelt i?" subtitle="Historien bag" text="Med en kombination af uddannelsen som webudvikler, og med et skarpt øje for design og UI/UX, skaber vækst og gør mig i stand til at arbejde helhjertet med frontend-development. På den måde styrker jeg brandets position med at være de bedste når det kommer til frontend-development, og samtidig skaber værdifulde resultater, som i sidste ende giver bedre købeklare leads." />
                             </Grid>
                             <Grid item md={6}>
-                                <Typography variant="h1" component="h1">Daniel</Typography>
-                                <Typography variant="h1" component="h1" color="primary">Pedersen</Typography>
+                                <Typography variant="h1" component="h1">Daniel <Typography variant="h1" component="span" color="primary">Pedersen</Typography> </Typography>
                             </Grid>
                         </Grid>
                     </TabPanel>
@@ -49,8 +47,7 @@ const Slider = () => {
                                 <TextBundle title="Du er altid velkommen til at kontakte mig" subtitle="Kontakt" text="Med en kombination af uddannelsen som webudvikler, og med et skarpt øje for design og UI/UX, skaber vækst og gør mig i stand til at arbejde helhjertet med frontend-development. På den måde styrker jeg brandets position med at være de bedste når det kommer til frontend-development, og samtidig skaber værdifulde resultater, som i sidste ende giver bedre købeklare leads." />
                             </Grid>
                             <Grid item md={6}>
-                                <Typography variant="h1" component="h1">Daniel</Typography>
-                                <Typography variant="h1" component="h1" color="primary">Pedersen</Typography>
+                                <Typography variant="h1" component="h1">Daniel <Typography variant="h1" component="span" color="primary">Pedersen</Typography> </Typography>
                             </Grid>
                         </Grid>
                     </TabPanel>
