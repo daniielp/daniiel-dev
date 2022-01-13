@@ -25,6 +25,9 @@ const Header = () => {
 
   return (
     <AppBar position="sticky" sx={{bgcolor: 'secondary.main'}}>
+       <Button href="#main-content" component="a" sx={{position: 'absolute', transform: 'translateY(-120%)' ,'&:focus': {transform: 'translateY(0)'}}}>
+          Skip Navigation
+        </Button>
       <Container maxWidth="lg">
         <Toolbar sx={{p: [0,0,0,0,0], display: 'flex', justifyContent: 'space-between'}}>
           <Link href="/">

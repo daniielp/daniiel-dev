@@ -6,6 +6,10 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@400;700&display=swap');
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Anonymous Pro', monospace;
     -webkit-font-smoothing: antialiased;

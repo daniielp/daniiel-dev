@@ -6,7 +6,9 @@ function index(props: any) {
     return (
         <React.Fragment>
             <Header />
-            {props.children}
+            <div id="main-content">
+                {props.children}
+            </div>
             <Footer />
         </React.Fragment>
     )

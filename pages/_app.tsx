@@ -9,6 +9,8 @@ import '../styles/global.css'
 import createCache from '@emotion/cache';
 import {CacheProvider} from "@emotion/react";
 
+
+
 import theme from '../src/theme';
 
 const responsiveTheme = responsiveFontSizes(theme);
