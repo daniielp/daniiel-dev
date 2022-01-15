@@ -4,12 +4,10 @@ import RouteWithLayout from '../Layouts/RouteWithLayout'
 import Head from 'next/head'
 import {useRouter} from 'next/router'
 import {CssBaseline, ThemeProvider} from '@mui/material';
-import {createTheme, responsiveFontSizes} from '@mui/material/styles';
+import {responsiveFontSizes} from '@mui/material/styles';
 import '../styles/global.css'
 import createCache from '@emotion/cache';
 import {CacheProvider} from "@emotion/react";
-
-
 
 import theme from '../src/theme';
 

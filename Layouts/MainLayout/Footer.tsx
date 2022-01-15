@@ -2,6 +2,7 @@ import {Button, Container, Grid, TextField, Typography, Link, Theme, Stack, Box}
 import Image from "next/image";
 import EmailIcon from "../../assets/Icons/email.svg";
 import { Alert } from '@mui/material';
+import TextBundle from "../../components/Typography/TextBundle";
 
 
 const Footer = () => {
@@ -10,11 +11,11 @@ const Footer = () => {
       <Container>
         <Grid container spacing={5}>
           <Grid item md={6}>
-            {/* <TextBundle
+            <TextBundle
               title="Har du nogle spørgsmål?"
               subtitle="Kontakt mig"
               text={"Hvis du skulle stå og have nogle spørgsmål, eller har brug for hjælp og vejledning til din hjemmeside. Så er du altid velkommen til at kontakte mig enten over email på daniel.horsens@gmail.com eller ved at bruge kontaktformularen I højre side."}
-            /> */}
+            />
           </Grid>
           <Grid item md={6} sx={{display: 'flex', flexDirection: 'column'}}>
             <Grid container sx={{bgcolor: 'secondary.light', p: 2}}>
