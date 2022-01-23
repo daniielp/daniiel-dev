@@ -7,7 +7,7 @@ import TestimonialSlider from './Tabs/TestimonialSlider';
 const Testimonial = () => {
 
     return (
-        <Box sx={{bgcolor: 'secondary.dark', p: 10, borderTop: 1, borderBottom: 1, borderColor: 'secondary.light'}} component="section">
+        <Box sx={{bgcolor: 'secondary.dark', py: [5, 5, 10], borderTop: 1, borderBottom: 1, borderColor: 'secondary.light'}} component="section">
             <Container maxWidth="lg">
                 <Grid container spacing={2}>
                     <Grid item md={6}>
