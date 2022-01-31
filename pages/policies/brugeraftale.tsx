@@ -18,7 +18,7 @@ function brugeraftale() {
                         <Typography variant="h4" component="h3" gutterBottom>Ansvarsfraskrivelse</Typography>
                         <BodyText>Daniiel.dev er ikke ansvarlig for tab, der skyldes IT-nedbrud eller ødelæggelse af data i forbindelse med lovindgreb eller forvaltningsakter, hacking, computervirus, sabotage, naturkatastrofer, uroligheder, terror, hærværk, strejke, blokade, boykot eller andre forhold, der uden for daniiel.dev kontrol.</BodyText>
                         <Typography variant="h4" component="h3" gutterBottom>Lovvalg og værneting</Typography>
-                        <BodyText gutterBottom>Disse vilkår og betingelser er underlagt dansk ret, og alle uoverensstemmelser, der måtte opstå i forbindelse med fortolkningen af Vilkårene eller brugen af Morebankers hjemmeside, Tjenesten og andre ydelser skal afgøres i overensstemmelse med dansk ret og ved byretten i København.</BodyText>
+                        <BodyText gutterBottom>Disse vilkår og betingelser er underlagt dansk ret, og alle uoverensstemmelser, der måtte opstå i forbindelse med fortolkningen af Vilkårene eller brugen af daniiel.dev hjemmeside, Tjenesten og andre ydelser skal afgøres i overensstemmelse med dansk ret og ved byretten i København.</BodyText>
                     </Grid>
                 </Grid>
             </Container>
