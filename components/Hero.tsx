@@ -1,5 +1,5 @@
 import {Box, Container, Grid, Link} from '@mui/material';
-import TextBundle from './Typography/TextBundle'
+import TextBundle from './Typography/TextBundle';
 
 const Hero = () => {
 

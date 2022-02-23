@@ -33,8 +33,18 @@ const Header = () => {
           <Link href="/">
             <Button
               variant="contained"
+<<<<<<< Updated upstream
               startIcon={<Image src={Logo} width={45} height={45} />}
               sx={{ bgcolor: 'transparent', boxShadow: 'none', m: 0, p: 0, '&:hover': { boxShadow: 'none', background: 'transparent' } }}
+=======
+<<<<<<< HEAD
+              startIcon={<Image src={Logo} width={45} height={45} priority />}
+              sx={{bgcolor: 'transparent', boxShadow: 'none', m: 0, p: 0, '&:hover': {boxShadow: 'none', background: 'transparent'}}}
+=======
+              startIcon={<Image src={Logo} width={45} height={45} />}
+              sx={{ bgcolor: 'transparent', boxShadow: 'none', m: 0, p: 0, '&:hover': { boxShadow: 'none', background: 'transparent' } }}
+>>>>>>> 19ce4a2ae9dad38aa38281a9fe6442e9c0461b9c
+>>>>>>> Stashed changes
               disableRipple
             >
               <Typography variant="h6" component="h1" color="textPrimary">

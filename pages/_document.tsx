@@ -4,6 +4,33 @@ import createEmotionServer from '@emotion/server/create-instance';
 import theme from '../src/theme';
 import createEmotionCache from '../src/createEmotionCache';
 
+const config = {
+    translations: {
+        en: {
+            googleAnalytics: {
+                title: "Google Analytics",
+                description: "The analytics service ran by a most definitely non-evil company.",
+            },
+            purposes: {
+                analytics: "Analytics",
+                styling: "Styling",
+            }
+        }
+    },
+    apps: [
+        {
+            name: "googleAnalytics",
+            purposes: ["analytics"],
+        },
+        {
+            name: "bootstrap",
+            title: "Bootstrap (external resource)",
+            description: "Example for embedding external stylesheets.",
+            purposes: ["styling"],
+        },
+    ],
+};
+
 export default class MyDocument extends Document {
     render() {
         return (
