@@ -33,67 +33,55 @@ const Header = () => {
           <Link href="/">
             <Button
               variant="contained"
-<<<<<<< Updated upstream
               startIcon={<Image src={Logo} width={45} height={45} />}
-              sx={{ bgcolor: 'transparent', boxShadow: 'none', m: 0, p: 0, '&:hover': { boxShadow: 'none', background: 'transparent' } }}
-=======
-<<<<<<< HEAD
-              startIcon={<Image src={Logo} width={45} height={45} priority />}
-              sx={{bgcolor: 'transparent', boxShadow: 'none', m: 0, p: 0, '&:hover': {boxShadow: 'none', background: 'transparent'}}}
-=======
-              startIcon={<Image src={Logo} width={45} height={45} />}
-              sx={{ bgcolor: 'transparent', boxShadow: 'none', m: 0, p: 0, '&:hover': { boxShadow: 'none', background: 'transparent' } }}
->>>>>>> 19ce4a2ae9dad38aa38281a9fe6442e9c0461b9c
->>>>>>> Stashed changes
-              disableRipple
-            >
+              sx={{ bgcolor: 'transparent', boxShadow: 'none', m: 0, p: 0, '&:hover': { boxShadow: 'none', background: 'transparent' } }}>
               <Typography variant="h6" component="h1" color="textPrimary">
-                Daniel Pedersen
-              </Typography>
-            </Button>
-          </Link>
-          <Hidden smDown>
-            <nav>
-              <Link href="/om-mig">
-                <Button variant="text" >Om mig</Button>
-              </Link>
-            </nav>
-          </Hidden>
-          <Hidden mdUp>
-            <IconButton color="inherit" aria-label="Main Menu" onClick={() => setDrawer(prevState => !prevState)}><Image src={Menu} width={35} height={35} alt="menu" /></IconButton>
-            <Drawer anchor="left" open={drawer} onClose={() => setDrawer(prevState => !prevState)} PaperProps={{ style: { width: '100%', backgroundColor: '#272c3a', backgroundImage: 'none' } }}>
-              <Container maxWidth="lg">
-                <Box sx={{ display: 'flex', justifyContent: 'space-between', py: 1, borderBottom: 1, borderColor: 'secondary.light' }}>
-                  <Link href="/">
-                    <Button
-                      variant="contained"
-                      startIcon={<Image src={Logo} width={45} height={45} />}
-                      sx={{ bgcolor: 'transparent', boxShadow: 'none', m: 0, p: 0, '&:hover': { boxShadow: 'none', background: 'transparent' } }}
-                      disableRipple
-                      onClick={() => setDrawer(prevState => !prevState)}
-                    >
-                      <Typography variant="h6" component="h1" color="textPrimary">
-                        Daniel Pedersen
-                      </Typography>
-                    </Button>
-                  </Link>
-                  <IconButton color="inherit" aria-label="Close menu" onClick={() => setDrawer(prevState => !prevState)}><Image src={Close} width={35} height={35} alt="menu" /></IconButton>
-                </Box>
+              Daniel Pedersen
+            </Typography>
+          </Button>
+        </Link>
+        <Hidden smDown>
+          <nav>
+            <Link href="/om-mig">
+              <Button variant="text" >Om mig</Button>
+            </Link>
+          </nav>
+        </Hidden>
+        <Hidden mdUp>
+          <IconButton color="inherit" aria-label="Main Menu" onClick={() => setDrawer(prevState => !prevState)}><Image src={Menu} width={35} height={35} alt="menu" /></IconButton>
+          <Drawer anchor="left" open={drawer} onClose={() => setDrawer(prevState => !prevState)} PaperProps={{ style: { width: '100%', backgroundColor: '#272c3a', backgroundImage: 'none' } }}>
+            <Container maxWidth="lg">
+              <Box sx={{ display: 'flex', justifyContent: 'space-between', py: 1, borderBottom: 1, borderColor: 'secondary.light' }}>
+                <Link href="/">
+                  <Button
+                    variant="contained"
+                    startIcon={<Image src={Logo} width={45} height={45} />}
+                    sx={{ bgcolor: 'transparent', boxShadow: 'none', m: 0, p: 0, '&:hover': { boxShadow: 'none', background: 'transparent' } }}
+                    disableRipple
+                    onClick={() => setDrawer(prevState => !prevState)}
+                  >
+                    <Typography variant="h6" component="h1" color="textPrimary">
+                      Daniel Pedersen
+                    </Typography>
+                  </Button>
+                </Link>
+                <IconButton color="inherit" aria-label="Close menu" onClick={() => setDrawer(prevState => !prevState)}><Image src={Close} width={35} height={35} alt="menu" /></IconButton>
+              </Box>
 
-                <List component="nav" aria-labelledby="menu list">
-                  <Link href="/om-mig">
-                    <ListItem onClick={() => setDrawer(prevState => !prevState)}>
-                      <ListItemText primary="Om mig" />
-                    </ListItem>
-                  </Link>
-                </List>
+              <List component="nav" aria-labelledby="menu list">
+                <Link href="/om-mig">
+                  <ListItem onClick={() => setDrawer(prevState => !prevState)}>
+                    <ListItemText primary="Om mig" />
+                  </ListItem>
+                </Link>
+              </List>
 
-              </Container>
-            </Drawer>
-          </Hidden>
-        </Toolbar>
-      </Container>
-    </AppBar>
+            </Container>
+          </Drawer>
+        </Hidden>
+      </Toolbar>
+    </Container>
+    </AppBar >
   )
 }
 
