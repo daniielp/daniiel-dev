@@ -3,7 +3,7 @@ import { Theme } from '@mui/material/styles'
 import TextBundle from '../Typography/TextBundle'
 import React, { useState } from 'react'
 import { Box } from '@mui/material'
-import { Breadcrumbs, SvgIcon } from '@mui/material'
+import { Breadcrumbs } from '@mui/material'
 import { TabContext, TabPanel } from '@mui/lab';
 import Image from 'next/image';
 import DenmarkVector from '../../assets/images/denmark-vector.svg';
@@ -44,8 +44,10 @@ const Slider = () => {
                                 </Link> */}
                             </Grid>
                             <Grid item md={6} sx={{ position: "relative", display: "flex" }}>
-                                <Box sx={{ position: "absolute", width: 10, height: 10, zIndex: 1, opacity: 0, background: "yellow", top: "53.3%", left: "32.2%", borderRadius: "50%", animation: `${bounce} 1.5s infinite`}}></Box>
-                                <Image src={DenmarkVector} alt="vector map" width="556" height="600" layout="fixed" />
+                                <Hidden smDown>
+                                    <Box sx={{ position: "absolute", width: 10, height: 10, zIndex: 1, opacity: 0, background: "yellow", top: "53.3%", left: "32.2%", borderRadius: "50%", animation: `${bounce} 1.5s infinite` }}></Box>
+                                    <Image src={DenmarkVector} alt="vector map" width="556" height="600" layout="fixed" />
+                                </Hidden>
                             </Grid>
                         </Grid>
                     </TabPanel>
