@@ -46,7 +46,7 @@ const Slider = () => {
                             <Grid item md={6} sx={{ position: "relative", display: "flex" }}>
                                 <Hidden smDown>
                                     <Box sx={{ position: "absolute", width: 10, height: 10, zIndex: 1, opacity: 0, background: "yellow", top: "53.3%", left: "32.2%", borderRadius: "50%", animation: `${bounce} 1.5s infinite` }}></Box>
-                                    <Image src={DenmarkVector} alt="vector map" width="556" height="600" layout="fixed" />
+                                    <Image src={DenmarkVector} alt="vector map" width="556" height="600" layout="fixed" priority />
                                 </Hidden>
                             </Grid>
                         </Grid>
@@ -54,7 +54,7 @@ const Slider = () => {
                     <TabPanel value={"1"} sx={{ p: 0 }}>
                         <Grid container spacing={5}>
                             <Grid item md={6}>
-                                <TextBundle title="Hedder du rigtigt Daniiel med dobbelt i?" subtitle="Historien bag" text="Med en kombination af uddannelsen som webudvikler, og med et skarpt øje for design og UI/UX, skaber vækst og gør mig i stand til at arbejde helhjertet med frontend-development. På den måde styrker jeg brandets position med at være de bedste når det kommer til frontend-development, og samtidig skaber værdifulde resultater, som i sidste ende giver bedre købeklare leads." />
+                                <TextBundle title="Hedder du rigtigt Daniiel med dobbelt i?" subtitle="Historien bag" text="Da navnet Daniiel blev lavet var det faktisk ikke meningen at det skulle være stavet med 2 i’er. Det var oprindeligt en stavefejl, men som tiden går begyndte jeg at vende mig mere og mere til det." />
                             </Grid>
                             <Grid item md={6}>
                                 <Typography variant="h1" component="h1">Daniel <Typography variant="h1" component="span" color="primary">Pedersen</Typography> </Typography>
@@ -64,7 +64,7 @@ const Slider = () => {
                     <TabPanel value={"2"} sx={{ p: 0 }}>
                         <Grid container spacing={5}>
                             <Grid item md={6}>
-                                <TextBundle title="Du er altid velkommen til at kontakte mig" subtitle="Kontakt" text="Med en kombination af uddannelsen som webudvikler, og med et skarpt øje for design og UI/UX, skaber vækst og gør mig i stand til at arbejde helhjertet med frontend-development. På den måde styrker jeg brandets position med at være de bedste når det kommer til frontend-development, og samtidig skaber værdifulde resultater, som i sidste ende giver bedre købeklare leads." />
+                                <TextBundle title="Du er altid velkommen til at kontakte mig" subtitle="Kontakt" text="Har du nogle spørgsmål eller føler du dig bare nysgerrig? Er du mere end velkommen til sende mig en mail. Så står jeg klar til de spørgsmål du end måtte have, eller bare tag en snak." />
                             </Grid>
                             <Grid item md={6}>
                                 <Typography variant="h1" component="h1">Daniel <Typography variant="h1" component="span" color="primary">Pedersen</Typography> </Typography>

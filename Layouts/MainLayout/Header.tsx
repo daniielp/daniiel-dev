@@ -33,7 +33,7 @@ const Header = () => {
           <Link href="/">
             <Button
               variant="contained"
-              startIcon={<Image src={Logo} width={45} height={45} />}
+              startIcon={<Image src={Logo} width={45} height={45} priority />}
               sx={{ bgcolor: 'transparent', boxShadow: 'none', m: 0, p: 0, '&:hover': { boxShadow: 'none', background: 'transparent' } }}>
               <Typography variant="h6" component="h1" color="textPrimary">
               Daniel Pedersen
