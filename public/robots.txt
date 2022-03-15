@@ -1,2 +1,9 @@
+# *
 User-agent: *
-Disallow: /policies/
+Allow: /
+
+# Host
+Host: https://daniiel.dev
+
+# Sitemaps
+Sitemap: https://daniiel.dev/sitemap.xml
