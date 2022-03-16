@@ -30,7 +30,7 @@ const Faq = () => {
                                 <Typography itemProp="name" variant="h4" component="h3">Hvem er jeg</Typography>
                             </AccordionSummary>
                             <AccordionDetails itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
-                                <BodyText>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. A diam maecenas sed enim. In massa tempor nec feugiat.</BodyText>
+                                <BodyText itemProp="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. A diam maecenas sed enim. In massa tempor nec feugiat.</BodyText>
                             </AccordionDetails>
                         </Accordion>
                         <Accordion itemScope itemProp="mainEntity" itemType="https://schema.org/Question" sx={{ bgcolor: 'secondary.dark' }} defaultExpanded={true}>
@@ -38,7 +38,7 @@ const Faq = () => {
                                 <Typography itemProp="name" variant="h4" component="h3">Hvorfor daniiel med 2 i'er</Typography>
                             </AccordionSummary>
                             <AccordionDetails itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
-                                <BodyText>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. A diam maecenas sed enim. In massa tempor nec feugiat.</BodyText>
+                                <BodyText itemProp="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. A diam maecenas sed enim. In massa tempor nec feugiat.</BodyText>
                             </AccordionDetails>
                             <AccordionActions>
                                 <Button color="primary" disabled>Læs historien bag</Button>
@@ -49,7 +49,7 @@ const Faq = () => {
                                 <Typography itemProp="name" variant="h4" component="h3">Fremtidsplaner</Typography>
                             </AccordionSummary>
                             <AccordionDetails itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
-                                <BodyText>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. A diam maecenas sed enim. In massa tempor nec feugiat.</BodyText>
+                                <BodyText itemProp="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. A diam maecenas sed enim. In massa tempor nec feugiat.</BodyText>
                             </AccordionDetails>
                         </Accordion>
                     </Grid>
