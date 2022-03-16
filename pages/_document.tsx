@@ -38,8 +38,8 @@ export default class MyDocument extends Document {
                 <Head>
                     {/* PWA primary color */}
                     <meta name="theme-color" content={theme.palette.primary.main} />
-                    <link rel="shortcut icon" href="/static/favicon.ico" />
-                    <meta property="og:image" content="/static/og-image.jpg" />
+                    <link rel="shortcut icon" href="/favicon.ico" />
+                    <meta property="og:image" content="/og-image.jpg" />
                     <meta property="og:image:type" content="image/jpg" />
                     <meta property="og:image:width" content="300" />
                     <meta property="og:image:height" content="300" />
