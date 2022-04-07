@@ -12,7 +12,7 @@ declare global {
 
 function Checkout() {
     const router = useRouter();
-    const { paymentId } = router.query;
+    // const { paymentId } = router.query;
 
     return (
         <main>
@@ -20,6 +20,8 @@ function Checkout() {
                 <Box id="checkout-container"></Box>
             </Container>
             <Script src="https://test.checkout.dibspayment.eu/v1/checkout.js?v=1" strategy="afterInteractive" onLoad={() => {
+                const urlParams = new URLSearchParams(window.location.search);
+                const paymentId = urlParams.get('paymentId');
                 const checkoutOptions = {
                     checkoutKey: process.env.NEXT_PUBLIC_CHECKOUT_KEY,
                     paymentId: paymentId,
