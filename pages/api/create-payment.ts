@@ -32,7 +32,7 @@ function handler(req: any, res: any) {
   let payload = {
     checkout: {
       integrationType: "HostedPaymentPage",
-      returnUrl: "https://daniiel.dev",
+      returnUrl: "https://daniiel.dev/checkout",
       termsUrl: "https://daniiel.dev/terms",
     },
     order: {
