@@ -1,6 +1,7 @@
 import http from "https";
+import type { NextApiRequest, NextApiResponse } from "next";
 
-function handler(req: any, res: any) {
+function handler(req: NextApiRequest, res: NextApiResponse) {
   const options = {
 		"method": "POST",
 		"hostname": "test.api.dibspayment.eu",
@@ -32,7 +33,7 @@ function handler(req: any, res: any) {
   let payload = {
     checkout: {
       integrationType: "HostedPaymentPage",
-      returnUrl: "https://daniiel.dev",
+      returnUrl: "https://daniiel.dev/checkout",
       termsUrl: "https://daniiel.dev/terms",
     },
     order: {

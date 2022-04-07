@@ -13,8 +13,6 @@ function Cart() {
             return;
         }
 
-        console.log(data);
-
         Router.push({
             pathname: "checkout",
             query: {paymentId: data.paymentId}
