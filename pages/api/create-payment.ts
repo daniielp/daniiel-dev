@@ -4,7 +4,7 @@ function handler(req: any, res: any) {
   const options = {
 		"method": "POST",
 		"hostname": "test.api.dibspayment.eu",
-		"port": 443,
+		"port": null,
 		"path": "/v1/payments",
 		"headers": {
 			"content-type": "application/json",
@@ -32,7 +32,7 @@ function handler(req: any, res: any) {
   let payload = {
     checkout: {
       integrationType: "HostedPaymentPage",
-      returnUrl: "https://daniiel.dev/cart",
+      returnUrl: "https://daniiel.dev/checkout",
       termsUrl: "https://daniiel.dev/terms",
     },
     order: {
