@@ -2,7 +2,6 @@ import { Container } from '@mui/material'
 import { Box } from '@mui/system'
 import Script from 'next/script'
 import { useRouter } from 'next/router'
-import { useEffect } from 'react';
 
 declare global {
     interface Window {
@@ -12,7 +11,6 @@ declare global {
 
 function Checkout() {
     const router = useRouter();
-    // const { paymentId } = router.query;
 
     return (
         <main>
