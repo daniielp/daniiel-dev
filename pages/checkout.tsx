@@ -24,6 +24,7 @@ function Checkout() {
                     checkoutKey: process.env.NEXT_PUBLIC_CHECKOUT_KEY,
                     paymentId: paymentId,
                     containerId: "checkout-container",
+                    language: "da-DK"
                 }
                 const checkout = new window.Dibs.Checkout(checkoutOptions)
                 checkout.on('payment-completed', function (response: any) {
