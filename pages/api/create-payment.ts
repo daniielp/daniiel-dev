@@ -32,6 +32,7 @@ function handler(req: NextApiRequest, res: NextApiResponse) {
 
   let payload = {
     checkout: {
+      url: "https://daniiel.dev",
       integrationType: "EmbeddedCheckout",
       returnUrl: "https://daniiel.dev/checkout",
       termsUrl: "https://daniiel.dev/terms",
