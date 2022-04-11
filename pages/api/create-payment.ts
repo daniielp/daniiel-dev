@@ -32,7 +32,7 @@ function handler(req: NextApiRequest, res: NextApiResponse) {
 
   let payload = {
     checkout: {
-      integrationType: "HostedPaymentPage",
+      integrationType: "EmbeddedCheckout",
       returnUrl: "https://daniiel.dev/checkout",
       termsUrl: "https://daniiel.dev/terms",
     },
