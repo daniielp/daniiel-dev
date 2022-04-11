@@ -88,7 +88,7 @@ const Hero = () => {
                             Min historie
                         </Link>
                     </Grid>
-                    <Grid item md={6}>
+                    <Grid item md={6} sx={{margin: '0 auto'}}>
                         <AnimationContainer>
                             <AnimationBackground>
                                 <img src={Browser} />

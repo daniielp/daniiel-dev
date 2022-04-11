@@ -40,7 +40,7 @@ const Header = () => {
             </Typography>
           </Button>
         </Link>
-        <Hidden smDown>
+        <Hidden mdDown>
           <nav>
             <Link href="/om-mig">
               <Button variant="text" >Om mig</Button>
