@@ -1,10 +1,15 @@
-import React from 'react'
+import dynamic from 'next/dynamic'
 import Hero from '../components/Hero'
 import Experience from '../components/Tabs/Experience'
-import Skills from '../components/Tabs/Skills'
-import History from '../components/History'
 import Head from 'next/head'
 
+const DynamicSkills = dynamic(() => import('../components/Tabs/Skills'), {
+    ssr: false,
+})
+
+const DynamicHistory = dynamic(() => import('../components/History'), {
+    ssr: false,
+})
 
 export default function about() {
     return (
@@ -16,8 +21,8 @@ export default function about() {
             <main>
                 <Hero />
                 <Experience />
-                <Skills />
-                <History />
+                <DynamicSkills />
+                <DynamicHistory />
             </main>
         </>
     )
