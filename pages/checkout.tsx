@@ -14,7 +14,7 @@ function Checkout() {
 
     return (
         <main>
-            <Container sx={{ py: 5, height: '70vh' }}>
+            <Container sx={{ py: 5, minHeight: '70vh' }}>
                 <Box id="checkout-container"></Box>
             </Container>
             <Script src="https://test.checkout.dibspayment.eu/v1/checkout.js?v=1" strategy="afterInteractive" onLoad={() => {
