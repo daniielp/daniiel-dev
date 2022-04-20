@@ -43,10 +43,7 @@ const Footer = () => {
       setAlertMessage("Tjek at dine oplysninger er korrekte og prøv igen")
     }
 
-    console.log(payload)
-
-
-
+    event.target.reset();
   }
 
   return (
@@ -78,6 +75,9 @@ const Footer = () => {
                 <TextField
                   name="name"
                   sx={{ my: 2 }}
+                  InputProps={{ sx: { "input:-webkit-autofill": {
+                    WebkitBoxShadow: "0 0 0 1000px #383f54 inset",
+                  }}}}
                   fullWidth={true}
                   label="Navn"
                   variant="outlined"
@@ -86,6 +86,9 @@ const Footer = () => {
                 <TextField
                   name="email"
                   sx={{ my: 2 }}
+                  InputProps={{ sx: { "input:-webkit-autofill": {
+                    WebkitBoxShadow: "0 0 0 1000px #383f54 inset",
+                  }}}}
                   fullWidth={true}
                   label="Email"
                   variant="outlined"
@@ -94,6 +97,9 @@ const Footer = () => {
                 <TextField
                   name="subject"
                   sx={{ my: 2 }}
+                  InputProps={{ sx: { "input:-webkit-autofill": {
+                    WebkitBoxShadow: "0 0 0 1000px #383f54 inset",
+                  }}}}
                   fullWidth={true}
                   label="Emne"
                   variant="outlined"
@@ -102,6 +108,9 @@ const Footer = () => {
                 <TextField
                   name="message"
                   sx={{ my: 2 }}
+                  InputProps={{ sx: { "input:-webkit-autofill": {
+                    WebkitBoxShadow: "0 0 0 1000px #383f54 inset",
+                  }}}}
                   fullWidth={true}
                   label="Besked"
                   multiline
