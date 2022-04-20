@@ -90,6 +90,7 @@ const Footer = () => {
                     WebkitBoxShadow: "0 0 0 1000px #383f54 inset",
                   }}}}
                   fullWidth={true}
+                  type="email"
                   label="Email"
                   variant="outlined"
                   required
