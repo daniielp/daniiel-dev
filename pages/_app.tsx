@@ -10,6 +10,7 @@ import createCache from '@emotion/cache';
 import { CacheProvider } from "@emotion/react";
 
 import theme from '../src/theme';
+import Script from 'next/script'
 
 const responsiveTheme = responsiveFontSizes(theme);
 
@@ -19,19 +20,20 @@ function MyApp(props: any) {
     const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
     const { pathname } = useRouter();
 
-    if (pathname.startsWith("/admin")) return (
-        <CacheProvider value={emotionCache}>
-            <Head>
-                <title>Daniel Pedersen - Dashboard</title>
-                <meta name="viewport" content="initial-scale=1, width=device-width" />
-                <meta name="robots" content="noindex" />
-            </Head>
-            <ThemeProvider theme={responsiveTheme}>
-                <CssBaseline />
-                <RouteWithLayout Layout={MainLayout} Component={Component} pageProps={pageProps} />
-            </ThemeProvider>
-        </CacheProvider>
-    );
+    // if (pathname.startsWith("/admin")) return (
+    //     <CacheProvider value={emotionCache}>
+    //         <Head>
+    //             <title>Daniel Pedersen - Dashboard</title>
+    //             <meta name="viewport" content="initial-scale=1, width=device-width" />
+    //             <meta name="robots" content="noindex" />
+    //             <Script src={`https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_KEY}`} />
+    //         </Head>
+    //         <ThemeProvider theme={responsiveTheme}>
+    //             <CssBaseline />
+    //             <RouteWithLayout Layout={MainLayout} Component={Component} pageProps={pageProps} />
+    //         </ThemeProvider>
+    //     </CacheProvider>
+    // );
 
     if (pathname.startsWith("/policies")) return (
         <CacheProvider value={emotionCache}>
@@ -55,8 +57,11 @@ function MyApp(props: any) {
                 <link rel="icon" href="/favicon.ico" />
                 <meta name="description"
                     content="With a background as a web developer and a good eye to UI/UX. Daniel Pedersen create groth and is dedicated to frontend development." />
+                {/* <script src={`https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_KEY}`}/> */}
+
             </Head>
             <ThemeProvider theme={responsiveTheme}>
+                <Script src={"https://www.google.com/recaptcha/api.js?render=" + process.env.NEXT_PUBLIC_RECAPTCHA_KEY} ></Script>
                 <CssBaseline />
                 <RouteWithLayout Layout={MainLayout} Component={Component} pageProps={pageProps} />
             </ThemeProvider>

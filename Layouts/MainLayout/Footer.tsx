@@ -7,6 +7,12 @@ import CloseIcon from '@mui/icons-material/Close';
 import { useState } from 'react'
 import { setServers } from "dns";
 
+declare global {
+  interface Window {
+    grecaptcha: any;
+  }
+}
+
 const Footer = () => {
   const [isDisabled, setIsDisabled] = useState(false);
   const [alertMessage, setAlertMessage] = useState<string>();
@@ -18,32 +24,44 @@ const Footer = () => {
 
     setIsDisabled(true);
 
-    var formData = new FormData(event.target);
-    let payload = {} as any;
-    formData.forEach((value, name) => {
-      payload[name] = value;
+    window.grecaptcha.ready(() => {
+      window.grecaptcha
+        .execute(process.env.NEXT_PUBLIC_RECAPTCHA_KEY, { action: "submit" })
+        .then(async (token: string) => {
+          var formData = new FormData(event.target);
+          let payload = {} as any;
+          formData.forEach((value, name) => {
+            payload[name] = value;
+          })
+          payload["recaptchaResponse"] = token
+
+          const options = {
+            method: 'POST',
+            headers: {
+              Accept: 'application/json',
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(payload)
+          }
+
+          const response = await fetch("api/email/send-transactional-email", options)
+
+          if (response.status == 200) {
+            setSeverity("success")
+            setAlertMessage("Mange tak for din interesse i daniiel.dev. Jeg vender hurtigst muligt tilbage over mail.")
+          } else {
+            setSeverity("warning")
+            setAlertMessage("Tjek at dine oplysninger er korrekte og prøv igen")
+          }
+
+          event.target.reset();
+
+        });
     })
 
-    const options = {
-      method: 'POST',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(payload)
-    }
 
-    const response = await fetch("api/email/send-transactional-email", options)
 
-    if (response.status == 200) {
-      setSeverity("success")
-      setAlertMessage("Mange tak for din interesse i daniiel.dev. Jeg vender hurtigst muligt tilbage over mail.")
-    } else {
-      setSeverity("warning")
-      setAlertMessage("Tjek at dine oplysninger er korrekte og prøv igen")
-    }
 
-    event.target.reset();
   }
 
   return (
@@ -75,9 +93,13 @@ const Footer = () => {
                 <TextField
                   name="name"
                   sx={{ my: 2 }}
-                  InputProps={{ sx: { "input:-webkit-autofill": {
-                    WebkitBoxShadow: "0 0 0 1000px #383f54 inset",
-                  }}}}
+                  InputProps={{
+                    sx: {
+                      "input:-webkit-autofill": {
+                        WebkitBoxShadow: "0 0 0 1000px #383f54 inset",
+                      }
+                    }
+                  }}
                   fullWidth={true}
                   label="Navn"
                   variant="outlined"
@@ -86,9 +108,13 @@ const Footer = () => {
                 <TextField
                   name="email"
                   sx={{ my: 2 }}
-                  InputProps={{ sx: { "input:-webkit-autofill": {
-                    WebkitBoxShadow: "0 0 0 1000px #383f54 inset",
-                  }}}}
+                  InputProps={{
+                    sx: {
+                      "input:-webkit-autofill": {
+                        WebkitBoxShadow: "0 0 0 1000px #383f54 inset",
+                      }
+                    }
+                  }}
                   fullWidth={true}
                   type="email"
                   label="Email"
@@ -98,9 +124,13 @@ const Footer = () => {
                 <TextField
                   name="subject"
                   sx={{ my: 2 }}
-                  InputProps={{ sx: { "input:-webkit-autofill": {
-                    WebkitBoxShadow: "0 0 0 1000px #383f54 inset",
-                  }}}}
+                  InputProps={{
+                    sx: {
+                      "input:-webkit-autofill": {
+                        WebkitBoxShadow: "0 0 0 1000px #383f54 inset",
+                      }
+                    }
+                  }}
                   fullWidth={true}
                   label="Emne"
                   variant="outlined"
@@ -109,9 +139,13 @@ const Footer = () => {
                 <TextField
                   name="message"
                   sx={{ my: 2 }}
-                  InputProps={{ sx: { "input:-webkit-autofill": {
-                    WebkitBoxShadow: "0 0 0 1000px #383f54 inset",
-                  }}}}
+                  InputProps={{
+                    sx: {
+                      "input:-webkit-autofill": {
+                        WebkitBoxShadow: "0 0 0 1000px #383f54 inset",
+                      }
+                    }
+                  }}
                   fullWidth={true}
                   label="Besked"
                   multiline

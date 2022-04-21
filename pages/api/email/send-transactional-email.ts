@@ -1,15 +1,17 @@
 import http from "https";
 import fetch from "node-fetch";
 import type { NextApiRequest, NextApiResponse } from "next";
+import verifyReCaptcha from "../../../security/VerifyReCaptcha";
 
 interface FormRequest {
     name: string;
     email: string;
     subject: string;
     message: string;
+    recaptchaResponse: string;
 }
 
-function createContact(req: NextApiRequest, res: NextApiResponse) {
+async function createContact(req: NextApiRequest, res: NextApiResponse) {
     if (req.method === "POST") {
         const url = 'https://api.sendinblue.com/v3/smtp/email';
 
@@ -19,9 +21,19 @@ function createContact(req: NextApiRequest, res: NextApiResponse) {
             res.status(400).json({ code: "bad_request", message: "Missing body" })
         }
 
-        if(body.email == null || body.message == null || body.name == null || body.subject == null) {
+        if(body.email == null || body.message == null || body.name == null || body.subject == null || body.recaptchaResponse == null) {
             return res.status(400).json({ code: "bad_request", message: "Fields missing" })
         }
+
+        var isRecaptchaVerified = await verifyReCaptcha(body.recaptchaResponse);
+
+        if(!isRecaptchaVerified) {
+            res.status(400).json({ code: "bad_request", message: "Missing body" })
+        }
+
+        
+
+        
 
         const options = {
             method: 'POST',
@@ -33,7 +45,7 @@ function createContact(req: NextApiRequest, res: NextApiResponse) {
             body: JSON.stringify({
                 sender: { name: 'Daniel from daniiel.dev', email: 'no-reply@daniiel.dev' },
                 to: [{ email: 'dp@daniiel.dev', name: 'Daniel' }],
-                textContent: 'This is a test transactional email.',
+                textContent: body.message,
                 subject: body.subject,
                 replyTo: { email: body.email, name: body.name },
             })
