@@ -17,23 +17,19 @@ async function createContact(req: NextApiRequest, res: NextApiResponse) {
 
         const body = req.body as FormRequest
 
-        if (!body) {
-            res.status(400).json({ code: "bad_request", message: "Missing body" })
+        if (body == null) {
+            return res.status(400).json({ code: "bad_request", message: "Missing body" })
         }
 
         if(body.email == null || body.message == null || body.name == null || body.subject == null || body.recaptchaResponse == null) {
-            return res.status(400).json({ code: "bad_request", message: "Fields missing" })
+            return res.status(400).json({ code: "bad_request", message: "Field(s) missing" })
         }
 
         var isRecaptchaVerified = await verifyReCaptcha(body.recaptchaResponse);
 
         if(!isRecaptchaVerified) {
-            res.status(400).json({ code: "bad_request", message: "Missing body" })
+            return res.status(400).json({ code: "bad_request", message: "reCAPTCHA invalid" })
         }
-
-        
-
-        
 
         const options = {
             method: 'POST',
