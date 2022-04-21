@@ -9,7 +9,7 @@ async function verifyReCaptcha(recaptchaToken: string) {
 
         const recaptchaJson = await recaptchaResponse.json() as any;
 
-        if(recaptchaJson.sucess === true && recaptchaJson.score >= 0.5) {
+        if(recaptchaJson.success == true && recaptchaJson.score >= 0.7) {
             return true;
         }
 
