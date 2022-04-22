@@ -1,5 +1,6 @@
 import Header from './Header'
 import Footer from './Footer'
+import CookieConsent from '../../components/CookieConsent'
 
 export default function index(props: any) {
     return (
@@ -7,6 +8,7 @@ export default function index(props: any) {
             <Header />
                 {props.children}
             <Footer />
+            <CookieConsent />
         </>
     )
 }
