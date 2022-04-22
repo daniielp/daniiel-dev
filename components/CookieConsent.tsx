@@ -1,14 +1,23 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Button, Dialog, DialogActions, DialogContent, DialogTitle, Grid, Link, Snackbar, SnackbarContent, Typography, IconButton, ListItemText, Switch, ListItem, List } from '@mui/material'
 import PrivacyTipIcon from '@mui/icons-material/PrivacyTip';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
+import useLocalStorage from '../hooks/UseLocalStorage'
 
 const CookieConsent = () => {
     const [isConsentActive, setIsConsentActive] = useState(true);
     const [isModalActive, setIsModalActive] = useState(false);
+    const [localConsent, setLocalConsent] = useLocalStorage("ShowConsent", true)
+
+    useEffect(() => {
+        setIsConsentActive(localConsent)
+    }, [])
+
+
 
     const handleAcceptAll = () => {
         setIsConsentActive(false);
+        setLocalConsent(false)
     }
 
     const toggleModal = () => {
@@ -19,6 +28,7 @@ const CookieConsent = () => {
     const acceptChanges = () => {
         setIsConsentActive(false);
         setIsModalActive(false);
+        setLocalConsent(false)
     }
 
     return (
@@ -59,7 +69,7 @@ const CookieConsent = () => {
                             <Typography component="h4" variant="h4">Strengt nødvendige cookies</Typography>
                             <Typography variant="body1">Disse cookies er nødvendige for at hjemmesiden kan fungere, og der kan ikke slukkes for dem i vores systemer. De afsættes normalt kun som svar på handlinger, du har foretaget, som resulterer i en anmodning om tjenester, såsom at angive dine indstillinger at logge på eller udfylde formularer og beskyttelse af personlige oplysninger. Du kan indstille din browser til at blokere eller advare dig om disse cookies, men nogle dele af webstedet fungerer måske ikke som følge heraf.</Typography>
                             <List>
-                                <ListItem divider sx={{borderColor: "#5f657636"}}>
+                                <ListItem divider sx={{ borderColor: "#5f657636" }}>
                                     <ListItemText id="switch-list-label-toggle-all" primary="Slå alle fra" />
                                     <Switch
                                         edge="end"
@@ -71,7 +81,7 @@ const CookieConsent = () => {
                                         }}
                                     />
                                 </ListItem>
-                                <ListItem divider sx={{borderColor: "#5f657636"}}>
+                                <ListItem divider sx={{ borderColor: "#5f657636" }}>
                                     <ListItemText id="switch-list-label-sikkerhed" primary="Sikkerhed" />
                                     <Switch
                                         edge="end"
@@ -83,7 +93,7 @@ const CookieConsent = () => {
                                         }}
                                     />
                                 </ListItem>
-                                <ListItem divider sx={{borderColor: "#5f657636"}}>
+                                <ListItem divider sx={{ borderColor: "#5f657636" }}>
                                     <ListItemText id="switch-list-label-sprogindstillinger" primary="Sprogindstillinger" />
                                     <Switch
                                         edge="end"
@@ -95,7 +105,7 @@ const CookieConsent = () => {
                                         }}
                                     />
                                 </ListItem>
-                                <ListItem divider sx={{borderColor: "#5f657636"}}>
+                                <ListItem divider sx={{ borderColor: "#5f657636" }}>
                                     <ListItemText id="switch-list-label-recaptcha" primary="Google reCAPTCHA v3" secondary={<Typography variant="body2">reCAPTCHA v3 er underlagt Googles <Link color="secondary" target="_blank" rel="nofollow" href="https://www.google.com/policies/privacy/">privatlivspolitik</Link> og <Link color="secondary" target="_blank" rel="nofollow" href="https://www.google.com/policies/terms/">vilkår</Link> for brug.</Typography>} />
                                     <Switch
                                         edge="end"
