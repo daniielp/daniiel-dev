@@ -19,7 +19,7 @@ module.exports = withImages({
         ignoreDuringBuilds: true,
     },
     i18n: {
-        locales: ['da', 'en', 'de', 'fr'],
+        locales: ['da', 'en'],
         defaultLocale: 'da',
         localeDetection: false,
     },

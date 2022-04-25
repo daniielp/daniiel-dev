@@ -1,5 +1,8 @@
-import { Box, Button, Card, CardActions, CardContent, Container, Grid, Typography } from '@mui/material';
+import { Box, Button, Card, CardActions, CardContent, CardMedia, Container, Grid, Typography } from '@mui/material';
 import TextBundle from './Typography/TextBundle';
+import shorcyPortfolio from '../assets/images/portfolio-shorcy.jpg'
+import novicellPortfolio from '../assets/images/portfolio-novicell.jpg'
+import daniielPortfolio from '../assets/images/portfolio-daniiel.jpg'
 import PropTypes from 'prop-types'
 
 const Project = () => {
@@ -17,10 +20,11 @@ const Project = () => {
                 <Grid container sx={{ mt: 0 }} spacing={5}>
                     <Grid item md={4}>
                         <Card sx={{ backgroundColor: "#272c3a", backgroundImage: 'none', height: "100%" }}>
+                            <CardMedia component="img" height="200" alt="Shorcy.com web development in WordPress" image={shorcyPortfolio} />
                             <CardContent>
-                                <Typography gutterBottom variant="subtitle1" component="p">- shorcy.com</Typography>
+                                <Typography gutterBottom variant="subtitle1" color="text.secondary" component="p">- shorcy.com</Typography>
                                 <Typography gutterBottom variant="h5" component="h5">Web development</Typography>
-                                <Typography variant="body2" color="text.secondary">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elit ut aliquam purus sit amet luctus venenatis lectus. Phasellus vestibulum lorem sed risus ultricies tristique nulla aliquet. Eu lobortis elementum nibh tellus molestie nunc non blandit massa. Venenatis urna cursus eget nunc scelerisque viverra mauris in. Ornare massa eget egestas purus. Ut ornare lectus sit amet. Sodales ut eu sem integer. Sed id semper risus in hendrerit gravida rutrum quisque. Donec pretium vulputate sapien nec. Mauris rhoncus aenean vel elit scelerisque mauris pellentesque pulvinar pellentesque. Aliquam purus sit amet luctus venenatis lectus magna fringilla urna. Viverra nibh cras pulvinar mattis nunc.</Typography>
+                                <Typography variant="body1">Det nye website har givet shorcy's visuelle identitet et moderne look. Sitet er målrettet B2B og har til formål at øge tillid, samt leads.</Typography>
                             </CardContent>
                             <CardActions>
                                 <Button href="https://shorcy.com" target="_blank" variant="text" component="a">Besøg siden</Button>
@@ -29,10 +33,11 @@ const Project = () => {
                     </Grid>
                     <Grid item md={4}>
                         <Card sx={{ backgroundColor: "#272c3a", backgroundImage: 'none', height: "100%" }}>
+                            <CardMedia component="img" height="200" alt="Designforslag til novicell" image={novicellPortfolio} />
                             <CardContent>
-                                <Typography gutterBottom variant="subtitle1" component="p">- novicell.dk</Typography>
+                                <Typography gutterBottom variant="subtitle1" color="text.secondary" component="p">- novicell.dk</Typography>
                                 <Typography gutterBottom variant="h5" component="h5">Designforslag</Typography>
-                                <Typography variant="body2" color="text.secondary">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elit ut aliquam purus sit amet luctus venenatis lectus. Phasellus vestibulum lorem sed risus ultricies tristique nulla aliquet. Eu lobortis elementum nibh tellus molestie nunc non blandit massa. Venenatis urna cursus eget nunc scelerisque viverra mauris in. Ornare massa eget egestas purus. Ut ornare lectus sit amet. Sodales ut eu sem integer. Sed id semper risus in hendrerit gravida rutrum quisque. Donec pretium vulputate sapien nec. Mauris rhoncus aenean vel elit scelerisque mauris pellentesque pulvinar pellentesque. Aliquam purus sit amet luctus venenatis lectus magna fringilla urna. Viverra nibh cras pulvinar mattis nunc.</Typography>
+                                <Typography variant="body1">Opgaven bestod i at skabe en bedre visuel identitet der afspejler deres brand. Jeg designede en moderne, minimalistisk hjemmeside med fokus på innovation.</Typography>
                             </CardContent>
                             {/* <CardActions sx={{color: "text.secondary"}}>
                             </CardActions> */}
@@ -40,10 +45,11 @@ const Project = () => {
                     </Grid>
                     <Grid item md={4}>
                         <Card sx={{ backgroundColor: "#272c3a", backgroundImage: 'none', height: "100%" }}>
+                            <CardMedia component="img" height="200" alt="daniiel.dev web development in NextJS" image={daniielPortfolio} />
                             <CardContent>
-                                <Typography gutterBottom variant="subtitle1" component="p">- daniiel.dk</Typography>
-                                <Typography gutterBottom variant="h5" component="h5">Web development</Typography>
-                                <Typography variant="body2" color="text.secondary">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elit ut aliquam purus sit amet luctus venenatis lectus. Phasellus vestibulum lorem sed risus ultricies tristique nulla aliquet. Eu lobortis elementum nibh tellus molestie nunc non blandit massa. Venenatis urna cursus eget nunc scelerisque viverra mauris in. Ornare massa eget egestas purus. Ut ornare lectus sit amet. Sodales ut eu sem integer. Sed id semper risus in hendrerit gravida rutrum quisque. Donec pretium vulputate sapien nec. Mauris rhoncus aenean vel elit scelerisque mauris pellentesque pulvinar pellentesque. Aliquam purus sit amet luctus venenatis lectus magna fringilla urna. Viverra nibh cras pulvinar mattis nunc.</Typography>
+                                <Typography gutterBottom variant="subtitle1" color="text.secondary" component="p">- daniiel.dk</Typography>
+                                <Typography gutterBottom variant="h5" component="h5">Web design/development</Typography>
+                                <Typography variant="body1" color="text.primary">Skrædersyet hjemmeside kodet fra bunden med fokus på brugervenlighed og online tilstedeværelse.</Typography>
                             </CardContent>
                             {/* <CardActions sx={{color: "text.secondary"}}>
                             </CardActions> */}
