@@ -4,10 +4,8 @@ import type { NextApiRequest, NextApiResponse } from "next";
 interface ScreenshotApiRequest extends NextApiRequest {
   body: {
     url: string;
-  }
+  };
 }
-
-
 
 function screenshotHandler(req: ScreenshotApiRequest, res: NextApiResponse) {
   if (req.method === "POST") {
@@ -20,35 +18,42 @@ function screenshotHandler(req: ScreenshotApiRequest, res: NextApiResponse) {
       });
     }
 
-    const requestURL = new URL(body.url);
+    try {
+      const requestURL = new URL(body.url);
 
-    const domains = requestURL.hostname.split(".");
-    const domainName = domains[domains.length - 2];
+      const domains = requestURL.hostname.split(".");
+      const domainName = domains[domains.length - 2];
 
-    puppeteer
-      .launch({
-        defaultViewport: {
-          width: 1920,
-          height: 1080,
-        },
-      })
-      .then(async (browser) => {
-        const page = await browser.newPage();
-        await page.goto(requestURL.toString());
-        await page.waitForNetworkIdle();
-        await page.screenshot({
-          type: "jpeg",
-          quality: 50,
-          path: "public/" + domainName + ".jpg",
+      puppeteer
+        .launch({
+          defaultViewport: {
+            width: 1920,
+            height: 1080,
+          },
+        })
+        .then(async (browser) => {
+          const page = await browser.newPage();
+          await page.goto(requestURL.toString());
+          await page.waitForNetworkIdle();
+          await page.screenshot({
+            type: "jpeg",
+            quality: 50,
+            path: "public/" + domainName + ".jpg",
+          });
+
+          browser.close();
         });
 
-        browser.close();
+      return res.status(201).json({
+        code: "screenshot_created",
+        path: "/" + domainName + ".jpg",
       });
-
-    return res.status(201).json({
-      code: "screenshot_created",
-      path: "/" + domainName + ".jpg",
-    });
+    } catch (err: any) {
+      return res.status(400).json({
+        code: "invalid_url",
+        message: err.message,
+      })
+    }
   } else {
     return res.status(405).json({
       code: "method_not_allowed",
