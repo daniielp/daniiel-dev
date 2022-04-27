@@ -1,18 +1,22 @@
 import puppeteer from "puppeteer";
 import type { NextApiRequest, NextApiResponse } from "next";
 
-interface screenshotRequest {
-  url: string;
+interface ScreenshotApiRequest extends NextApiRequest {
+  body: {
+    url: string;
+  }
 }
 
-function screenshotHandler(req: NextApiRequest, res: NextApiResponse) {
+
+
+function screenshotHandler(req: ScreenshotApiRequest, res: NextApiResponse) {
   if (req.method === "POST") {
-    const body = req.body as screenshotRequest;
+    const body = req.body;
 
     if (body.url == null || body.url == undefined) {
       return res.status(400).json({
         code: "bad_request",
-        message: "Missing url",
+        message: "url is missing from the request body",
       });
     }
 

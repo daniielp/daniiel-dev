@@ -9,7 +9,7 @@ import '../styles/global.css'
 import createCache from '@emotion/cache';
 import { CacheProvider } from "@emotion/react";
 
-import theme from '../src/theme';
+import theme from '../utils/theme';
 import Script from 'next/script'
 
 const responsiveTheme = responsiveFontSizes(theme);
