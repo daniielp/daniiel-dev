@@ -1,5 +1,40 @@
-import puppeteer from "puppeteer";
 import type { NextApiRequest, NextApiResponse } from "next";
+
+import puppeteer from "puppeteer-core";
+const chrome = require("chrome-aws-lambda");
+
+const exePath =
+  process.platform === "win32"
+    ? "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"
+    : process.platform === "linux"
+    ? "/usr/bin/google-chrome"
+    : "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome";
+
+async function getOptions() {
+  let options;
+  if (process.env.NODE_ENV === "development") {
+    options = {
+      args: [],
+      executablePath: exePath,
+      headless: true,
+      defaultViewport: {
+        width: 1920,
+        height: 1080,
+      },
+    };
+  } else {
+    options = {
+      args: chrome.args,
+      executablePath: await chrome.executablePath,
+      headless: chrome.headless,
+      defaultViewport: {
+        width: 1920,
+        height: 1080,
+      },
+    };
+  }
+  return options;
+}
 
 interface ScreenshotApiRequest extends NextApiRequest {
   body: {
@@ -7,7 +42,7 @@ interface ScreenshotApiRequest extends NextApiRequest {
   };
 }
 
-function screenshotHandler(req: ScreenshotApiRequest, res: NextApiResponse) {
+async function screenshotHandler(req: ScreenshotApiRequest, res: NextApiResponse) {
   if (req.method === "POST") {
     const body = req.body;
 
@@ -24,13 +59,10 @@ function screenshotHandler(req: ScreenshotApiRequest, res: NextApiResponse) {
       const domains = requestURL.hostname.split(".");
       const domainName = domains[domains.length - 2];
 
+      const options = await getOptions();
+
       puppeteer
-        .launch({
-          defaultViewport: {
-            width: 1920,
-            height: 1080,
-          },
-        })
+        .launch(options)
         .then(async (browser) => {
           const page = await browser.newPage();
           await page.goto(requestURL.toString());
@@ -52,7 +84,7 @@ function screenshotHandler(req: ScreenshotApiRequest, res: NextApiResponse) {
       return res.status(400).json({
         code: "invalid_url",
         message: err.message,
-      })
+      });
     }
   } else {
     return res.status(405).json({
