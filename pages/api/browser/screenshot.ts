@@ -1,6 +1,6 @@
 import puppeteer from "puppeteer";
 import type { NextApiRequest, NextApiResponse } from "next";
-import chrome from "chrome-aws-lambda";
+import chromium from "chrome-aws-lambda";
 
 interface ScreenshotApiRequest extends NextApiRequest {
   body: {
@@ -32,13 +32,15 @@ async function screenshotHandler(
         .launch(
           process.env.NODE_ENV === "production"
             ? {
-                args: chrome.args,
-                executablePath: await chrome.executablePath,
-                headless: chrome.headless,
-                defaultViewport: {
-                  width: 1920,
-                  height: 1080,
-                },
+                args: [
+                  ...chromium.args,
+                  "--hide-scrollbars",
+                  "--disable-web-security",
+                ],
+                defaultViewport: chromium.defaultViewport,
+                executablePath: await chromium.executablePath,
+                headless: true,
+                ignoreHTTPSErrors: true,
               }
             : {
                 defaultViewport: {
