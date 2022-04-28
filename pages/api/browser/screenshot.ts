@@ -1,4 +1,4 @@
-import puppeteer from "puppeteer";
+// import puppeteer from "puppeteer";
 import type { NextApiRequest, NextApiResponse } from "next";
 import chromium from "chrome-aws-lambda";
 
@@ -28,7 +28,9 @@ async function screenshotHandler(
       const domains = requestURL.hostname.split(".");
       const domainName = domains[domains.length - 2];
 
-      puppeteer
+      
+
+      chromium.puppeteer
         .launch(
           process.env.NODE_ENV === "production"
             ? {
@@ -56,7 +58,7 @@ async function screenshotHandler(
           await page.screenshot({
             type: "jpeg",
             quality: 50,
-            path: "public/" + domainName + ".jpg",
+            path: "public/project-" + domainName + ".jpg",
           });
 
           browser.close();
@@ -64,7 +66,7 @@ async function screenshotHandler(
 
       return res.status(201).json({
         code: "screenshot_created",
-        path: "/" + domainName + ".jpg",
+        path: "/project-" + domainName + ".jpg",
       });
     } catch (err: any) {
       return res.status(400).json({
