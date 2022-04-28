@@ -38,21 +38,21 @@ function screenshotHandler(req: ScreenshotApiRequest, res: NextApiResponse) {
           await page.screenshot({
             type: "jpeg",
             quality: 50,
-            path: "public/project-" + domainName + ".jpg",
+            path: "public/" + domainName + ".jpg",
           });
 
           browser.close();
-
-          return res.status(201).json({
-            code: "screenshot_created",
-            path: "/project-" + domainName + ".jpg",
-          });
         });
+
+      return res.status(201).json({
+        code: "screenshot_created",
+        path: "/" + domainName + ".jpg",
+      });
     } catch (err: any) {
       return res.status(400).json({
         code: "invalid_url",
         message: err.message,
-      });
+      })
     }
   } else {
     return res.status(405).json({
