@@ -34,5 +34,5 @@ module.exports = withImages({
     //         }
     //     ]
     // }
-    // swcMinify: true,
+    swcMinify: true,
 });
