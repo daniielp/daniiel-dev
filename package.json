@@ -16,12 +16,10 @@
     "@mui/lab": "^5.0.0-alpha.53",
     "@mui/material": "^5.0.6",
     "@supabase/supabase-js": "^1.11.17",
-    "chrome-aws-lambda": "^10.1.0",
     "next": "^12.1.0",
     "next-images": "^1.7.0",
     "node-fetch": "^3.2.3",
-    "puppeteer": "^13.6.0",
-    "puppeteer-core": "^13.6.0"
+    "puppeteer": "^13.6.0"
   },
   "peerDependencies": {
     "react": "^17.0.2",
