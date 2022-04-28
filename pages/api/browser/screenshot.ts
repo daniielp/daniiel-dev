@@ -1,6 +1,5 @@
-// import puppeteer from "puppeteer";
+import puppeteer from "puppeteer";
 import type { NextApiRequest, NextApiResponse } from "next";
-import chromium from "chrome-aws-lambda";
 
 interface ScreenshotApiRequest extends NextApiRequest {
   body: {
@@ -8,10 +7,7 @@ interface ScreenshotApiRequest extends NextApiRequest {
   };
 }
 
-async function screenshotHandler(
-  req: ScreenshotApiRequest,
-  res: NextApiResponse
-) {
+function screenshotHandler(req: ScreenshotApiRequest, res: NextApiResponse) {
   if (req.method === "POST") {
     const body = req.body;
 
@@ -28,29 +24,13 @@ async function screenshotHandler(
       const domains = requestURL.hostname.split(".");
       const domainName = domains[domains.length - 2];
 
-      
-
-      chromium.puppeteer
-        .launch(
-          process.env.NODE_ENV === "production"
-            ? {
-                args: [
-                  ...chromium.args,
-                  "--hide-scrollbars",
-                  "--disable-web-security",
-                ],
-                defaultViewport: chromium.defaultViewport,
-                executablePath: await chromium.executablePath,
-                headless: true,
-                ignoreHTTPSErrors: true,
-              }
-            : {
-                defaultViewport: {
-                  width: 1920,
-                  height: 1080,
-                },
-              }
-        )
+      puppeteer
+        .launch({
+          defaultViewport: {
+            width: 1920,
+            height: 1080,
+          },
+        })
         .then(async (browser) => {
           const page = await browser.newPage();
           await page.goto(requestURL.toString());
@@ -72,7 +52,7 @@ async function screenshotHandler(
       return res.status(400).json({
         code: "invalid_url",
         message: err.message,
-      });
+      })
     }
   } else {
     return res.status(405).json({
