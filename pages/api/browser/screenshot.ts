@@ -2,9 +2,6 @@ import type { NextApiRequest, NextApiResponse } from "next";
 
 import puppeteer from "puppeteer-core";
 
-const chrome = await (import("chrome-aws-lambda")) as any
-
-
 const exePath =
   process.platform === "win32"
     ? "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"
@@ -12,7 +9,11 @@ const exePath =
     ? "/usr/bin/google-chrome"
     : "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome";
 
+
 async function getOptions() {
+
+  const chrome = (await import("chrome-aws-lambda")) as any;
+
   let options;
   if (process.env.NODE_ENV === "development") {
     options = {
@@ -44,7 +45,10 @@ interface ScreenshotApiRequest extends NextApiRequest {
   };
 }
 
-async function screenshotHandler(req: ScreenshotApiRequest, res: NextApiResponse) {
+async function screenshotHandler(
+  req: ScreenshotApiRequest,
+  res: NextApiResponse
+) {
   if (req.method === "POST") {
     const body = req.body;
 
@@ -63,20 +67,18 @@ async function screenshotHandler(req: ScreenshotApiRequest, res: NextApiResponse
 
       const options = await getOptions();
 
-      puppeteer
-        .launch(options)
-        .then(async (browser) => {
-          const page = await browser.newPage();
-          await page.goto(requestURL.toString());
-          await page.waitForNetworkIdle();
-          await page.screenshot({
-            type: "jpeg",
-            quality: 50,
-            path: "public/" + domainName + ".jpg",
-          });
-
-          browser.close();
+      puppeteer.launch(options).then(async (browser) => {
+        const page = await browser.newPage();
+        await page.goto(requestURL.toString());
+        await page.waitForNetworkIdle();
+        await page.screenshot({
+          type: "jpeg",
+          quality: 50,
+          path: "public/" + domainName + ".jpg",
         });
+
+        browser.close();
+      });
 
       return res.status(201).json({
         code: "screenshot_created",
