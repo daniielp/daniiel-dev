@@ -1,7 +1,9 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 
 import puppeteer from "puppeteer-core";
-const chrome = require("chrome-aws-lambda");
+
+const chrome = await (import("chrome-aws-lambda")) as any
+
 
 const exePath =
   process.platform === "win32"
