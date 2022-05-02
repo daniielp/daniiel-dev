@@ -42,7 +42,7 @@ const Faq = () => {
                             </AccordionDetails>
                         </Accordion> */}
                         <Accordion itemScope itemProp="mainEntity" itemType="https://schema.org/Question" sx={{ bgcolor: 'secondary.dark' }} defaultExpanded={true}>
-                            <AccordionSummary expandIcon={<Image src={ArrowDownIcon} width={32} height={32} />}>
+                            <AccordionSummary expandIcon={<Image src={ArrowDownIcon} width={32} height={32} alt="expand/contract icon" />}>
                                 <Typography itemProp="name" variant="h4" component="h3">Hvorfor daniiel med 2 i'er</Typography>
                             </AccordionSummary>
                             <AccordionDetails itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
@@ -55,7 +55,7 @@ const Faq = () => {
                             </AccordionActions>
                         </Accordion>
                         <Accordion itemScope itemProp='mainEntity' itemType="https://schema.org/Question" sx={{ bgcolor: 'secondary.dark' }} defaultExpanded={true}>
-                            <AccordionSummary expandIcon={<Image src={ArrowDownIcon} width={32} height={32} />}>
+                            <AccordionSummary expandIcon={<Image src={ArrowDownIcon} width={32} height={32} alt="expand/contract icon" />}>
                                 <Typography itemProp="name" variant="h4" component="h3">Personlige målsætninger</Typography>
                             </AccordionSummary>
                             <AccordionDetails itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
@@ -64,7 +64,7 @@ const Faq = () => {
                         </Accordion>
                     </Grid>
                     <Grid item md={6}>
-                        <Image src={Illustration} width={600} height={400} />
+                        <Image src={Illustration} width={600} height={400} alt="question illustration" />
                     </Grid>
                 </Grid>
             </Container>

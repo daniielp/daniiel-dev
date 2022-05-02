@@ -8,6 +8,7 @@ import { TabContext, TabPanel } from '@mui/lab';
 import Image from 'next/image';
 import DenmarkVector from '../../assets/images/denmark-vector.svg';
 import { keyframes } from '@emotion/react'
+import ContactForm from '../ContactForm';
 
 
 
@@ -67,7 +68,7 @@ const Slider = () => {
                                 <TextBundle title="Du er altid velkommen til at kontakte mig" subtitle="Kontakt" text="Har du nogle spørgsmål eller føler du dig bare nysgerrig? Er du mere end velkommen til sende mig en mail. Så står jeg klar til de spørgsmål du end måtte have, eller bare tag en snak." />
                             </Grid>
                             <Grid item md={6}>
-                                <Typography variant="h1" component="h1">Daniel <Typography variant="h1" component="span" color="primary">Pedersen</Typography> </Typography>
+                                <ContactForm />
                             </Grid>
                         </Grid>
                     </TabPanel>

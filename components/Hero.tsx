@@ -91,13 +91,13 @@ const Hero = () => {
                     <Grid item md={6} sx={{margin: '0 auto'}}>
                         <AnimationContainer>
                             <AnimationBackground>
-                                <img src={Browser} />
+                                <img src={Browser} alt="browser" />
                             </AnimationBackground>
                             <AnimationElement>
-                                <img src={HeroImage} />
+                                <img src={HeroImage} alt="hero section" />
                             </AnimationElement>
                             <AnimationElement className="second">
-                                <img src={NewsletterImage} />
+                                <img src={NewsletterImage} alt="newsletter section" />
                             </AnimationElement>
                         </AnimationContainer>
                     </Grid>

@@ -45,9 +45,9 @@ const Project = () => {
                     </Grid>
                     <Grid item md={4}>
                         <Card sx={{ backgroundColor: "#272c3a", backgroundImage: 'none', height: "100%" }}>
-                            <CardMedia component="img" height="200" alt="daniiel.dev web development in NextJS" image={daniielPortfolio} />
+                            <CardMedia component="img" height="200" alt="daniiel.dev web development in NextJS" src="img" image={daniielPortfolio} />
                             <CardContent>
-                                <Typography gutterBottom variant="subtitle1" color="text.secondary" component="p">- daniiel.dk</Typography>
+                                <Typography gutterBottom variant="subtitle1" color="text.secondary" component="p">- daniiel.dev</Typography>
                                 <Typography gutterBottom variant="h5" component="h5">Web design/development</Typography>
                                 <Typography variant="body1" color="text.primary">Skrædersyet hjemmeside kodet fra bunden med fokus på brugervenlighed og online tilstedeværelse.</Typography>
                             </CardContent>
