@@ -59,7 +59,7 @@ const Faq = () => {
                                 <Typography itemProp="name" variant="h4" component="h3">Personlige målsætninger</Typography>
                             </AccordionSummary>
                             <AccordionDetails itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
-                                <BodyText itemProp="text">Med tiden jeg har arbejdet som fullstack developer med speciale i web development har jeg fundet en dyb interesse i frontend development og UI/UX. Hvilket vil kunne ses i de fremtidige hjemmesider jeg kommer til at lave.</BodyText>
+                                <BodyText itemProp="text">Med tiden jeg har arbejdet som fullstack developer med speciale i web development, har jeg fundet en dyb interesse i <Typography component="span" sx={{fontWeight: 'bold', color: 'primary.main'}}>frontend development</Typography> og <Typography component="span" sx={{fontWeight: 'bold', color: 'primary.main'}}>UI/UX</Typography>. Hvilket vil kunne ses i de fremtidige hjemmesider jeg kommer til at lave.</BodyText>
                             </AccordionDetails>
                         </Accordion>
                     </Grid>
