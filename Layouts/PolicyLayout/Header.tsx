@@ -18,12 +18,12 @@ const Header = () => {
           <NextLink href="/">
             <Button
               variant="contained"
-              startIcon={<Image src={Logo} width={45} height={45} />}
-              sx={{bgcolor: 'transparent', boxShadow: 'none', m: 0, p: 0, '&:hover': {boxShadow: 'none', background: 'transparent'}}}
+              startIcon={<Image src={Logo} width={150} height={45} alt="Daniel Pedersen logo" />}
+              sx={{bgcolor: 'transparent', boxShadow: 'none', m: 0, p: 0, '&:hover': {boxShadow: 'none', background: 'transparent'}, display: 'flex', alignItems: 'center'}}
               disableRipple
             >
               <Typography variant="h6" component="h1" color="textPrimary">
-                Daniel Pedersen - Privatliv & Betingelser
+                Privatliv & Betingelser
               </Typography>
             </Button>
           </NextLink>

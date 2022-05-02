@@ -33,11 +33,11 @@ const Header = () => {
           <Link href="/" passHref>
             <Button
               variant="contained"
-              startIcon={<Image src={Logo} width={45} height={45} priority />}
+              startIcon={<Image src={Logo} width={150} height={45} priority alt="Daniel Pedersen logo" />}
               sx={{ bgcolor: 'transparent', boxShadow: 'none', m: 0, p: 0, '&:hover': { boxShadow: 'none', background: 'transparent' } }}>
-              <Typography variant="h6" component="h1" color="textPrimary">
+              {/* <Typography variant="h6" component="h1" color="textPrimary">
               Daniel Pedersen
-            </Typography>
+            </Typography> */}
           </Button>
         </Link>
         <Hidden mdDown>
@@ -55,14 +55,11 @@ const Header = () => {
                 <Link href="/" passHref>
                   <Button
                     variant="contained"
-                    startIcon={<Image src={Logo} width={45} height={45} />}
+                    startIcon={<Image src={Logo} width={150} height={45} alt="Daniel Pedersen logo" />}
                     sx={{ bgcolor: 'transparent', boxShadow: 'none', m: 0, p: 0, '&:hover': { boxShadow: 'none', background: 'transparent' } }}
                     disableRipple
                     onClick={() => setDrawer(prevState => !prevState)}
                   >
-                    <Typography variant="h6" component="h1" color="textPrimary">
-                      Daniel Pedersen
-                    </Typography>
                   </Button>
                 </Link>
                 <IconButton color="inherit" aria-label="Close menu" onClick={() => setDrawer(prevState => !prevState)}><Image src={Close} width={35} height={35} alt="menu" /></IconButton>

@@ -70,7 +70,7 @@ const ContactForm = () => {
               </Grid>
             </Grid>
             <Box sx={{ bgcolor: 'secondary.main', height: '100%', p: 2 }}>
-              <Box component="form" sx={{ width: '100%;', display: 'flex', flexDirection: 'column' }} onSubmit={handleSubmit} id="contact">
+              <Box component="form" sx={{ width: '100%;', display: 'flex', flexDirection: 'column' }} onSubmit={handleSubmit}>
                 <TextField
                   name="name"
                   sx={{ my: 2 }}
