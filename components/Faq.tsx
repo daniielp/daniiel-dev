@@ -56,7 +56,7 @@ const Faq = () => {
                         </Accordion>
                         <Accordion itemScope itemProp='mainEntity' itemType="https://schema.org/Question" sx={{ bgcolor: 'secondary.dark' }} defaultExpanded={true}>
                             <AccordionSummary expandIcon={<Image src={ArrowDownIcon} width={32} height={32} />}>
-                                <Typography itemProp="name" variant="h4" component="h3">Personlig målsætninger</Typography>
+                                <Typography itemProp="name" variant="h4" component="h3">Personlige målsætninger</Typography>
                             </AccordionSummary>
                             <AccordionDetails itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
                                 <BodyText itemProp="text">Med tiden jeg har arbejdet som fullstack developer med speciale i web development har jeg fundet en dyb interesse i frontend development og UI/UX. Hvilket vil kunne ses i de fremtidige hjemmesider jeg kommer til at lave.</BodyText>
