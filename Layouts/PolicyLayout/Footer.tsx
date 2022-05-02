@@ -12,7 +12,7 @@ const Footer = () => {
                                 component="span"
                                 sx={{fontWeight: 'bold'}}
                             >
-                                © 2021 Daniel Bøgh Pedersen
+                                © {new Date().getFullYear()} Daniel Bøgh Pedersen
                             </Typography>
                             . Alle rettigheder forbeholdes.
                         </Typography>

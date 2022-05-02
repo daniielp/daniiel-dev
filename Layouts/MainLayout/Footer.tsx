@@ -89,7 +89,7 @@ const Footer = () => {
               </Grid>
             </Grid>
             <Box sx={{ bgcolor: 'secondary.main', height: '100%', p: 2 }}>
-              <Box component="form" sx={{ width: '100%;', display: 'flex', flexDirection: 'column' }} onSubmit={handleSubmit}>
+              <Box component="form" sx={{ width: '100%;', display: 'flex', flexDirection: 'column' }} onSubmit={handleSubmit} id="contact">
                 <TextField
                   name="name"
                   sx={{ my: 2 }}
@@ -192,7 +192,7 @@ const Footer = () => {
                   component="span"
                   sx={{ fontWeight: 'bold' }}
                 >
-                  © 2021 Daniel Bøgh Pedersen
+                  © {new Date().getFullYear()} Daniel Bøgh Pedersen
                 </Typography>
                 . Alle rettigheder forbeholdes.
               </Typography>
