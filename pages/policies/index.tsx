@@ -1,4 +1,4 @@
-import { Container, Grid, Link, Typography } from '@mui/material';
+import { Box, Container, Grid, Link, Typography } from '@mui/material';
 import BodyText from '../../components/Typography/BodyText';
 
 
@@ -6,7 +6,7 @@ import BodyText from '../../components/Typography/BodyText';
 const index = () => {
 
     return (
-        <section>
+        <Box component="section" sx={{ bgcolor: 'secondary.dark'}}>
             <Container maxWidth="lg" sx={{py: [5, 5, 10]}}>
                 <Grid container spacing={10}>
                     <Grid item sm={12}>
@@ -29,7 +29,7 @@ const index = () => {
                     </Grid>
                 </Grid>
             </Container>
-        </section>
+        </Box>
     )
 }
 

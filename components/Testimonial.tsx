@@ -12,7 +12,7 @@ const Testimonial = () => {
                 <Grid container spacing={2}>
                     <Grid item md={6}>
                         <TextBundle title="Hvad siger folk?" subtitle="Anmeldelser" text="Jeg har haft muligheden for at arbejde med nogle helt fantastiske mennesker, og tænkte jeg lige ville dele hvad de har sagt om mig." />
-                        <Button sx={{color: 'primary.main', fontWeight: 'bold'}}>Se mere</Button>
+                        {/* <Button sx={{color: 'primary.main', fontWeight: 'bold'}}>Se mere</Button> */}
                     </Grid>
                     <Grid item md={6} sx={{display: 'flex', justifyContent: 'center', flexDirection: 'column'}}>
                         <TestimonialSlider />

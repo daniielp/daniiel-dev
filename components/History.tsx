@@ -7,7 +7,7 @@ import HistoryImage from '../assets/images/history.svg'
 const Hero = () => {
 
     return (
-        <Box sx={{py: [5, 5, 10]}}>
+        <Box sx={{py: [5, 5, 10]}} id="historien">
             <Container maxWidth="lg">
 
                 <Grid container spacing={5}>
