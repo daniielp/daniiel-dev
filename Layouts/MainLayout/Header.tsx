@@ -30,7 +30,7 @@ const Header = () => {
       </Button> */}
       <Container maxWidth="lg">
         <Toolbar sx={{ p: [0, 0, 0, 0, 0], display: 'flex', justifyContent: 'space-between' }}>
-          <Link href="/">
+          <Link href="/" passHref>
             <Button
               variant="contained"
               startIcon={<Image src={Logo} width={45} height={45} priority />}
@@ -42,7 +42,7 @@ const Header = () => {
         </Link>
         <Hidden mdDown>
           <nav>
-            <Link href="/om-mig">
+            <Link href="/om-mig" passHref>
               <Button variant="text" >Om mig</Button>
             </Link>
           </nav>
@@ -52,7 +52,7 @@ const Header = () => {
           <Drawer anchor="left" open={drawer} onClose={() => setDrawer(prevState => !prevState)} PaperProps={{ style: { width: '100%', backgroundColor: '#272c3a', backgroundImage: 'none' } }}>
             <Container maxWidth="lg">
               <Box sx={{ display: 'flex', justifyContent: 'space-between', py: 1, borderBottom: 1, borderColor: 'secondary.light' }}>
-                <Link href="/">
+                <Link href="/" passHref>
                   <Button
                     variant="contained"
                     startIcon={<Image src={Logo} width={45} height={45} />}
@@ -69,7 +69,7 @@ const Header = () => {
               </Box>
 
               <List component="nav" aria-labelledby="menu list">
-                <Link href="/om-mig">
+                <Link href="/om-mig" passHref>
                   <ListItem onClick={() => setDrawer(prevState => !prevState)}>
                     <ListItemText primary="Om mig" />
                   </ListItem>
