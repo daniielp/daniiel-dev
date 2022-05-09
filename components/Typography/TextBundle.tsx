@@ -5,7 +5,7 @@ interface textBunde {
     title: string,
     subtitle: string,
     text: string,
-    primaryHeading: boolean
+    primaryHeading?: boolean
 }
 
 const TextBundle = ({title, subtitle, text, primaryHeading = false}: textBunde) => {
