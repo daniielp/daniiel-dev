@@ -65,7 +65,7 @@ const Header = () => {
                 <IconButton color="inherit" aria-label="Close menu" onClick={() => setDrawer(prevState => !prevState)}><Image src={Close} width={35} height={35} alt="menu" /></IconButton>
               </Box>
 
-              <List component="nav" aria-labelledby="menu list">
+              <List component="div" aria-labelledby="menu list">
                 <Link href="/om-mig" passHref>
                   <ListItem onClick={() => setDrawer(prevState => !prevState)}>
                     <ListItemText primary="Om mig" />
