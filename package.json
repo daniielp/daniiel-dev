@@ -19,7 +19,7 @@
     "next": "^12.1.0",
     "next-images": "^1.7.0",
     "node-fetch": "^3.2.3",
-    "puppeteer": "^13.6.0"
+    "yup": "^0.32.11"
   },
   "peerDependencies": {
     "react": "^17.0.2",
