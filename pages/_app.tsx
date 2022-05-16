@@ -57,6 +57,7 @@ function MyApp(props: any) {
                 <link rel="icon" href="/favicon.ico" />
                 <meta name="description"
                     content="With a background as a web developer and a good eye to UI/UX. Daniel Pedersen create groth and is dedicated to frontend development." />
+                    <meta name="keywords" content="daniel pedersen, web developer, development, web design, website, daniel, pedersen, freelance" />
                 {/* <script src={`https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_KEY}`}/> */}
 
             </Head>
