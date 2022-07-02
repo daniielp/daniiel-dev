@@ -24,15 +24,5 @@ module.exports = withImages({
         localeDetection: false,
     },
     trailingSlash: false,
-    // async headers() {
-    //     return [
-    //         {
-    //             source: "/:path*",
-    //             headers: [
-    //                 { key: "Access-Control-Allow-Origin", value: "*" },
-    //             ]
-    //         }
-    //     ]
-    // }
     swcMinify: true,
 });
