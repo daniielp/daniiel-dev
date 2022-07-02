@@ -1,7 +1,7 @@
 import { Container, Grid, Tab, Tabs, Typography, Hidden, createSvgIcon } from '@mui/material';
 import { Theme } from '@mui/material/styles'
 import TextBundle from '../Typography/TextBundle'
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Box } from '@mui/material'
 import { Breadcrumbs } from '@mui/material'
 import { TabContext, TabPanel } from '@mui/lab';
@@ -14,10 +14,17 @@ import ContactForm from '../ContactForm';
 
 const Slider = () => {
     const [index, setIndex] = useState(0);
+    const imageElement = useRef(null);
 
     const handleChange = (_event: any, newIndex: React.SetStateAction<number>) => {
         setIndex(newIndex);
     }
+
+    useEffect(() => {
+        console.log(imageElement);
+        
+    }, [imageElement])
+
 
     const bounce = keyframes`
     from {
