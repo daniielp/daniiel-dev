@@ -32,7 +32,7 @@ async function createContact(req: NextApiRequest, res: NextApiResponse) {
           name: "Daniel from daniiel.dev",
           email: "no-reply@daniiel.dev",
         },
-        to: [{ email: "dp@daniiel.dev", name: "Daniel" }],
+        to: [{ email: "daniel.horsens@gmail.com", name: "Daniel" }],
         textContent: body.message,
         subject: body.subject,
         replyTo: { email: body.email, name: body.name },
