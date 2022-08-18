@@ -31,7 +31,6 @@ const Faq = () => {
                 <Grid container>
                     <Grid item md={6}>
                         <TextBundle title="Nu er du snart ved at være ved ende." subtitle="FAQ" text="Så er du velkommen til at sende mig en besked, og så vil jeg vende tilbage indenfor 1-2 dage." />
-                        <Link href="#contact" color="primary" sx={{ display: "block", pb: 4 }}>Kom i kontakt</Link>
 
                         {/* <Accordion itemScope itemProp="mainEntity" itemType="https://schema.org/Question" sx={{ bgcolor: 'secondary.dark' }} defaultExpanded={true}>
                             <AccordionSummary expandIcon={<Image src={ArrowDownIcon} width={32} height={32} />}>

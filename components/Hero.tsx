@@ -6,6 +6,7 @@ import Browser from '../assets/images/browser.svg';
 import HeroImage from '../assets/images/Hero.svg';
 import NewsletterImage from '../assets/images/Newsletter.svg';
 import { keyframes } from '@emotion/react'
+import Button from './Button';
 
 const floating = keyframes`
 0% {
@@ -84,9 +85,7 @@ const Hero = () => {
                 <Grid container spacing={5}>
                     <Grid item md={6}>
                         <TextBundle title="Udvikler med høje ambitioner" subtitle="Om mig" text="Min vision er at hjælpe små og mellemstore virksomheder med at få lavet en skræddersyet hjemmeside, som passer til deres online tilstedeværelse, på det vi alle kender som internettet. Ved at vælge mig er du sikret en skræddersyet hjemmeside kodet fra bunden." />
-                        <Link href="#historien" underline="hover">
-                            Min historie
-                        </Link>
+                        <Button href="#historien">Min historie</Button>
                     </Grid>
                     <Grid item md={6} sx={{margin: '0 auto'}}>
                         <AnimationContainer>

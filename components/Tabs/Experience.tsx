@@ -4,6 +4,7 @@ import { TabContext, TabPanel } from '@mui/lab';
 import { useState } from 'react'
 import BodyText from '../Typography/BodyText'
 import {Theme} from "@mui/material/styles";
+import Button from '../Button';
 
 const Hero = () => {
     const [tabIndex, setTabIndex] = useState(0);
@@ -19,9 +20,6 @@ const Hero = () => {
                 <Grid container spacing={5}>
                     <Grid item md={6}>
                         <TextBundle title="Virksomheder jeg har arbejdet med" subtitle="Erfaring" text="Som udvikler er det vigtigt at du har kendskab til hvad for nogle teknologier der bliver brugt ude I virksomhederne, og har et kendskab til hvordan du kan Performance Optimize, og Hvordan du kan nå I mål med de målsætninger virksomhederne sætter." />
-                        <Link href="/omkring" underline="hover">
-                            Se mere
-                        </Link>
                     </Grid>
                     <Grid item md={6} sx={{display: 'flex', flexDirection: ['column-reverse', 'column-reverse', 'column'], justifyContent: "center",}} >
                         <TabContext value={tabIndex.toString()}>

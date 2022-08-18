@@ -1,9 +1,10 @@
-import { Box, Button, Card, CardActions, CardContent, CardMedia, Container, Grid, Typography } from '@mui/material';
+import { Box, Card, CardActions, CardContent, CardMedia, Container, Grid, Typography } from '@mui/material';
 import TextBundle from './Typography/TextBundle';
 import shorcyPortfolio from '../assets/images/portfolio-shorcy.jpg'
 import novicellPortfolio from '../assets/images/portfolio-novicell.jpg'
 import daniielPortfolio from '../assets/images/portfolio-daniiel.jpg'
 import PropTypes from 'prop-types'
+import Button from './Button';
 
 const Project = () => {
     return (
@@ -26,9 +27,6 @@ const Project = () => {
                                 <Typography gutterBottom variant="h5" component="h5">Web development</Typography>
                                 <Typography variant="body1">Det nye website har givet shorcy's visuelle identitet et moderne look. Sitet er målrettet B2B og har til formål at øge tillid, samt leads.</Typography>
                             </CardContent>
-                            <CardActions>
-                                <Button href="https://shorcy.com" target="_blank" variant="text" component="a">Besøg siden</Button>
-                            </CardActions>
                         </Card>
                     </Grid>
                     <Grid item md={4}>

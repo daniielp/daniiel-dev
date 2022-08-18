@@ -13,6 +13,7 @@ const DynamicFaq = dynamic(() => import('../components/Faq'), {
 export default function Home() {
   return (
     <main>
+      
       <Slider />
       <Project isFrontpage />
       <DynamicTestimonial />

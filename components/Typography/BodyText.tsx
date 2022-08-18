@@ -11,7 +11,7 @@ type bodyProps = {
 
 const BodyText = (props : bodyProps) => {
     return (
-        <Typography {...props} sx={{color: '#BDBDBD'}}>{props.children}</Typography>
+        <Typography {...props} sx={{color: '#BDBDBD'}} gutterBottom>{props.children}</Typography>
     )
 }
 
