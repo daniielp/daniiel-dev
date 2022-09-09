@@ -25,7 +25,7 @@ const Hero = () => {
                         <TabContext value={tabIndex.toString()}>
                             <TabPanel value="0" sx={{padding: 0, flexGrow: 1}}>
                                 <Grid container spacing={0}>
-                                    <Grid item md={6} sx={{bgcolor: 'secondary.dark', p:2}}>
+                                    <Grid item md={6} sx={{bgcolor: 'secondary.dark', p:2, width: '100%'}}>
                                         <Typography variant="h6" component="h4">Fullstack udvikler</Typography>
                                         <Typography variant="subtitle1" component="h4">Admill.dk</Typography>
                                         <BodyText>Hos admill var jeg en del af et større team, som havde til ansvar at holde styr på deres I alt 20+ sider.</BodyText>
