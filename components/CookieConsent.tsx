@@ -6,14 +6,21 @@ import useLocalStorage from '../hooks/UseLocalStorage'
 
 const CookieConsent = () => {
     const [isConsentActive, setIsConsentActive] = useState(true);
-    const [isModalActive, setIsModalActive] = useState(false);
     const [localConsent, setLocalConsent] = useLocalStorage("ShowConsent", true)
+    const [isModalActive, setIsModalActive] = useState(false);
 
     useEffect(() => {
         setIsConsentActive(localConsent)
+        window.addEventListener("ShowConsent", (e) => {
+            const item = window.localStorage.getItem("ShowConsent")
+            if(item === "true") {
+                setIsModalActive(true);
+            } else {
+                setIsModalActive(false)
+            }
+        })
+
     }, [])
-
-
 
     const handleAcceptAll = () => {
         setIsConsentActive(false);
@@ -28,7 +35,7 @@ const CookieConsent = () => {
     const acceptChanges = () => {
         setIsConsentActive(false);
         setIsModalActive(false);
-        setLocalConsent(false)
+        setLocalConsent(false);
     }
 
     return (

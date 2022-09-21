@@ -1,6 +1,8 @@
-import {Container, Grid, Typography, Link, Theme, Stack, Box } from "@mui/material";
+import {Container, Grid, Typography, Link, Theme, Stack, Box, Button } from "@mui/material";
 import TextBundle from "../../components/Typography/TextBundle";
 import ContactForm from "../../components/ContactForm";
+import useLocalStorage from '../../hooks/UseLocalStorage'
+import { useEffect } from "react";
 
 declare global {
   interface Window {
@@ -9,6 +11,7 @@ declare global {
 }
 
 const Footer = () => {
+  const [localConsent, setLocalConsent] = useLocalStorage("ShowConsent", true);
 
   return (
     <Box component="footer" sx={{ pt: [5, 5, 10], bgcolor: 'secondary.dark', pb: [5, 5, 0] }}>
@@ -46,6 +49,7 @@ const Footer = () => {
                 <Link href="/policies/brugeraftale" rel="nofollow" sx={{ color: "#BDBDBD", p: (theme: Theme) => "0 " + theme.spacing(1), textDecoration: 'none' }}>Brugeraftale</Link>
                 <Link href="/policies/privatlivspolitik" rel="nofollow" sx={{ color: "#BDBDBD", p: (theme: Theme) => "0 " + theme.spacing(1), textDecoration: 'none' }}>Privatlivspolitik</Link>
                 <Link href="/policies/cookies" rel="nofollow" sx={{ color: "#BDBDBD", p: (theme: Theme) => "0 " + theme.spacing(1), textDecoration: 'none', pr: 0 }}>Cookies</Link>
+                <Button sx={{ color: "#BDBDBD", p: (theme: Theme) => "0 " + theme.spacing(1), textDecoration: 'none', pr: 0 }} onClick={() => setLocalConsent(true)}>Cookieindstillinger</Button>
               </Stack>
 
 

@@ -49,10 +49,24 @@ const Hero = () => {
                                     </Grid>
                                 </Grid>
                             </TabPanel>
+                            <TabPanel value="2" sx={{padding: 0, flexGrow: 1}}>
+                                <Grid container spacing={0}>
+                                    <Grid item md={6} sx={{bgcolor: 'secondary.dark', p:2}}>
+                                        <Typography variant="h6" component="h4">App udvikling</Typography>
+                                        <Typography variant="subtitle1" component="h4">Elberegner</Typography>
+                                        <BodyText>Under tiden som udvikle hos admill, hjalp jeg også til i virksomheden Adlab med at udvikle en app.</BodyText>
+                                    </Grid>
+                                    <Grid item md={6} sx={{p: 2, border: 2, borderColor: 'primary.main'}}>
+                                        <Typography variant="h6" component="h4" gutterBottom>Udviklingsværktøjer</Typography>
+                                        <Typography variant="body2">Hertil bestod arbejdet blandt andet i at <Typography variant="body2" component="span" sx={{fontWeight: 'bold', color: 'primary.main'}}>design</Typography>, udvikling en app i <Typography variant="body2" component="span" sx={{fontWeight: 'bold', color: 'primary.main'}}>react native</Typography>. Samt fremvisning af data på en <Typography variant="body2" component="span" sx={{fontWeight: 'bold', color: 'primary.main'}}>brugervenlig</Typography> måde, som gav værdi for brugeren.</Typography>
+                                    </Grid>
+                                </Grid>
+                            </TabPanel>
                         </TabContext>
                         <Tabs value={tabIndex} onChange={handleChange} sx={{pt: 2}} TabIndicatorProps={{style: {bottom: 'unset', top: 0, height: 10}}} indicatorColor="primary" textColor="primary" variant="scrollable" scrollButtons="auto" allowScrollButtonsMobile>
                             <Tab label="Admill" sx={{borderTop: 10, borderColor: (theme : Theme) => theme.palette.grey[500], mx: 2}}/>
                             <Tab label="Novicell" sx={{borderTop: 10, borderColor: (theme : Theme) => theme.palette.grey[500], mx: 2}}/>
+                            <Tab label="Adlab" sx={{borderTop: 10, borderColor: (theme : Theme) => theme.palette.grey[500], mx: 2}}/>
                         </Tabs>
                     </Grid>
                 </Grid>
