@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import CloseIcon from '@mui/icons-material/Close';
 import EmailIcon from "../assets/Icons/email.svg";
-import type { GetStaticProps } from "next";
 
 const ContactForm = (props: any) => {
   const [isDisabled, setIsDisabled] = useState(false);

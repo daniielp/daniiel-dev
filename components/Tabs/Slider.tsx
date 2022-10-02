@@ -35,7 +35,7 @@ const Slider = () => {
 
 
     return (
-        <Box sx={{ py: [5, 5, 10], bgcolor: 'secondary.dark', height: '94vh' }} component="section">
+        <Box sx={{ py: [5, 5, 10], bgcolor: 'secondary.dark'}} component="section">
             <Container maxWidth="lg">
                 <TabContext value={index.toString()}>
                     <TabPanel value={"0"} sx={{ p: 0 }}>
