@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { Button, Dialog, DialogActions, DialogContent, DialogTitle, Grid, Link, Snackbar, SnackbarContent, Typography, IconButton, ListItemText, Switch, ListItem, List } from '@mui/material'
 import PrivacyTipIcon from '@mui/icons-material/PrivacyTip';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-import useLocalStorage from '../hooks/UseLocalStorage'
+import useLocalStorage from '../hooks/UseLocalStorage';
 
 const CookieConsent = () => {
     const [isConsentActive, setIsConsentActive] = useState(true);
@@ -13,7 +13,7 @@ const CookieConsent = () => {
         setIsConsentActive(localConsent)
         window.addEventListener("ShowConsent", (e) => {
             const item = window.localStorage.getItem("ShowConsent")
-            if(item === "true") {
+            if (item === "true") {
                 setIsModalActive(true);
             } else {
                 setIsModalActive(false)
@@ -37,6 +37,8 @@ const CookieConsent = () => {
         setIsModalActive(false);
         setLocalConsent(false);
     }
+
+    
 
     return (
         <>
