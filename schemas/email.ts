@@ -1,9 +1,14 @@
-import { object, string } from "yup";
+import z from 'zod';
 
-export const emailSchema = object({
-    name: string().required(),
-    email: string().required().email(),
-    subject: string().required(),
-    message: string().required(),
-    recaptchaResponse: string().required(),
+
+export const emailSchema = z.object({
+    name: z.string(),
+    email: z.string().email("invalid email"),
+    subject: z.string({
+        errorMap: (issue , _ctx) => ({
+            message: 'missing subject'
+        })
+    }),
+    message: z.string(),
+    recaptchaResponse: z.string(),
 });

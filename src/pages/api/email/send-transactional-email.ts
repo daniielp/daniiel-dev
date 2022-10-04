@@ -1,10 +1,10 @@
 import fetch from "node-fetch";
 import type { NextApiRequest, NextApiResponse } from "next";
-import verifyReCaptcha from "../../../security/VerifyReCaptcha";
-import { emailSchema } from "../../../schemas/email";
-import { validate } from "../../../middleware/validate";
+import verifyReCaptcha from "../../../server/utils/VerifyReCaptcha";
+import validate from "../../../server/utils/validate";
+import { emailSchema } from "../../../../schemas/email";
 
-async function createContact(req: NextApiRequest, res: NextApiResponse) {
+async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === "POST") {
     const url = "https://api.sendinblue.com/v3/smtp/email";
 
@@ -66,6 +66,6 @@ async function createContact(req: NextApiRequest, res: NextApiResponse) {
       message: req.method + " Method is not allowed on this path",
     });
   }
-}
+};
 
-export default validate(emailSchema, createContact);
+export default validate(emailSchema, handler)

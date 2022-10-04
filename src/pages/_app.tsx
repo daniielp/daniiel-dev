@@ -1,6 +1,6 @@
-import MainLayout from '../Layouts/MainLayout'
-import PolicyLayout from '../Layouts/PolicyLayout'
-import RouteWithLayout from '../Layouts/RouteWithLayout'
+import MainLayout from '../layouts/MainLayout'
+import PolicyLayout from '../layouts/PolicyLayout'
+import RouteWithLayout from '../layouts/RouteWithLayout'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { CssBaseline, ThemeProvider } from '@mui/material';

@@ -9,7 +9,7 @@ import Image from 'next/image';
 import DenmarkVector from '../../assets/images/denmark-vector.svg';
 import { keyframes } from '@emotion/react'
 import ContactForm from '../ContactForm';
-import Button from '../../components/Button';
+import Button from '../Button';
 
 
 const Slider = () => {
