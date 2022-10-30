@@ -46,7 +46,6 @@ function MyApp(props: any) {
             <ThemeProvider theme={responsiveTheme}>
                 <CssBaseline />
                 <RouteWithLayout Layout={PolicyLayout} Component={Component} pageProps={pageProps} />
-                <Analytics />
             </ThemeProvider>
         </CacheProvider>
     )
@@ -67,7 +66,6 @@ function MyApp(props: any) {
                 <Script src={"https://www.google.com/recaptcha/api.js?render=" + process.env.NEXT_PUBLIC_RECAPTCHA_KEY} ></Script>
                 <CssBaseline />
                 <RouteWithLayout Layout={MainLayout} Component={Component} pageProps={pageProps} />
-                <Analytics />
             </ThemeProvider>
         </CacheProvider>
     );
