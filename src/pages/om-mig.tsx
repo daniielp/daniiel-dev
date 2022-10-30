@@ -1,4 +1,3 @@
-import dynamic from 'next/dynamic'
 import Hero from '../components/Hero'
 import Experience from '../components/Tabs/Experience'
 import Head from 'next/head'

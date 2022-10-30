@@ -4,6 +4,7 @@ function RouteWithLayout(props: any) {
     <Layout>
       <Component {...pageProps} />
     </Layout>
+    
   )
 }
 
