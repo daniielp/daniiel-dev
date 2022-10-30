@@ -19,7 +19,7 @@ const TestimonialSlider = () => {
                 <TabPanel value={"0"} sx={{ p: 0, display: 'flex', flexDirection: 'column', justifyContent: 'center', height: '100%' }}>
                     <Grid container spacing={4}>
                         <Grid item md={4} display="grid">
-                            <Image src={Avatar} layout="responsive" width={250} height={250} alt="Mark Andersen Avatar" />
+                            <Image src={Avatar} width={168} height={168} alt="Mark Andersen Avatar" />
                         </Grid>
                         <Grid item md={8} sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                             <BodyText gutterBottom>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."</BodyText>
@@ -31,7 +31,7 @@ const TestimonialSlider = () => {
                 <TabPanel value={"1"} sx={{ p: 0, display: 'flex', flexDirection: 'column', justifyContent: 'center', height: '100%' }}>
                     <Grid container spacing={4}>
                         <Grid item md={4} display="grid">
-                            <Image src={Avatar} layout="responsive" width={250} height={250} alt="Jakob Kjeldtoft Avatar" />
+                            <Image src={Avatar} width={168} height={168} alt="Jakob Kjeldtoft Avatar" />
                         </Grid>
                         <Grid item md={8} sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                             <BodyText gutterBottom>"Jeg er meget imponeret over din refleksioner – det er virkelig godt arbejde. Du har fat i det helt rigtige..."</BodyText>

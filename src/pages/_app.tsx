@@ -8,7 +8,7 @@ import { responsiveFontSizes } from '@mui/material/styles';
 import '../styles/global.css'
 import createCache from '@emotion/cache';
 import { CacheProvider } from "@emotion/react";
-
+import { Analytics } from '@vercel/analytics/react';
 import theme from '../utils/theme';
 import Script from 'next/script'
 
@@ -46,6 +46,7 @@ function MyApp(props: any) {
                 <CssBaseline />
                 <RouteWithLayout Layout={PolicyLayout} Component={Component} pageProps={pageProps} />
             </ThemeProvider>
+            <Analytics />
         </CacheProvider>
     )
 
@@ -66,6 +67,7 @@ function MyApp(props: any) {
                 <CssBaseline />
                 <RouteWithLayout Layout={MainLayout} Component={Component} pageProps={pageProps} />
             </ThemeProvider>
+            <Analytics />
         </CacheProvider>
     );
 }
