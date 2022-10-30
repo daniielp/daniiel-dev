@@ -122,7 +122,7 @@ const Slider = () => {
           </TabPanel>
         </TabContext>
         <Box display="flex" sx={{ display: "flex", pt: 5 }}>
-          <Hidden mdDown>
+          <Box sx={{ display: { xs: "none", md: "block" } }}>
             <Breadcrumbs sx={{ color: "text.primary", typography: "h4" }}>
               <Typography
                 variant="h4"
@@ -135,7 +135,7 @@ const Slider = () => {
                 3
               </Typography>
             </Breadcrumbs>
-          </Hidden>
+          </Box>
           <Tabs
             value={index}
             onChange={handleChange}

@@ -40,14 +40,14 @@ const Header = () => {
             </Typography> */}
           </Button>
         </Link>
-        <Hidden mdDown>
+        <Box sx={{ display: { xs: "none", md: "block" } }}>
           <nav>
             <Link href="/om-mig" passHref>
               <Button variant="text" >Om mig</Button>
             </Link>
           </nav>
-        </Hidden>
-        <Hidden mdUp>
+        </Box>
+        <Box sx={{ display: { xs: "block", md: "none" } }}>
           <IconButton color="inherit" aria-label="Main Menu" onClick={() => setDrawer(prevState => !prevState)}><Image src={Menu} width={35} height={35} alt="menu" /></IconButton>
           <Drawer anchor="left" open={drawer} onClose={() => setDrawer(prevState => !prevState)} PaperProps={{ style: { width: '100%', backgroundColor: '#272c3a', backgroundImage: 'none' } }}>
             <Container maxWidth="lg">
@@ -75,7 +75,7 @@ const Header = () => {
 
             </Container>
           </Drawer>
-        </Hidden>
+        </Box>
       </Toolbar>
     </Container>
     </AppBar >
