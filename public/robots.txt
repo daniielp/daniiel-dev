@@ -1,9 +1,0 @@
-# *
-User-agent: *
-Allow: /
-
-# Host
-Host: https://daniiel.dev
-
-# Sitemaps
-Sitemap: https://daniiel.dev/sitemap.xml
