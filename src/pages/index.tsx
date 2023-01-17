@@ -2,6 +2,7 @@ import { type NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
 import Hero from "../components/Hero";
+import Projects from "../components/Projects";
 import Stats from "../components/Stats";
 
 import { trpc } from "../utils/trpc";
@@ -21,7 +22,8 @@ const Home: NextPage = () => {
       </Head>
       <main className="bg-gray-50">
         <Hero />
-        <Stats />
+        {/* <Stats /> */}
+        <Projects />
       </main>
     </>
   );
