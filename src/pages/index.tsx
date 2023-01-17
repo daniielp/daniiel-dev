@@ -1,7 +1,8 @@
 import { type NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
-import { Hero } from "../components/Hero";
+import Hero from "../components/Hero";
+import Stats from "../components/Stats";
 
 import { trpc } from "../utils/trpc";
 
@@ -18,8 +19,9 @@ const Home: NextPage = () => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="bg-white">
+      <main className="bg-gray-50">
         <Hero />
+        <Stats />
       </main>
     </>
   );
