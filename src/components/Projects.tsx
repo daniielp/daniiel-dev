@@ -5,7 +5,7 @@ import { useState } from "react"
 
 const slides = [
     {
-        Quote: "Hos Adlab har vi haft fornøjelsen af at arbejde sammen med Daniel. Han udviklede første version af vores app, der på under en måned blev downloadet mere end 50.000 gange. Han er dygtig og forstår at arbejde med gode løsninger.",
+        Quote: "Hos Adlab har vi haft fornøjelsen af at arbejde sammen med Daniel. Han udviklede første version af vores app, der på under en måned blev downloadet mere end 50.000 gange.",
         Author: "Daniel Østergaard, CEO hos Adlab",
         ImageUrl: "/images/elberegner-mockup.png",
         Company: "Adlab",
