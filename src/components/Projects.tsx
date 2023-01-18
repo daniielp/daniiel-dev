@@ -5,23 +5,24 @@ import { useState } from "react"
 
 const slides = [
     {
+        Quote: "Hos Adlab har vi haft fornøjelsen af at arbejde sammen med Daniel. Han udviklede første version af vores app, der på under en måned blev downloadet mere end 50.000 gange. Han er dygtig og forstår at arbejde med gode løsninger.",
+        Author: "Daniel Østergaard, CEO hos Adlab",
+        ImageUrl: "/images/elberegner-mockup.png",
+        Company: "Adlab",
+    },
+    {
         Quote: "Jeg er meget imponeret over din refleksioner – det er virkelig godt arbejde. Du har fat i det helt rigtige...",
         Author: "Jakob Kjeldtoft, Udvikler hos Novicell",
-        ImageUrl: "https://tailwindui.com/img/component-images/inbox-app-screenshot-1.jpg",
+        ImageUrl: "/images/novicell-mockup.png",
         Company: "Novicell"
     },
     {
         Quote: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         Author: "Mark Andersen, CEO hos Admill",
-        ImageUrl: "https://tailwindui.com/img/component-images/inbox-app-screenshot-1.jpg",
+        ImageUrl: "/images/default-mockup.png",
         Company: "Admill",
     },
-    {
-        Quote: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        Author: "Daniel Østergaard, CEO hos Adlab",
-        ImageUrl: "https://tailwindui.com/img/component-images/inbox-app-screenshot-1.jpg",
-        Company: "Adlab",
-    },
+    
 ]
 
 const Projects = () => {
@@ -92,7 +93,7 @@ const Projects = () => {
                                 {slides.map((slide) => (
                                     <Tab.Panel>
                                         <img
-                                            className="w-full rounded-xl shadow-xl ring-1 ring-black ring-opacity-5 lg:absolute lg:left-0 lg:h-full lg:w-auto lg:max-w-none"
+                                            className="w-full rounded-xl  lg:absolute lg:left-0 lg:h-full lg:w-auto lg:max-w-none"
                                             src={slide.ImageUrl}
                                             alt="Inbox user interface"
                                         />
