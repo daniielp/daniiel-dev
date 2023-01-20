@@ -34,8 +34,7 @@ const Projects = () => {
 
     return (
         <div className="relative overflow-hidden pt-16 pb-32">
-            <div aria-hidden="true" className="absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-gray-100" />
-            <div className="relative">
+            <div className="relative overflow-hidden pt-16 pb-32">
                 <div className="lg:mx-auto lg:grid lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-2 lg:gap-24 lg:px-8">
                     <Tab.Group selectedIndex={selectedIndex} onChange={setSelectedIndex}>
                         <div className="mx-auto max-w-xl px-6 lg:mx-0 lg:max-w-none lg:py-16 lg:px-0">
