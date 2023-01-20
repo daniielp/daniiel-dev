@@ -87,7 +87,7 @@ export default function Header() {
           <div className="flex justify-start lg:w-0 lg:flex-1">
             <a href="#" className='flex justify-center items-center'>
               <span className="sr-only">Daniiel</span>
-              <Logo primary='fill-yellow-500' secondary='fill-slate-900' className="h-8 w-auto sm:h-10" title="logo" />
+              <Logo primary='fill-yellow-400' secondary='fill-slate-900' className="h-8 w-auto sm:h-10" title="logo" />
             </a>
           </div>
           <div className="-my-2 -mr-2 md:hidden">
@@ -258,7 +258,7 @@ export default function Header() {
             <div className="px-5 pt-5 pb-6">
               <div className="flex items-center justify-between">
                 <div>
-                <Logo primary='fill-indigo-500' secondary='fill-black' className="h-8 w-auto sm:h-10" />
+                <Logo primary='fill-yellow-400' secondary='fill-slate-900' className="h-8 w-auto sm:h-10" />
                 </div>
                 <div className="-mr-2">
                   <Popover.Button className="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
