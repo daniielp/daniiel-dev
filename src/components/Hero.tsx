@@ -10,7 +10,7 @@ const Hero = () => {
             <div className="lg:py-24">
               <div className="hidden sm:mb-5 sm:flex sm:justify-center lg:justify-start">
                 <a
-                  href="#"
+                  href="/#about"
                   className="flex items-center rounded-full bg-black p-1 pr-2 text-white hover:text-gray-200 sm:text-base lg:text-sm xl:text-base"
                 >
                   <span className="rounded-full bg-indigo-500 px-3 py-0.5 text-sm font-semibold leading-5 text-white">
