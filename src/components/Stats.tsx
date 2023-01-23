@@ -1,6 +1,6 @@
 const Stats = () => {
   return (
-    <div className=" pt-12 sm:pt-16">
+    <div className=" pt-12 sm:pt-16" id="stats">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
           <p className="mt-3 text-xl text-gray-500 sm:mt-4">

@@ -1,3 +1,4 @@
+import { ChevronRightIcon } from '@heroicons/react/20/solid'
 import { NewspaperIcon, PhoneIcon, WindowIcon } from '@heroicons/react/24/outline'
 
 const supportLinks = [
@@ -54,15 +55,15 @@ const About = () => {
               {supportLinks.map((link) => (
                 <div key={link.name} className="flex flex-col rounded-2xl bg-white shadow-xl">
                   <div className="relative flex-1 px-6 pt-16 pb-8 md:px-8">
-                    <div className="absolute top-0 inline-block -translate-y-1/2 transform rounded-xl bg-indigo-600 p-5 shadow-lg">
+                    <div className="absolute top-0 inline-block -translate-y-1/2 transform rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 p-5 shadow-lg">
                       <link.icon className="h-6 w-6 text-white" aria-hidden="true" />
                     </div>
                     <h3 className="text-xl font-medium text-gray-900">{link.name}</h3>
                     <p className="mt-4 text-base text-gray-500">{link.description}</p>
                   </div>
                   <div className="rounded-bl-2xl rounded-br-2xl bg-gray-50 p-6 md:px-8">
-                    <a href={link.href} className="text-base font-medium text-indigo-700 hover:text-indigo-600">
-                      Har du brug for hjælp? Tag kontakt<span aria-hidden="true"> &rarr;</span>
+                    <a href={link.href} className="text-base flex content-center items-center font-medium text-indigo-700 hover:text-indigo-600">
+                      Har du brug for hjælp? Tag kontakt<span aria-hidden="true"> <ChevronRightIcon className="ml-2 h-5 w-5" aria-hidden="true" /></span>
                     </a>
                   </div>
                 </div>

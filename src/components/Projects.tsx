@@ -54,7 +54,7 @@ const Projects = () => {
                                 </div>
                                 <div className="mt-8 border-t border-gray-200">
                                     <Tab.List className="-mb-px flex space-x-8">
-                                        {slides.map((slide, index) => (<Tab as="button" className={classNames(
+                                        {slides.map((slide, index) => (<Tab as="button" key={slide.Company} className={classNames(
                                             index == selectedIndex
                                                 ? 'border-indigo-500 text-indigo-600'
                                                 : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300',
@@ -83,7 +83,7 @@ const Projects = () => {
                             <div className="mt-12 sm:mt-16 lg:mt-0">
                                 <Tab.Panels className="-mr-48 pl-6 md:-mr-16 lg:relative lg:m-0 lg:h-full lg:px-0">
                                     {slides.map((slide) => (
-                                        <Tab.Panel>
+                                        <Tab.Panel key={slide.Author}>
                                             <img
                                                 className="w-full rounded-xl  lg:absolute lg:left-0 lg:h-full lg:w-auto lg:max-w-none"
                                                 src={slide.ImageUrl}

@@ -2,15 +2,12 @@ import { type NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
 import About from "../components/About";
+import Daniiel from "../components/Daniiel";
 import Hero from "../components/Hero";
 import Projects from "../components/Projects";
 import Stats from "../components/Stats";
 
-import { trpc } from "../utils/trpc";
-
 const Home: NextPage = () => {
-  const hello = trpc.example.hello.useQuery({ text: "from trpc" });
-
   return (
     <>
       <Head>
@@ -26,6 +23,7 @@ const Home: NextPage = () => {
         {/* <Stats /> */}
         <Projects />
         <About />
+        <Daniiel />
       </main>
     </>
   );
