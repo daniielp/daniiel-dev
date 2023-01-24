@@ -2,7 +2,10 @@ import React from 'react'
 
 const navigation = {
     legal: [
-        {name: 'Cookie indstillinger', href: "#"}
+        {name: 'Brugeraftale', href: "/policies/brugeraftale"},
+        {name: 'Privatlivspolitik', href: "/policies/privatlivspolitik"},
+        {name: 'Cookies', href: "/policies/cookies"},
+        // {name: 'Cookie indstillinger', href: "#"}
     ]
 }
 

@@ -51,7 +51,7 @@ export default function Error() {
               ))}
             </ul>
             <div className="mt-8">
-              <a href="#" className="text-base font-medium text-indigo-600 hover:text-indigo-500">
+              <a href="/" className="text-base font-medium text-indigo-600 hover:text-indigo-500">
                 Gå til forsiden
                 <span aria-hidden="true"> &rarr;</span>
               </a>
