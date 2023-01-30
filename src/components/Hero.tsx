@@ -27,13 +27,11 @@ const Hero = () => {
               <p className="mt-3 text-base text-gray-300 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
                 Med en kombination af uddannelsen som webudvikler, og med et skarpt øje for design og UI/UX, skaber vækst og gør mig i stand til at arbejde helhjertet med frontend-development. På den måde styrker jeg brandets position med at være de bedste når det kommer til frontend-development, og samtidig skaber værdifulde resultater, som i sidste ende giver bedre købeklare leads.
               </p>
-              
+
             </div>
           </div>
           <div className="mt-12 -mb-16 sm:-mb-48 lg:relative lg:m-0">
-            <div className="mx-auto max-w-md px-6 sm:max-w-2xl lg:max-w-none lg:px-0">
-              <Location />
-            </div>
+            <Location />
           </div>
         </div>
       </div>
