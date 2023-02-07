@@ -2,6 +2,7 @@ import { InboxIcon, SparklesIcon } from "@heroicons/react/20/solid"
 import Avatar from "./Avatar"
 import { Tab } from '@headlessui/react'
 import { useState } from "react"
+import Image from "next/image"
 
 const slides = [
     {
@@ -84,11 +85,7 @@ const Projects = () => {
                                 <Tab.Panels className="-mr-48 pl-6 md:-mr-16 lg:relative lg:m-0 lg:h-full lg:px-0">
                                     {slides.map((slide) => (
                                         <Tab.Panel key={slide.Author}>
-                                            <img
-                                                className="w-full rounded-xl  lg:absolute lg:left-0 lg:h-full lg:w-auto lg:max-w-none"
-                                                src={slide.ImageUrl}
-                                                alt="Inbox user interface"
-                                            />
+                                            <Image className="w-full rounded-xl  lg:absolute lg:left-0 lg:h-full lg:w-auto lg:max-w-none" src={slide.ImageUrl} alt="Inbox user interface" width="600" height="550" />
                                         </Tab.Panel>
                                     ))}
 
