@@ -1,7 +1,10 @@
 import { NextPage } from 'next'
 import React from 'react'
+import { trpc } from '../../utils/trpc';
 
 const Privatlivspolitik: NextPage = () => {
+    const email = trpc.default.email.useQuery();
+
     return (
         <div className="relative overflow-hidden bg-white py-16">
             <div className="relative px-6 lg:px-8">
@@ -37,7 +40,7 @@ const Privatlivspolitik: NextPage = () => {
                     <p>
                         Hvis du har spørgsmål om databeskyttelse, eller du vil bruge dine rettigheder (se nedenfor), beder vi dig kontakte:
 
-                        Daniel Bøgh Pedersen på <a href="mailto:dp@daniiel.dev">dp@daniiel.dev</a>.
+                        Daniel Bøgh Pedersen på <a href={`mailto:${email.data?.message}`}>{email.data?.message}</a>.
                     </p>
                     <h2>Hvilke typer af personoplysninger behandler vi om dig?</h2>
                     <p>Teknisk information sendt til og fra din browser til vores server (IP-adresse, browser, lokation, sprog) og information om tracking f.eks. cookies sendt til browseren, f.eks. hvilket website besøgende kommer fra, hvilken browser du anvender og hvornår og hvilke dele af Tjenesten du har besøgt, klager, feedback og eventuel anden kommunikation og handlinger over for daniiel.dev.</p>

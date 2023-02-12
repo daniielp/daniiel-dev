@@ -1,7 +1,15 @@
 import { EnvelopeIcon, PhoneIcon } from '@heroicons/react/20/solid'
-import React from 'react'
+import React, { useState } from 'react'
+import { trpc } from '../utils/trpc';
 
 const Contact = () => {
+    const [characterCount, setCharacterCount] = useState(0)
+    const email = trpc.default.email.useQuery();
+
+    const countCharacters = (e: React.FormEvent<HTMLTextAreaElement>) => {
+        setCharacterCount(e.currentTarget.value.length)
+    }
+
     return (
         <section className="relative bg-white" aria-labelledby="contact-heading">
             <div className="absolute h-1/2 w-full bg-warm-gray-50" aria-hidden="true" />
@@ -138,8 +146,7 @@ const Contact = () => {
                             </div>
                             <h3 className="text-lg font-medium text-white">Kom i kontakt</h3>
                             <p className="mt-6 max-w-3xl text-base text-gray-50">
-                                Nullam risus blandit ac aliquam justo ipsum. Quam mauris volutpat massa dictumst amet. Sapien tortor
-                                lacus arcu.
+                                Skulle du have nogle spørgsmål du ikke fik svar på, så er du velkommen til at kontakte mig med nedestående muligheder. Eller bruge kontaktformularen i højre side, og så vender jeg tilbage til dig.
                             </p>
                             <dl className="mt-8 space-y-6">
                                 <dt>
@@ -154,7 +161,7 @@ const Contact = () => {
                                 </dt>
                                 <dd className="flex text-base text-gray-50">
                                     <EnvelopeIcon className="h-6 w-6 flex-shrink-0 text-gray-200" aria-hidden="true" />
-                                    <span className="ml-3">support@workcation.com</span>
+                                    <span className="ml-3">{email.data?.message}</span>
                                 </dd>
                             </dl>
                             <ul role="list" className="mt-8 flex space-x-12">
@@ -199,7 +206,7 @@ const Contact = () => {
                             <form action="#" method="POST" className="mt-6 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
                                 <div>
                                     <label htmlFor="first-name" className="block text-sm font-medium text-gray-900">
-                                        First name
+                                        Fornavn
                                     </label>
                                     <div className="mt-1">
                                         <input
@@ -213,7 +220,7 @@ const Contact = () => {
                                 </div>
                                 <div>
                                     <label htmlFor="last-name" className="block text-sm font-medium text-gray-900">
-                                        Last name
+                                        Efternavn
                                     </label>
                                     <div className="mt-1">
                                         <input
@@ -242,10 +249,10 @@ const Contact = () => {
                                 <div>
                                     <div className="flex justify-between">
                                         <label htmlFor="phone" className="block text-sm font-medium text-gray-900">
-                                            Phone
+                                            Telefonnummer
                                         </label>
                                         <span id="phone-optional" className="text-sm text-gray-500">
-                                            Optional
+                                            Valgfri
                                         </span>
                                     </div>
                                     <div className="mt-1">
@@ -261,7 +268,7 @@ const Contact = () => {
                                 </div>
                                 <div className="sm:col-span-2">
                                     <label htmlFor="subject" className="block text-sm font-medium text-gray-900">
-                                        Subject
+                                        Emne
                                     </label>
                                     <div className="mt-1">
                                         <input
@@ -275,10 +282,10 @@ const Contact = () => {
                                 <div className="sm:col-span-2">
                                     <div className="flex justify-between">
                                         <label htmlFor="message" className="block text-sm font-medium text-gray-900">
-                                            Message
+                                            Besked
                                         </label>
-                                        <span id="message-max" className="text-sm text-gray-500">
-                                            Max. 500 characters
+                                        <span id="message-max" className={`text-sm ${characterCount <= 500 ? "text-gray-500": "text-red-600"}`}>
+                                            {characterCount}/500 karakter
                                         </span>
                                     </div>
                                     <div className="mt-1">
@@ -289,6 +296,7 @@ const Contact = () => {
                                             className="block w-full rounded-md border-warm-gray-300 py-3 px-4 text-gray-900 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
                                             aria-describedby="message-max"
                                             defaultValue={''}
+                                            onChange={countCharacters}
                                         />
                                     </div>
                                 </div>
@@ -297,7 +305,7 @@ const Contact = () => {
                                         type="submit"
                                         className="mt-2 inline-flex w-full items-center justify-center rounded-md border border-transparent bg-slate-800 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-slate-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:w-auto"
                                     >
-                                        Submit
+                                        Send
                                     </button>
                                 </div>
                             </form>
