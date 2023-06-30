@@ -1,6 +1,6 @@
-import { NextPage } from 'next'
+import type { NextPage } from 'next'
 import React from 'react'
-import Contact from '../components/Contact'
+import Contact from '@/components/Contact'
 
 const Kontakt: NextPage = () => {
   return (

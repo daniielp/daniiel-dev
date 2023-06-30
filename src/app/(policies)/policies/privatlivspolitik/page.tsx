@@ -1,9 +1,9 @@
-import { NextPage } from 'next'
+import { siteConfig } from '@/config/site'
+import type { NextPage } from 'next'
+import Link from 'next/link'
 import React from 'react'
-import { trpc } from '../../utils/trpc';
 
 const Privatlivspolitik: NextPage = () => {
-    const email = trpc.default.email.useQuery();
 
     return (
         <div className="relative overflow-hidden bg-white py-16">
@@ -40,7 +40,7 @@ const Privatlivspolitik: NextPage = () => {
                     <p>
                         Hvis du har spørgsmål om databeskyttelse, eller du vil bruge dine rettigheder (se nedenfor), beder vi dig kontakte:
 
-                        Daniel Bøgh Pedersen på <a href={`mailto:${email.data?.message}`}>{email.data?.message}</a>.
+                        Daniel Bøgh Pedersen på <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>.
                     </p>
                     <h2>Hvilke typer af personoplysninger behandler vi om dig?</h2>
                     <p>Teknisk information sendt til og fra din browser til vores server (IP-adresse, browser, lokation, sprog) og information om tracking f.eks. cookies sendt til browseren, f.eks. hvilket website besøgende kommer fra, hvilken browser du anvender og hvornår og hvilke dele af Tjenesten du har besøgt, klager, feedback og eventuel anden kommunikation og handlinger over for daniiel.dev.</p>
@@ -51,7 +51,7 @@ const Privatlivspolitik: NextPage = () => {
                         <li>at sende dig elektroniske nyhedsbreve, når du har tilmeldt dig nyhedsbrevene.</li>
                         <li>at lave brugertilfredshedsundersøgelser.</li>
                     </ul>
-                    <p>Samtykke til tracking via cookies (samtykke indhentes via pop-up på Tjenesten), jf. § 4 om samtykke i Bekendtgørelse 2011-12-09 nr. 1148 om krav til information og samtykke ved lagring af eller adgang til oplysninger i slutbrugeres terminaludstyr. Du kan når som helst tilbagekalde samtykket til behandling af tracking og cookies ved at slette cookies i dit system som beskrevet i vores cookie-politik, som du finder <a href="/policies/cookies">her</a>.</p>
+                    <p>Samtykke til tracking via cookies (samtykke indhentes via pop-up på Tjenesten), jf. § 4 om samtykke i Bekendtgørelse 2011-12-09 nr. 1148 om krav til information og samtykke ved lagring af eller adgang til oplysninger i slutbrugeres terminaludstyr. Du kan når som helst tilbagekalde samtykket til behandling af tracking og cookies ved at slette cookies i dit system som beskrevet i vores cookie-politik, som du finder <Link href="/policies/cookies">her</Link>.</p>
                     <h2>Hvor længe beholder vi personoplysninger om dig?</h2>
                     <p>Vi opbevarer personoplysninger, så længe det er nødvendig for at varetage formålene, herunder at overholde lovbestemte forpligtelser til behandling af personoplysninger.</p>
                     <p>Som regel opbevarer vi personoplysningerne i 2 år.</p>

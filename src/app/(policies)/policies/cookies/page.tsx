@@ -1,9 +1,7 @@
-import { NextPage } from 'next'
-import React from 'react'
-import { trpc } from '../../utils/trpc';
+import { siteConfig } from '@/config/site'
+import type { NextPage } from 'next'
 
 const Cookies: NextPage = () => {
-    const email = trpc.default.email.useQuery();
     return (
         <div className="relative overflow-hidden bg-white py-16">
             <div className="relative px-6 lg:px-8">
@@ -50,7 +48,7 @@ const Cookies: NextPage = () => {
                     <p>Derudover er der flere tilgængelige tjenester, som er udviklet specifikt til at give brugere en fuldt opdateret liste af cookies og andre sporingsmekanismer. See eksempelvis</p>
                     <a href="https://www.ghostery.com/" rel="nofollow">ghostery.com</a>
                     <p>NB: Slår du cookies fra daniiel.dev fra eller sletter dem, kan vores tjeneste ikke fungere optimalt. For eksempel vil dine personlige indstillinger forsvinde, du vil blive nødt til at logge ind hver gang du besøger os og du vil modtage tilfældige annoncer fremfor nogle, som er relevante for dig.</p>
-                    <p>Har du spørgsmål eller klager angående brug af cookies på dette site. Er du velkommen til at kontakte mig på <a href={"mailto:" + email.data?.message}>{email.data?.message}</a></p>
+                    <p>Har du spørgsmål eller klager angående brug af cookies på dette site. Er du velkommen til at kontakte mig på <a href={"mailto:" + siteConfig.email}>{siteConfig.email}</a></p>
                 </div>
             </div>
         </div>

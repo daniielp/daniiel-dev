@@ -1,4 +1,5 @@
-import { InboxIcon, SparklesIcon } from "@heroicons/react/20/solid"
+"use client"
+import { InboxIcon } from "@heroicons/react/20/solid"
 import Avatar from "./Avatar"
 import { Tab } from '@headlessui/react'
 import { useState } from "react"
@@ -17,13 +18,6 @@ const slides = [
         ImageUrl: "/images/novicell-mockup.png",
         Company: "Novicell"
     },
-    {
-        Quote: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        Author: "Mark Andersen, CEO hos Admill",
-        ImageUrl: "/images/default-mockup.png",
-        Company: "Admill",
-    },
-
 ]
 
 const Projects = () => {

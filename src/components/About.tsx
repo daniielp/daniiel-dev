@@ -1,7 +1,7 @@
 import { ChevronRightIcon } from '@heroicons/react/20/solid'
-import { NewspaperIcon, PhoneIcon, WindowIcon } from '@heroicons/react/24/outline'
+import { NewspaperIcon, WindowIcon } from '@heroicons/react/24/outline'
 import Image from "next/image"
-import { trpc } from '../utils/trpc'
+import { siteConfig } from '@/config/site'
 
 const supportLinks = [
     {
@@ -28,7 +28,6 @@ const supportLinks = [
   ]
 
 const About = () => {
-  const email = trpc.default.email.useQuery();
     return (
         <div>
           {/* Header */}
@@ -61,7 +60,7 @@ const About = () => {
                     <p className="mt-4 text-base text-gray-500">{link.description}</p>
                   </div>
                   <div className="rounded-bl-2xl rounded-br-2xl bg-gray-50 p-6 md:px-8">
-                    <a href={`mailto:${email.data?.message}?subject=${link.subject  ?? ''}`} className="text-base flex content-center items-center font-medium text-indigo-700 hover:text-indigo-600">
+                    <a href={`mailto:${siteConfig.email}?subject=${link.subject  ?? ''}`} className="text-base flex content-center items-center font-medium text-indigo-700 hover:text-indigo-600">
                       Har du brug for hjælp? Tag kontakt<span aria-hidden="true"> <ChevronRightIcon className="ml-2 h-5 w-5" aria-hidden="true" /></span>
                     </a>
                   </div>

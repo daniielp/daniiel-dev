@@ -1,10 +1,10 @@
 import { ChevronRightIcon } from '@heroicons/react/20/solid'
-import { Bars4Icon, BookOpenIcon } from '@heroicons/react/24/outline'
-import Logo from '../components/Logo'
+import { BookOpenIcon, CodeBracketIcon } from '@heroicons/react/24/outline'
+import Link from 'next/link'
 
 const links = [
-  { title: 'Projekter', href:"/#projects", description: 'Learn how to integrate our tools with your app', icon: BookOpenIcon },
-  { title: 'Introduktion', href:"#", description: 'A complete API reference for our libraries', icon: Bars4Icon },
+  { title: 'Projekter', href: "/#projects", description: 'Learn how to integrate our tools with your app', icon: BookOpenIcon },
+  { title: 'Github', href: "https://github.com/shorcy/daniiel-dev", description: 'A complete API reference for our libraries', icon: CodeBracketIcon },
   // { title: 'Guides', description: 'Installation guides that cover popular setups', icon: BookmarkSquareIcon },
   // { title: 'Blog', description: 'Read our latest news and articles', icon: RssIcon },
 ]
@@ -51,10 +51,10 @@ export default function Error() {
               ))}
             </ul>
             <div className="mt-8">
-              <a href="/" className="text-base font-medium text-indigo-600 hover:text-indigo-500">
+              <Link href="/" className="text-base font-medium text-indigo-600 hover:text-indigo-500">
                 Gå til forsiden
                 <span aria-hidden="true"> &rarr;</span>
-              </a>
+              </Link>
             </div>
           </div>
         </div>

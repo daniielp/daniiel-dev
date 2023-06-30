@@ -1,10 +1,10 @@
+"use client"
 import { EnvelopeIcon, PhoneIcon } from '@heroicons/react/20/solid'
 import React, { useState } from 'react'
-import { trpc } from '../utils/trpc';
+import { siteConfig } from "@/config/site"
 
 const Contact = () => {
     const [characterCount, setCharacterCount] = useState(0)
-    const email = trpc.default.email.useQuery();
 
     const countCharacters = (e: React.FormEvent<HTMLTextAreaElement>) => {
         setCharacterCount(e.currentTarget.value.length)
@@ -136,7 +136,7 @@ const Contact = () => {
                                 </dt>
                                 <dd className="flex text-base text-gray-50">
                                     <EnvelopeIcon className="h-6 w-6 flex-shrink-0 text-gray-200" aria-hidden="true" />
-                                    <span className="ml-3">{email.data?.message}</span>
+                                    <span className="ml-3">{siteConfig.email}</span>
                                 </dd>
                             </dl>
                             <ul role="list" className="mt-8 flex space-x-12">
@@ -259,7 +259,7 @@ const Contact = () => {
                                         <label htmlFor="message" className="block text-sm font-medium text-gray-900">
                                             Besked
                                         </label>
-                                        <span id="message-max" className={`text-sm ${characterCount <= 500 ? "text-gray-500": "text-red-600"}`}>
+                                        <span id="message-max" className={`text-sm ${characterCount <= 500 ? "text-gray-500" : "text-red-600"}`}>
                                             {characterCount}/500 karakter
                                         </span>
                                     </div>
