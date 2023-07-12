@@ -3,15 +3,17 @@ import { useRef } from 'react'
 import { ChevronRightIcon } from '@heroicons/react/20/solid'
 // import Location from './Location'
 import Link from 'next/link'
-import ReactGlobe from '@/components/Globe'
 import useContainerDimensions from '@/hooks/useContainerDimensions'
+import dynamic from 'next/dynamic'
+
+const DynamicGlobe = dynamic(() => import('./Globe'), {
+  ssr: false,
+})
 
 
 const Hero = () => {
   const globeContainer = useRef<HTMLDivElement>(null)
   const { width, height } = useContainerDimensions(globeContainer)
-
-  console.log(width, height)
 
   return (
     <div className="bg-gray-900 pt-10 sm:pt-16 pb-10 sm:pb-16 lg:overflow-hidden lg:pt-8 lg:pb-14">
@@ -42,7 +44,7 @@ const Hero = () => {
             </div>
           </div>
           <div ref={globeContainer} className="mt-12 -mb-16 sm:-mb-48 lg:relative lg:m-0 hidden sm:block">
-            <ReactGlobe width={width} height={height} />
+            <DynamicGlobe width={width} height={height} />
             {/* <Location /> */}
           </div>
         </div>

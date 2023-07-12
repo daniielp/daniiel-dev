@@ -3,6 +3,7 @@ import React, { useRef, useEffect } from 'react'
 import Globe from 'react-globe.gl'
 import countries from "@/lib/globe-data-min.json";
 
+
 const locationData = [
     {
         "text": "Aarhus",
