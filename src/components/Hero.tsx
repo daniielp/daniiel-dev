@@ -1,10 +1,20 @@
+"use client"
+import { useRef } from 'react'
 import { ChevronRightIcon } from '@heroicons/react/20/solid'
-import Location from './Location'
+// import Location from './Location'
 import Link from 'next/link'
+import ReactGlobe from '@/components/Globe'
+import useContainerDimensions from '@/hooks/useContainerDimensions'
+
 
 const Hero = () => {
+  const globeContainer = useRef<HTMLDivElement>(null)
+  const { width, height } = useContainerDimensions(globeContainer)
+
+  console.log(width, height)
+
   return (
-    <div className="bg-gray-900 pt-10 sm:pt-16 lg:overflow-hidden lg:pt-8 lg:pb-14">
+    <div className="bg-gray-900 pt-10 sm:pt-16 pb-10 sm:pb-16 lg:overflow-hidden lg:pt-8 lg:pb-14">
       <div className="mx-auto max-w-7xl lg:px-8">
         <div className="lg:grid lg:grid-cols-2 lg:gap-8">
           <div className="mx-auto max-w-md px-6 sm:max-w-2xl sm:text-center lg:flex lg:items-center lg:px-0 lg:text-left">
@@ -31,8 +41,9 @@ const Hero = () => {
 
             </div>
           </div>
-          <div className="mt-12 -mb-16 sm:-mb-48 lg:relative lg:m-0">
-            <Location />
+          <div ref={globeContainer} className="mt-12 -mb-16 sm:-mb-48 lg:relative lg:m-0 hidden sm:block">
+            <ReactGlobe width={width} height={height} />
+            {/* <Location /> */}
           </div>
         </div>
       </div>
