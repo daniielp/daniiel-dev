@@ -8,6 +8,7 @@ import dynamic from 'next/dynamic'
 
 const DynamicGlobe = dynamic(() => import('./Globe'), {
   ssr: false,
+  loading: () => <div className='w-full h-full p-20 '><div className='bg-slate-700 rounded-full w-full h-full animate-pulse'></div></div>
 })
 
 
