@@ -1,11 +1,12 @@
-import React, { MutableRefObject, RefObject, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
+import type { RefObject } from 'react';
 
 
 
 const useContainerDimensions = (myRef: RefObject<HTMLDivElement>) => {
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 })
 
-  
+
   useEffect(() => {
     const getDimensions = () => ({
       width: myRef?.current?.offsetWidth ?? 0,
