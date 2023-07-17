@@ -7,7 +7,7 @@ import { Icons } from "../Iconts"
 import Link from "next/link"
 
 
-export default function SiteHeader() {
+export function SiteHeader() {
     return (
         <header className="sticky top-0 z-40 w-full border-b bg-white">
             <div className="mx-auto max-w-7xl px-8 lg:px-8 flex h-16 items-center">
