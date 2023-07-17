@@ -1,5 +1,10 @@
 export type SiteConfig = typeof siteConfig
 
+const socials = {
+    github: "https://github.com/shorcy",
+    linkedIn: "https://www.linkedin.com/in/daniiel/"
+}
+
 export const siteConfig = {
     name: "Daniiel",
     title: "Daniel Pedersen - Fullstack Webdeveloper",
@@ -10,27 +15,28 @@ export const siteConfig = {
     ogImage: "https://skateshop.sadmn.com/opengraph-image.png",
     mainNav: [
         {
-            title: "Marketing",
+            title: "Introduktion",
             items: [
                 {
-                    title: "Products",
-                    href: "/products",
-                    description: "All the products we have to offer.",
+                    title: "Projekter",
+                    href: "/#projects",
+                    description: "Se udvalgte projekter.",
                     items: [],
                 },
                 {
-                    title: "Build a Board",
-                    href: "/build-a-board",
-                    description: "Build your own custom skateboard.",
+                    title: "Om mig",
+                    href: "/#about",
+                    description: "Find mine kærneværdier",
                     items: [],
                 },
                 {
-                    title: "Blog",
-                    href: "/blog",
-                    description: "Read our latest blog posts.",
+                    title: "Navnet",
+                    href: "/#daniiel",
+                    description: "Bag om navnet.",
                     items: [],
                 },
             ],
         },
-    ]
+    ],
+    socials
 }

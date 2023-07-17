@@ -1,5 +1,5 @@
 import SiteFooter from "@/components/layout/SiteFooter";
-import SiteHeader from "@/components/layout/SiteHeader";
+import { SiteHeader } from "@/components/layout/SiteHeader";
 import type { PropsWithChildren } from "react";
 
 
