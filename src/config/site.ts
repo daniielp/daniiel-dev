@@ -1,7 +1,7 @@
 export type SiteConfig = typeof siteConfig
 
 const socials = {
-    github: "https://github.com/shorcy",
+    github: "https://github.com/daniielp",
     linkedIn: "https://www.linkedin.com/in/daniiel/"
 }
 
