@@ -45,7 +45,7 @@ export function MainNav({ items }: MainNavProps) {
                 <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
                   <li className="row-span-3">
                     <NavigationMenuLink asChild>
-                      <a
+                      <Link
                         aria-label="Home"
                         className="flex h-full w-full select-none flex-col justify-end rounded-md hover:bg-gray-100 p-6 no-underline outline-none focus:shadow-md"
                         href="/"
@@ -57,7 +57,7 @@ export function MainNav({ items }: MainNavProps) {
                         <p className="text-sm leading-tight text-gray-500">
                           {siteConfig.description}
                         </p>
-                      </a>
+                      </Link>
                     </NavigationMenuLink>
                   </li>
                   {items[0].items.map((item) => (
@@ -124,7 +124,6 @@ const ListItem = React.forwardRef<
       <NavigationMenuLink asChild>
         <Link
           ref={ref}
-          scroll={true}
           href={String(href)}
           className={classNames(
             "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-gray-100 hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",

@@ -63,7 +63,7 @@ export default function RootLayout({
             <head>
                 <Script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="ed830906-8ce2-4f30-a67a-2f0a4f263f4e" data-blockingmode="auto" type="text/javascript"></Script>
             </head>
-            <body >
+            <body className="bg-zinc-50">
                 {children}
                 <TailwindIndicator />
             </body>

@@ -3,13 +3,13 @@ import { MainNav } from '@/components/layout/MainNav'
 import { MobileNav } from '@/components/layout/MobileNav'
 import { Button } from "../ui/Button"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger, TooltipArrow } from "../ui/Tooltip"
-import { Icons } from "../Iconts"
+import { Icons } from "../Icons"
 import Link from "next/link"
 
 
 export function SiteHeader() {
     return (
-        <header className="sticky top-0 z-40 w-full border-b bg-white">
+        <header className="sticky top-0 z-40 w-full border-b bg-zinc-50">
             <div className="mx-auto max-w-7xl px-8 lg:px-8 flex h-16 items-center">
                 <MainNav items={siteConfig.mainNav} />
                 <MobileNav
