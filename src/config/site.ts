@@ -1,7 +1,7 @@
 export type SiteConfig = typeof siteConfig
 
 const socials = {
-    github: "https://github.com/shorcy",
+    github: "https://github.com/daniielp",
     linkedIn: "https://www.linkedin.com/in/daniiel/"
 }
 
@@ -12,7 +12,7 @@ export const siteConfig = {
         "With a background as a web developer and a good eye to UI/UX. Daniel Pedersen create groth and is dedicated to frontend development.",
     url: "https://daniiel.dev/",
     email: process.env.NEXT_PUBLIC_EMAIL,
-    ogImage: "https://skateshop.sadmn.com/opengraph-image.png",
+    ogImage: "https://daniiel.dev/images/daniiel-avatar.jpg",
     mainNav: [
         {
             title: "Introduktion",
