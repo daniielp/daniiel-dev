@@ -37,6 +37,10 @@ export const siteConfig = {
                 },
             ],
         },
+        {
+            title: "Kontakt",
+            href: "/kontakt"
+        }
     ],
     socials
 }

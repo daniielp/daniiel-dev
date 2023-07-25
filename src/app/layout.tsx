@@ -5,7 +5,7 @@ import Script from "next/script"
 import { TailwindIndicator } from "@/components/tailwind-indicator"
 
 
-export const metaData: Metadata = {
+export const metadata: Metadata = {
     title: {
         default: siteConfig.title,
         template: `%s - ${siteConfig.name}`,

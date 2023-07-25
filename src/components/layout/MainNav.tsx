@@ -15,7 +15,7 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/NavigationMenu"
-import Logo from "../Logo"
+import { Icons } from "../Icons"
 
 interface MainNavProps {
   items?: MainNavItem[]
@@ -29,7 +29,7 @@ export function MainNav({ items }: MainNavProps) {
         href="/"
         className="hidden items-center space-x-2 lg:flex"
       >
-        <Logo className="h-6 w-6" aria-hidden="true" />
+        <Icons.logo className="h-6 w-6" aria-hidden="true" />
         <span className="hidden font-bold lg:inline-block">
           {siteConfig.name}
         </span>
@@ -50,7 +50,7 @@ export function MainNav({ items }: MainNavProps) {
                         className="flex h-full w-full select-none flex-col justify-end rounded-md hover:bg-gray-100 p-6 no-underline outline-none focus:shadow-md"
                         href="/"
                       >
-                        <Logo className="h-6 w-6" aria-hidden="true" />
+                        <Icons.logo className="h-6 w-6" aria-hidden="true" />
                         <div className="mb-2 mt-4 text-lg font-medium text-gray-900">
                           {siteConfig.name}
                         </div>
