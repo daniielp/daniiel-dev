@@ -1,7 +1,7 @@
 import { siteConfig } from "@/config/site"
 import { MainNav } from '@/components/layout/MainNav'
 import { MobileNav } from '@/components/layout/MobileNav'
-import { Button } from "../ui/Button"
+import { Button } from "@/components/ui/Button"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger, TooltipArrow } from "../ui/Tooltip"
 import { Icons } from "../Icons"
 import Link from "next/link"
@@ -34,6 +34,7 @@ export function SiteHeader() {
                             </Tooltip>
                         </TooltipProvider>
                         <TooltipProvider>
+
                             <Tooltip>
                                 <TooltipTrigger asChild>
                                     <Button variant="secondary" asChild>
