@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     authors: [
         {
             name: "Daniel Pedersen",
-            url: "https://github.com/shorcy"
+            url: siteConfig.socials.github
         }
     ],
     creator: "daniiel",
