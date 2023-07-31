@@ -1,3 +1,5 @@
+import { MainNavItem } from "@/types"
+
 export type SiteConfig = typeof siteConfig
 
 const socials = {
@@ -7,9 +9,9 @@ const socials = {
 
 export const siteConfig = {
     name: "Daniiel",
-    title: "Daniel Pedersen - Fullstack Webdeveloper",
+    title: "Daniel Pedersen - Din kreative frontend developer - UI/UX Designer",
     description:
-        "With a background as a web developer and a good eye to UI/UX. Daniel Pedersen create groth and is dedicated to frontend development.",
+        "Jeg designer oplevelser med konsistente flows som tiltrækker nye kunder til danske forretninger. Min tilgang til at designe enestående brugeroplevelser og udvikle intuitive frontends.",
     url: "https://daniiel.dev/",
     email: process.env.NEXT_PUBLIC_EMAIL,
     ogImage: "https://daniiel.dev/images/daniiel-avatar.jpg",
@@ -37,10 +39,10 @@ export const siteConfig = {
                 },
             ],
         },
-        {
-            title: "Kontakt",
-            href: "/kontakt"
-        }
-    ],
+        // {
+        //     title: "Kontakt",
+        //     href: "/kontakt"
+        // }
+    ] satisfies MainNavItem[],
     socials
 }
