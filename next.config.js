@@ -1,11 +1,9 @@
 // @ts-check
-import { withContentlayer } from 'next-contentlayer'
-import "./src/env.mjs"
-
+const {withContentlayer } = require("next-contentlayer")
 
 /** @type {import("next").NextConfig} */
 const config = {
-  pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'mdx'],
+  // pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'mdx'],
   reactStrictMode: true,
   swcMinify: true,
   eslint: {
@@ -16,4 +14,4 @@ const config = {
   },
 };
 
-export default withContentlayer(config);
+module.exports = withContentlayer(config);
