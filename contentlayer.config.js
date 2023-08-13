@@ -1,8 +1,9 @@
+// @ts-nocheck
 import { defineDocumentType, makeSource } from 'contentlayer/source-files'
-import rehypeAutolinkHeadings from 'rehype-autolink-headings'
-import rehypePrettyCode from 'rehype-pretty-code'
-import rehypeSlug from 'rehype-slug'
-import remarkGfm from 'remark-gfm'
+import rehypeAutolinkHeadings from "rehype-autolink-headings"
+import rehypePrettyCode from "rehype-pretty-code"
+import rehypeSlug from "rehype-slug"
+import remarkGfm from "remark-gfm"
 
 /** @type {import('contentlayer/source-files').ComputedFields} */
 const computedFields = {
@@ -13,6 +14,16 @@ const computedFields = {
     slugAsParams: {
         type: "string",
         resolve: (doc) => doc._raw.flattenedPath.split("/").slice(1).join("/"),
+    },
+    readingTime: {
+        type: "number",
+        resolve: (doc) => {
+            const content = doc.body.raw
+            const wordsPerMinute = 200
+            const numberOfWords = content.split(/\s/g).length
+            const minutes = numberOfWords / wordsPerMinute
+            return Math.ceil(minutes)
+        },
     },
 }
 
@@ -58,23 +69,23 @@ export const Author = defineDocumentType(() => ({
     filePathPattern: `authors/**/*.mdx`,
     contentType: "mdx",
     fields: {
-      title: {
-        type: "string",
-        required: true,
-      },
-      description: {
-        type: "string",
-      },
-      twitter: {
-        type: "string",
-        required: true,
-      },
+        title: {
+            type: "string",
+            required: true,
+        },
+        description: {
+            type: "string",
+        },
+        twitter: {
+            type: "string",
+            required: true,
+        },
     },
     computedFields,
-  }))
+}))
 
 export default makeSource({
-    contentDirPath: "./src/content",
+    contentDirPath: "./content",
     documentTypes: [Post, Author],
     mdx: {
         remarkPlugins: [remarkGfm],
