@@ -1,6 +1,8 @@
 import About from "@/components/About";
 import Daniiel from "@/components/Daniiel";
+// import Hero from "@/components/Hero";
 import Hero from "@/components/elements/hero"
+// import HeroGlobe from "@/components/elements/hero/HeroGlobe";
 import Projects from "@/components/Projects";
 
 export default async function IndexPage() {

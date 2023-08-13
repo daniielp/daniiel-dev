@@ -1,24 +1,26 @@
 import { ChevronRightIcon } from '@heroicons/react/20/solid'
-import { NewspaperIcon, PhoneIcon, WindowIcon } from '@heroicons/react/24/outline'
+import { NewspaperIcon, WindowIcon } from '@heroicons/react/24/outline'
+import Image from "next/image"
+import { siteConfig } from '@/config/site'
 
 const supportLinks = [
     {
       name: 'UI/UX',
-      href: '#',
+      subject: 'Hjælp til forbedring af brugeroplevelse (UI/UX)',
       description:
         'UI/UX er vigtigt at tænke over hvordan brugerne vil interagere med siden og hvordan man kan gøre det så brugervenligt som muligt. UI (User Interface) beskæftiger sig med designet og layoutet af hjemmesiden, mens UX (User Experience) beskæftiger sig med hvordan brugerne oplever og interagerer med siden.',
       icon: NewspaperIcon,
     },
     {
       name: 'Development',
-      href: '#',
+      subject: 'Hjælp til advanceret kodning',
       description:
         'En udvikler som jeg med erfaring i både frontend og backend development (fullstack) giver flere fordele. Det giver mulighed for at skræddersy funktionaliteten og sikre en god brugervenlighed. Derudover sikrer jeg dig et højt kvalitet produkt med mine mere end 7 års praktisk erfaring, og 3 års erhverserafring.',
       icon: WindowIcon,
     },
     {
       name: 'Analytics',
-      href: '#',
+      subject: 'Hjælp til opsætning af analytics',
       description:
         'Hvordan skal man kunne optimere sin side uden data? Det er der analytics software som Google Analytics kommer ind i billedet. Der har jeg blandt andet arbejdet med at måle på de ting der giver mening for ens virksomhed. Alt fra interaktioner til hvilke devices brugerne befinder sig på.',
       icon: NewspaperIcon,
@@ -31,11 +33,7 @@ const About = () => {
           {/* Header */}
           <div className="relative bg-gray-800 pb-32" id="about">
             <div className="absolute inset-0">
-              <img
-                className="h-full w-full object-cover"
-                src="https://images.unsplash.com/photo-1525130413817-d45c1d127c42?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1920&q=60&&sat=-100"
-                alt=""
-              />
+              <Image className="h-full w-full object-cover" src="/images/overlay-about.jpg" alt="overlay about" fill />
               <div className="absolute inset-0 bg-gray-800 mix-blend-multiply" aria-hidden="true" />
             </div>
             <div className="relative mx-auto max-w-7xl py-24 px-6 sm:py-32 lg:px-8">
@@ -62,7 +60,7 @@ const About = () => {
                     <p className="mt-4 text-base text-gray-500">{link.description}</p>
                   </div>
                   <div className="rounded-bl-2xl rounded-br-2xl bg-gray-50 p-6 md:px-8">
-                    <a href={link.href} className="text-base flex content-center items-center font-medium text-indigo-700 hover:text-indigo-600">
+                    <a href={`mailto:${siteConfig.email}?subject=${link.subject  ?? ''}`} className="text-base flex content-center items-center font-medium text-indigo-700 hover:text-indigo-600">
                       Har du brug for hjælp? Tag kontakt<span aria-hidden="true"> <ChevronRightIcon className="ml-2 h-5 w-5" aria-hidden="true" /></span>
                     </a>
                   </div>

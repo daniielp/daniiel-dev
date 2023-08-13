@@ -1,5 +1,9 @@
 "use client"
+import { InboxIcon } from "@heroicons/react/20/solid"
+import Avatar from "./Avatar"
+import { Tab } from '@headlessui/react'
 import { useState } from "react"
+import Image from "next/image"
 
 const slides = [
     {
@@ -14,72 +18,18 @@ const slides = [
         ImageUrl: "/images/novicell-mockup.png",
         Company: "Novicell"
     },
-    {
-        Quote: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        Author: "Mark Andersen, CEO hos Admill",
-        ImageUrl: "/images/default-mockup.png",
-        Company: "Admill",
-    },
-
 ]
 
 const Projects = () => {
     const [selectedIndex, setSelectedIndex] = useState(0)
 
+    function classNames(...classes: string[]) {
+        return classes.filter(Boolean).join(' ')
+    }
+
     return (
         <>
-            <div className="bg-white py-32">
-                <div className="mx-auto max-w-7xl px-6 lg:px-8">
-                    <div className="mx-auto flex max-w-2xl flex-col items-center justify-between gap-16 lg:mx-0 lg:max-w-none lg:flex-row">
-                        <div className="w-full lg:max-w-lg lg:flex-auto">
-                            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-                                Projekter
-                            </h2>
-                            <p className="mt-6 text-xl leading-8 text-gray-600">
-                                For at sikre dig at du tager den rigtige beslutning når du skal vælge den næste medarbejder. Så er der her lige nogle eksempler på tidligere projekter og cases jeg har arbejdet med.
-                            </p>
-                            <img
-                                src={slides[0]?.ImageUrl}
-                                alt=""
-                                className="mt-16 aspect-[6/5] w-full rounded-2xl bg-gray-50 object-cover lg:aspect-auto lg:h-[34.5rem]"
-                            />
-                        </div>
-                        <div className="w-full lg:max-w-xl lg:flex-auto">
-                            <h3 className="sr-only">Fremviste projekter</h3>
-                            <ul className="-my-8 divide-y divide-gray-100">
-                                {slides.map((project) => (
-                                    <li key={project.Author} className="py-8">
-                                        <dl className="relative flex flex-wrap gap-x-3">
-                                            <dt className="sr-only">Author</dt>
-                                            <dd className="w-full flex-none text-lg font-semibold tracking-tight text-gray-900">
-                                                <span>
-                                                    {project.Author}
-                                                    <span className="absolute inset-0" aria-hidden="true" />
-                                                </span>
-                                            </dd>
-                                            <dt className="sr-only">Udtagelse</dt>
-                                            <dd className="mt-2 w-full flex-none text-base leading-7 text-gray-600">{project.Quote}</dd>
-                                            <dt className="sr-only">Company</dt>
-                                            <dd className="mt-4 flex items-center gap-x-3 text-base leading-7 text-gray-500">
-                                                <svg viewBox="0 0 2 2" className="h-0.5 w-0.5 flex-none fill-gray-300" aria-hidden="true">
-                                                    <circle cx={1} cy={1} r={1} />
-                                                </svg>
-                                                {project.Company}
-                                            </dd>
-                                        </dl>
-                                    </li>
-                                ))}
-                            </ul>
-                            {/* <div className="mt-8 flex border-t border-gray-100 pt-8">
-                                <a href="#" className="text-sm font-semibold leading-6 text-indigo-600 hover:text-indigo-500">
-                                    Vis alle projekter <span aria-hidden="true">&rarr;</span>
-                                </a>
-                            </div> */}
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {/* <div className="relative overflow-hidden pt-16" id="projects">
+            <div className="relative overflow-hidden pt-16" id="projects">
                 <div className="relative overflow-hidden pt-16 pb-32">
                     <div className="lg:mx-auto lg:grid lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-2 lg:gap-24 lg:px-8">
                         <Tab.Group selectedIndex={selectedIndex} onChange={setSelectedIndex}>
@@ -129,11 +79,7 @@ const Projects = () => {
                                 <Tab.Panels className="-mr-48 pl-6 md:-mr-16 lg:relative lg:m-0 lg:h-full lg:px-0">
                                     {slides.map((slide) => (
                                         <Tab.Panel key={slide.Author}>
-                                            <img
-                                                className="w-full rounded-xl  lg:absolute lg:left-0 lg:h-full lg:w-auto lg:max-w-none"
-                                                src={slide.ImageUrl}
-                                                alt="Inbox user interface"
-                                            />
+                                            <Image className="w-full rounded-xl  lg:absolute lg:left-0 lg:h-full lg:w-auto lg:max-w-none" src={slide.ImageUrl} alt="Inbox user interface" width="600" height="550" />
                                         </Tab.Panel>
                                     ))}
 
@@ -144,7 +90,7 @@ const Projects = () => {
                     </div>
                 </div>
 
-            </div> */}
+            </div>
         </>
     )
 }

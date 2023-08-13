@@ -8,10 +8,6 @@ const config = {
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'mdx'],
   reactStrictMode: true,
   swcMinify: true,
-  i18n: {
-    locales: ["en"],
-    defaultLocale: "en",
-  },
   eslint: {
     ignoreDuringBuilds: true,
   },

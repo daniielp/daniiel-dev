@@ -49,7 +49,7 @@ const Footer = () => {
         <div className="mt-8 border-t border-gray-900/10 pt-8 md:flex md:items-center md:justify-between">
           <div className="flex space-x-6 md:order-2">
             {navigation.legal.map((item) => (
-              <a key={item.name} href={item.href} className="text-gray-400 hover:text-gray-500">
+              <a key={item.name} href={item.href} className="text-gray-500 hover:text-gray-600">
                 <span className="">{item.name}</span>
               </a>
             ))}
