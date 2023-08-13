@@ -13,7 +13,7 @@ const config = {
   },
   experimental: {
     mdxRs: true
-  }
+  },
 };
 
 export default withContentlayer(config);
