@@ -1,9 +1,11 @@
-import { ChevronLeftIcon } from "@heroicons/react/24/outline"
+import { CheckIcon, ChevronLeftIcon, ClipboardIcon } from "@heroicons/react/24/outline"
 import React from "react"
 export type IconProp = React.HtmlHTMLAttributes<SVGElement>
 
 export const Icons = {
   chevronLeft: ChevronLeftIcon,
+  check: CheckIcon,
+  copy: ClipboardIcon,
   logo: ({ ...props }: IconProp) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
