@@ -108,8 +108,8 @@ export default async function PostPage({ params }: PostPageProps) {
               Udgivet den {formatDate(post.date)}
             </time>
           )}
-          {/* {post.date ? <div>•</div> : null} */}
-          {/* <div>{post.readingTime}min</div> */}
+          {post.date ? <div>•</div> : null}
+          <div>{post.readingTime}min</div>
         </div>
         <h1 className="mt-2 inline-block text-4xl font-bold leading-tight lg:text-5xl">
           {post.title}
@@ -143,13 +143,12 @@ export default async function PostPage({ params }: PostPageProps) {
         ) : null} */}
       </div>
       {post.image && (
-        <Image
+        <img
           src={post.image}
           alt={post.title}
           width={720}
           height={405}
           className="my-8 rounded-md border bg-muted transition-colors"
-          priority
         />
       )}
       <Mdx code={post.body.code} />
