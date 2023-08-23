@@ -31,7 +31,7 @@ const About = () => {
     return (
         <div>
           {/* Header */}
-          <div className="relative bg-gray-800 pb-32" id="about">
+          <div className="relative bg-gray-900 pb-32" id="about">
             <div className="absolute inset-0">
               <Image className="h-full w-full object-cover" src="/images/overlay-about.jpg" alt="overlay about" fill />
               <div className="absolute inset-0 bg-gray-800 mix-blend-multiply" aria-hidden="true" />
