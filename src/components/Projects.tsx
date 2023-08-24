@@ -2,6 +2,8 @@
 import { useState } from "react"
 import { Icons } from "./Icons"
 import Image from 'next/image'
+import { Button } from "./ui/Button"
+import Link from "next/link"
 
 const slides = [
     {
@@ -37,12 +39,11 @@ const Projects = () => {
                                 For at sikre dig at du tager den rigtige beslutning når du skal vælge den næste medarbejder. Så er der her lige nogle eksempler på tidligere projekter og cases jeg har arbejdet med.
                             </p>
                             <div className="mt-8">
-                                <a
-                                    href="#"
-                                    className="inline-flex rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                                >
-                                    Se andre projekter
-                                </a>
+                                <Button asChild>
+                                    <Link href="/projekter">
+                                        Se andre projekter
+                                    </Link>
+                                </Button>
                             </div>
                             <figure className="mt-16 border-l border-gray-200 pl-8 text-gray-600">
                                 <blockquote className="text-base leading-7">

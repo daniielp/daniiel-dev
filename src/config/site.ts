@@ -42,6 +42,10 @@ export const siteConfig = {
         {
             title: "Blog",
             href: "/blog",
+        },
+        {
+            title: "Projekter",
+            href: "/projekter",
         }
         // {
         //     title: "Kontakt",

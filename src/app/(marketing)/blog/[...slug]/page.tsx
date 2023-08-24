@@ -8,7 +8,7 @@ import { Mdx } from '@/components/mdx/mdxComponents'
 import Image from "next/image"
 import Link from "next/link"
 import { Shell } from '@/components/shells/Shell'
-import { buttonVariants } from '@/components/ui/Button'
+import { Button, buttonVariants } from '@/components/ui/Button'
 import { Icons } from '@/components/Icons'
 
 interface PostPageProps {
@@ -155,11 +155,14 @@ export default async function PostPage({ params }: PostPageProps) {
       {/* <Separator className="my-10" />
       <MdxPager currentItem={post} allItems={allPosts} /> */}
       <div className="flex justify-center py-5">
-        <Link href="/blog" className={classNames(buttonVariants({ variant: "ghost" }))}>
-          <Icons.chevronLeft className="mr-2 h-4 w-4" aria-hidden="true" />
-          Se alle indlæg
-          <span className="sr-only">Se alle indlæg</span>
-        </Link>
+        <Button asChild variant="ghost">
+          <Link href="/blog">
+            <Icons.chevronLeft className="mr-2 h-4 w-4" aria-hidden="true" />
+            Se alle indlæg
+            <span className="sr-only">Se alle indlæg</span>
+          </Link>
+
+        </Button>
       </div>
     </Shell>
   )
