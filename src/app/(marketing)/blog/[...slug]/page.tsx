@@ -111,7 +111,7 @@ export default async function PostPage({ params }: PostPageProps) {
           {post.date ? <div>•</div> : null}
           <div>{post.readingTime}min</div>
         </div>
-        <h1 className="mt-2 inline-block text-4xl font-bold leading-tight lg:text-5xl">
+        <h1 className="mt-2 mb-6 inline-block text-4xl font-bold leading-tight lg:text-5xl">
           {post.title}
         </h1>
         {/* {authors?.length ? (
