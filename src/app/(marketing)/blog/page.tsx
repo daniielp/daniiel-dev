@@ -11,7 +11,12 @@ export default function BlogPage() {
         </p>
       </div>
       <div className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-        {allPosts.filter(x => x.published).map((post) => (
+        {allPosts.filter(x => x.published).sort((a, b) => {
+          const dateA = new Date(a.date);
+          const dateB = new Date(b.date);
+
+          return dateA > dateB ? -1 : 1;
+        }).map((post) => (
           <article key={post._id} className="flex max-w-xl flex-col items-start justify-between">
             <div className="flex items-center gap-x-4 text-xs">
               <time dateTime={post.date} className="text-gray-500">

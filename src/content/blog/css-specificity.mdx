@@ -1,0 +1,27 @@
+---
+title: CSS Specificity scale
+description: Forstå finesserne i CSS-selectorprioritet med fokus på scoring. Lær at skrive effektive, konfliktfri selectors for pixel-perfekt webdesign.
+published: true
+date: "2023-09-12"
+authors:
+  - daniiel
+---
+Specificitet er den metode, som browsere bruger til at finde ud af, hvilken CSS-regel der er vigtigst for en bestemt ting på en hjemmeside. Denne vigtige regel bestemmer, hvordan tingene skal se ud. Specificitetsalgoritmen beregner, hvor vigtig en CSS-regel er ved at se på, hvor meget den betyder i forhold til andre regler. På den måde hjælper den med at afgøre, hvilken regel der skal bruges, når der er flere regler, der konkurrerer om at ændre tingene på hjemmesiden.
+
+<img src="/images/blog/css-specificity.png" alt="CSS Specificity algorithm" />
+
+## Specificity scoring
+
+Hver selector-regel tildeles en score. Specificitet kan betragtes som en samlet score, og hver selector-type bidrager med point til denne score. Selectoren med den højeste score bliver vinderen.
+Nedenfor ville der kunne ses hvad hver selector giver af points.
+
+| Selector                                   | Points |
+|--------------------------------------------|--------|
+| Universal Selector (*)                     | 0      |
+| Element or pseudo-element selector         | 1      |
+| Class, pseudo-class and attribute selector | 10     |
+| Id selector                                | 100    |
+| Inline style attribute                     | 1000   |
+| !important                                 | 10000  |
+
+For en mere detaljeret forklaring af, hvordan specificitet fungerer, kan du læse [web.dev: Specificity](https://web.dev/learn/css/specificity/).

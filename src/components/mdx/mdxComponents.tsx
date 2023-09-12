@@ -71,6 +71,8 @@ const components = {
     <a
       className={classNames("font-medium underline underline-offset-4", className)}
       {...props}
+      target="_blank"
+      rel="nofollow"
     />
   ),
   p: ({ className, ...props }: React.HTMLAttributes<HTMLParagraphElement>) => (
