@@ -60,14 +60,17 @@ const Projects = () => {
                             </figure>
                         </div>
                     </div>
-                    <Image
-                        src="/images/designarchitects.jpg"
-                        title="Eksamens projekt"
-                        alt="Design Architects live preview"
-                        width={2432}
-                        height={1442}
-                        className="w-[48rem] max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem] md:-ml-4 lg:ml-0"
-                    />
+                    <div className="relative">
+                        <Image
+                            src="/images/designarchitects.jpg"
+                            title="Eksamens projekt"
+                            alt="Design Architects live preview"
+                            width={2432}
+                            height={1442}
+                            className="w-[48rem] max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem] md:-ml-4 lg:ml-0"
+                        />
+                        <a href="https://designarchitects.daniiel.dev/"><span className="sr-only">Besøg websitet</span><span className="absolute inset-0 w-[48rem] max-w-none sm:w-[57rem] md:-ml-4 lg:ml-0"></span></a>
+                    </div>
                 </div>
             </div>
         </div >
