@@ -6,6 +6,7 @@ import Link from 'next/link'
 import useContainerDimensions from '@/hooks/useContainerDimensions'
 import dynamic from 'next/dynamic'
 import { classNames } from '@/lib/utils'
+import Image from 'next/image'
 
 const DynamicGlobe = dynamic(() => import('../../Globe'), {
     ssr: false,
@@ -47,8 +48,6 @@ const HeroGlobe = React.forwardRef<HTMLDivElement, HeroGlobeProps>(
                                 </div>
                                 <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl lg:mt-6 xl:text-6xl">
                                     {heading}
-                                    {/* <span className="block">Fullstack udvikler </span>
-                                    <span className="block text-indigo-400">baseret i Århus</span> */}
                                 </h1>
                                 <p className="mt-3 text-base text-gray-300 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
                                     {description}
@@ -56,7 +55,7 @@ const HeroGlobe = React.forwardRef<HTMLDivElement, HeroGlobeProps>(
                             </div>
                         </div>
                         <div ref={globeContainer} className="mt-12 -mb-16 sm:-mb-48 lg:relative lg:m-0 hidden sm:block">
-                            <DynamicGlobe width={width} height={height} />
+                            <Image width={600} height={600} src="/images/denmark-animation.svg" alt="Ping animation for aarhus, Denmark" />
                         </div>
                     </div>
                 </div>

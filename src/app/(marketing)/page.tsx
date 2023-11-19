@@ -22,7 +22,7 @@ export default async function IndexPage() {
             />
             <Projects />
             <About />
-            <Daniiel />  
+            <Daniiel />
         </>
     )
 }
