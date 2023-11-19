@@ -54,7 +54,7 @@ const HeroGlobe = React.forwardRef<HTMLDivElement, HeroGlobeProps>(
                                 </p>
                             </div>
                         </div>
-                        <div ref={globeContainer} className="mt-12 -mb-16 sm:-mb-48 lg:relative lg:m-0 hidden sm:block">
+                        <div ref={globeContainer} className="-mb-16 sm:-mb-48 lg:relative lg:m-0">
                             <Image width={600} height={600} src="/images/denmark-animation.svg" alt="Ping animation for aarhus, Denmark" />
                         </div>
                     </div>
