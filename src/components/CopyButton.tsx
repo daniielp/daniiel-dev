@@ -2,14 +2,14 @@
 
 import * as React from "react"
 
-import { Button, type ButtonProps } from "@/components/ui/Button"
 import { Icons } from "@/components/Icons"
+import { BasicButton, type ButtonProps } from "./ui/BasicButton"
 
 export function CopyButton({ value, ...props }: ButtonProps) {
   const [isCopied, setIsCopied] = React.useState(false)
 
   return (
-    <Button
+    <BasicButton
       variant="outline"
       size="sm"
       className="absolute right-5 top-4 z-20 h-6 w-6 px-0"
@@ -29,6 +29,6 @@ export function CopyButton({ value, ...props }: ButtonProps) {
       <span className="sr-only">
         {isCopied ? "Copied" : "Copy to clipboard"}
       </span>
-    </Button>
+    </BasicButton>
   )
 }
