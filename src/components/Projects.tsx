@@ -1,9 +1,7 @@
 "use client"
-import { useState } from "react"
 import { Icons } from "./Icons"
 import Image from 'next/image'
 import { Button } from "./ui/Button"
-import Link from "next/link"
 
 const slides = [
     {
@@ -21,12 +19,6 @@ const slides = [
 ]
 
 const Projects = () => {
-    const [selectedIndex, setSelectedIndex] = useState(0)
-
-    function classNames(...classes: string[]) {
-        return classes.filter(Boolean).join(' ')
-    }
-
     return (
         <div className="overflow-hidden bg-white py-24 sm:py-32">
             <div className="mx-auto max-w-7xl px-6 lg:px-8" id="projects">
@@ -39,10 +31,8 @@ const Projects = () => {
                                 For at sikre dig at du tager den rigtige beslutning når du skal vælge den næste medarbejder. Så er der her lige nogle eksempler på tidligere projekter og cases jeg har arbejdet med.
                             </p>
                             <div className="mt-8">
-                                <Button asChild>
-                                    <Link href="/projekter">
-                                        Se andre projekter
-                                    </Link>
+                                <Button href="/projekter">
+                                    Se andre projekter
                                 </Button>
                             </div>
                             <figure className="mt-16 border-l border-gray-200 pl-8 text-gray-600">

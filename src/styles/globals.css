@@ -2,8 +2,193 @@
 @tailwind components;
 @tailwind utilities;
 
-pre[class*='language-'] {
-  color: theme('colors.slate.50');
+@layer utilities {
+  .btn {
+    @apply text-white;
+    @apply inline-block;
+    @apply bg-indigo-500;
+    @apply flex-1;
+    @apply px-4;
+    @apply py-2;
+    @apply text-center;
+    @apply cursor-pointer;
+    @apply rounded-full;
+    @apply font-normal;
+    @apply relative;
+    @apply z-0;
+    @apply no-underline;
+    @apply align-middle;
+  }
+
+  .btn:before {
+    @apply block;
+    @apply absolute;
+    @apply w-full;
+    @apply h-full;
+    @apply top-0;
+    @apply left-0;
+    background: linear-gradient(
+      135deg,
+      theme("colors.white") 50%,
+      transparent 50%
+    );
+    background-position: 100% 0%;
+    background-size: 350%;
+    content: "";
+    transition: background-position ease-in-out 350ms;
+    @apply rounded-full;
+    @apply border;
+    @apply border-indigo-500;
+    @apply z-10;
+  }
+
+  .btn:after {
+    @apply text-indigo-500;
+    @apply block;
+    @apply absolute;
+    @apply w-full;
+    @apply h-full;
+    @apply top-0;
+    @apply left-0;
+    background: linear-gradient(
+      135deg,
+      theme("colors.indigo.500") 50%,
+      theme("colors.white") 50%
+    );
+    background-position: 100% 0%;
+    background-size: 250%;
+    -webkit-text-fill-color: rgba(0, 0, 0, 0);
+    padding: inherit;
+    content: attr(data-content);
+    transition: background-position ease-in-out 350ms;
+    @apply bg-clip-text;
+    @apply z-20;
+  }
+
+  .btn:hover::before,
+  .btn:hover::after,
+  .btn:active::before,
+  .btn:active::after,
+  .btn:focus::before,
+  .btn:focus::after {
+    background-position: 0% 0%;
+  }
+
+  .btn-secondary {
+    @apply bg-yellow-500;
+  }
+
+  .btn-secondary:before {
+    @apply border-yellow-500;
+  }
+
+  .btn-secondary:after {
+    @apply text-yellow-500;
+    background: linear-gradient(
+      135deg,
+      theme("colors.yellow.500") 50%,
+      theme("colors.white") 50%
+    );
+    background-position: 100% 0%;
+    background-size: 250%;
+    transition: background-position ease-in-out 350ms;
+    @apply bg-clip-text;
+    @apply z-20;
+  }
+
+  .btn-destructive {
+    @apply bg-red-500;
+  }
+
+  .btn-destructive:before {
+    @apply border-red-500;
+    background: linear-gradient(
+      135deg,
+      theme("colors.red.800") 50%,
+      transparent 50%
+    );
+    background-position: 100% 0%;
+    background-size: 350%;
+  }
+
+  .btn-destructive:after {
+    background: linear-gradient(
+      135deg,
+      theme("colors.white") 50%,
+      theme("colors.transparent") 50%
+    );
+    background-position: 100% 0%;
+    background-size: 250%;
+    transition: background-position ease-in-out 350ms;
+    @apply bg-clip-text;
+    @apply z-20;
+  }
+
+  .btn-destructive:hover::before {
+    @apply border-red-800
+  }
+
+  .btn-outline {
+    @apply bg-transparent;
+    @apply text-indigo-500;
+  }
+
+  .btn-outline:before {
+    @apply border-indigo-500;
+    background: linear-gradient(
+      135deg,
+      theme("colors.indigo.500") 50%,
+      transparent 50%
+    );
+    background-position: 100% 0%;
+    background-size: 350%;
+  }
+
+  .btn-outline:after {
+    background: linear-gradient(
+      135deg,
+      theme("colors.white") 50%,
+      theme("colors.transparent") 50%
+    );
+    background-position: 100% 0%;
+    background-size: 250%;
+    transition: background-position ease-in-out 350ms;
+    @apply bg-clip-text;
+    @apply z-20;
+  }
+
+  .btn-ghost {
+    @apply bg-transparent;
+    @apply text-indigo-500;
+  }
+
+  .btn-ghost:before {
+    @apply border-none;
+    background: linear-gradient(
+      135deg,
+      theme("colors.indigo.500") 50%,
+      transparent 50%
+    );
+    background-position: 100% 0%;
+    background-size: 350%;
+  }
+
+  .btn-ghost:after {
+    background: linear-gradient(
+      135deg,
+      theme("colors.white") 50%,
+      theme("colors.transparent") 50%
+    );
+    background-position: 100% 0%;
+    background-size: 250%;
+    transition: background-position ease-in-out 350ms;
+    @apply bg-clip-text;
+    @apply z-20;
+  }
+}
+
+pre[class*="language-"] {
+  color: theme("colors.slate.50");
 }
 
 .token.tag,
@@ -12,7 +197,7 @@ pre[class*='language-'] {
 .token.selector .class,
 .token.selector.class,
 .token.function {
-  color: theme('colors.pink.400');
+  color: theme("colors.pink.400");
 }
 
 .token.attr-name,
@@ -20,36 +205,32 @@ pre[class*='language-'] {
 .token.rule,
 .token.pseudo-class,
 .token.important {
-  color: theme('colors.slate.300');
+  color: theme("colors.slate.300");
 }
 
 .token.module {
-  color: theme('colors.pink.400');
+  color: theme("colors.pink.400");
 }
 
 .token.attr-value,
 .token.class,
 .token.string,
 .token.property {
-  color: theme('colors.sky.300');
+  color: theme("colors.sky.300");
 }
 
 .token.punctuation,
 .token.attr-equals {
-  color: theme('colors.slate.500');
+  color: theme("colors.slate.500");
 }
 
 .token.unit,
 .language-css .token.function {
-  color: theme('colors.teal.200');
+  color: theme("colors.teal.200");
 }
 
 .token.comment,
 .token.operator,
 .token.combinator {
-  color: theme('colors.slate.400');
+  color: theme("colors.slate.400");
 }
-
-
-
-

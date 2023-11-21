@@ -9,6 +9,7 @@ import Link from "next/link"
 import Logo from "../Logo"
 import { type NavItem } from "@/types"
 import { NavigationMenu, NavigationMenuLink } from "../ui/NavigationMenu"
+import { BasicButton } from "../ui/BasicButton"
 
 export const menuItems = [
     {
@@ -40,11 +41,11 @@ export function SiteHeader() {
                 <TooltipProvider>
                     <Tooltip>
                         <TooltipTrigger asChild>
-                            <Button variant="default" asChild>
+                            <BasicButton variant="default" asChild>
                                 <Link href={siteConfig.socials.github} target="_blank">
                                     <Icons.github className="w-4 h-4" />
                                 </Link>
-                            </Button>
+                            </BasicButton>
                         </TooltipTrigger>
                         <TooltipContent side="bottom" className="bg-white">
                             <p className="text-sm text-gray-900">Github</p>
@@ -55,11 +56,11 @@ export function SiteHeader() {
                 <TooltipProvider>
                     <Tooltip>
                         <TooltipTrigger asChild>
-                            <Button variant="secondary" asChild>
+                            <BasicButton variant="secondary" asChild>
                                 <Link href={siteConfig.socials.linkedIn} target="_blank">
                                     <Icons.linkedIn className="w-4 h-4" />
                                 </Link>
-                            </Button>
+                            </BasicButton>
                         </TooltipTrigger>
                         <TooltipContent side="bottom" className="bg-white">
                             <p className="text-sm text-gray-900">LinkedIn</p>
