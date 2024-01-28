@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --display-from: none;
+  --display-to: inline-flex;
+}
+
 @layer utilities {
   .btn {
     @apply text-white;
@@ -125,7 +130,7 @@
   }
 
   .btn-destructive:hover::before {
-    @apply border-red-800
+    @apply border-red-800;
   }
 
   .btn-outline {
