@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 import { siteConfig } from "@/config/site"
 import { MainNav } from '@/components/layout/MainNav'
 import { MobileNav } from '@/components/layout/MobileNav'
@@ -5,6 +6,10 @@ import { Button } from "@/components/ui/Button"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger, TooltipArrow } from "../ui/Tooltip"
 import { Icons } from "../Icons"
 import Link from "next/link"
+=======
+import { type NavItem } from "@/types"
+import SiteNavbar from "./SiteNavbar"
+>>>>>>> Stashed changes
 
 
 export function SiteHeader() {
@@ -53,5 +58,9 @@ export function SiteHeader() {
                 </div>
             </div>
         </header>
+<<<<<<< Updated upstream
+=======
+        
+>>>>>>> Stashed changes
     )
 }

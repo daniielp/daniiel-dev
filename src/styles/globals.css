@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+<<<<<<< Updated upstream
 
 pre[class*='language-'] {
   color: theme('colors.slate.50');
@@ -53,3 +54,5 @@ pre[class*='language-'] {
 
 
 
+=======
+>>>>>>> Stashed changes
