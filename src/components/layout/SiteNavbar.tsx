@@ -1,7 +1,6 @@
 'use client'
 
-
-import { BasicButton } from '../ui/BasicButton';
+import { Button } from '@/components/ui/Button';
 import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/24/solid';
 import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
 import { useState } from 'react'
@@ -116,11 +115,11 @@ export default function SiteNavbar() {
                 <TooltipProvider>
                     <Tooltip>
                         <TooltipTrigger asChild>
-                            <BasicButton variant="default" asChild>
+                            <Button variant="default" asChild>
                                 <Link href={siteConfig.socials.github} target="_blank">
                                     <Icons.github className="w-4 h-4" />
                                 </Link>
-                            </BasicButton>
+                            </Button>
                         </TooltipTrigger>
                         <TooltipContent side="bottom" className="bg-white p-2 rounded-sm">
                             <p className="text-sm text-gray-900">Github</p>
@@ -131,11 +130,11 @@ export default function SiteNavbar() {
                 <TooltipProvider>
                     <Tooltip>
                         <TooltipTrigger asChild>
-                            <BasicButton variant="secondary" asChild>
+                            <Button variant="secondary" asChild>
                                 <Link href={siteConfig.socials.linkedIn} target="_blank">
                                     <Icons.linkedIn className="w-4 h-4" />
                                 </Link>
-                            </BasicButton>
+                            </Button>
                         </TooltipTrigger>
                         <TooltipContent side="bottom" className="bg-white p-2 rounded">
                             <p className="text-sm text-gray-900">LinkedIn</p>
@@ -144,7 +143,7 @@ export default function SiteNavbar() {
                     </Tooltip>
                 </TooltipProvider>
             </motion.div>
-            <BasicButton
+            <Button
                 variant="ghost"
                 className='rounded-full min-w-[40px] sm:hidden'
                 onClick={() => {
@@ -154,7 +153,7 @@ export default function SiteNavbar() {
             >
                 <span className='sr-only'>{showNav ? "Luk menu" : "Åben menu"}</span>
                 {showNav ? <ChevronUpIcon /> : <ChevronDownIcon />}
-            </BasicButton>
+            </Button>
         </motion.nav>
     )
 }
