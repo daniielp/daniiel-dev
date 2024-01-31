@@ -1,4 +1,4 @@
-import { absoluteUrl, classNames, formatDate } from '@/lib/utils'
+import { absoluteUrl, cn, formatDate } from '@/lib/utils'
 import { allProjects } from 'contentlayer/generated'
 import { env } from '@/env.mjs'
 import { type Metadata } from 'next'
@@ -9,7 +9,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { Shell } from '@/components/shells/Shell'
 import { Icons } from '@/components/Icons'
-import { BasicButton, buttonVariants } from '@/components/ui/BasicButton'
+import { Button, buttonVariants } from '@/components/ui/Button'
 
 interface ProjectPageProps {
   params: {
@@ -90,7 +90,7 @@ export default async function PostPage({ params }: ProjectPageProps) {
     <Shell as="article" variant="markdown">
       <Link
         href="/projekter"
-        className={classNames(
+        className={cn(
           buttonVariants({ variant: "ghost" }),
           "absolute left-[-200px] top-14 hidden xl:inline-flex"
         )}
@@ -103,11 +103,11 @@ export default async function PostPage({ params }: ProjectPageProps) {
           <div>{project.readingTime}min</div>
           {project.url ? <div>•</div> : null}
           {project.url && (
-            <BasicButton asChild variant="link">
+            <Button asChild variant="link">
               <Link target='_blank' rel="nofollow" href={project.url}>
                 {project.url}
               </Link>
-            </BasicButton>
+            </Button>
           )}
 
         </div>
@@ -119,14 +119,14 @@ export default async function PostPage({ params }: ProjectPageProps) {
       {/* <Separator className="my-10" />
       <MdxPager currentItem={post} allItems={allPosts} /> */}
       <div className="flex justify-center py-5">
-        <BasicButton asChild variant="ghost">
+        <Button asChild variant="ghost">
           <Link href="/blog">
             <Icons.chevronLeft className="mr-2 h-4 w-4" aria-hidden="true" />
             Se alle indlæg
             <span className="sr-only">Se alle projekter</span>
           </Link>
 
-        </BasicButton>
+        </Button>
       </div>
     </Shell>
   )

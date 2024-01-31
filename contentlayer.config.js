@@ -1,5 +1,5 @@
 // @ts-nocheck
-import { defineDocumentType, makeSource } from 'contentlayer/source-files'
+import { defineDocumentType, makeSource, defineNestedType } from 'contentlayer/source-files'
 import rehypeAutolinkHeadings from "rehype-autolink-headings"
 import rehypePrettyCode from "rehype-pretty-code"
 import rehypeSlug from "rehype-slug"
@@ -108,9 +108,61 @@ export const Author = defineDocumentType(() => ({
     computedFields,
 }))
 
+const LinksProperties = defineNestedType(() => ({
+    name: "LinksProperties",
+    fields: {
+      doc: {
+        type: "string",
+      },
+      api: {
+        type: "string",
+      },
+    },
+  }))
+
+export const Doc = defineDocumentType(() => ({
+    name: "Doc",
+    filePathPattern: `design/**/*.mdx`,
+    contentType: "mdx",
+    fields: {
+      title: {
+        type: "string",
+        required: true,
+      },
+      description: {
+        type: "string",
+        required: true,
+      },
+      published: {
+        type: "boolean",
+        default: true,
+      },
+      links: {
+        type: "nested",
+        of: LinksProperties,
+      },
+      featured: {
+        type: "boolean",
+        default: false,
+        required: false,
+      },
+      component: {
+        type: "boolean",
+        default: false,
+        required: false,
+      },
+      toc: {
+        type: "boolean",
+        default: true,
+        required: false,
+      },
+    },
+    computedFields,
+  }))
+
 export default makeSource({
     contentDirPath: "./src/content",
-    documentTypes: [Post, Project, Author],
+    documentTypes: [Post, Project, Author, Doc],
     filePathPattern: `/**/*.mdx`,
     mdx: {
         remarkPlugins: [remarkGfm],
