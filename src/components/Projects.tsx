@@ -1,9 +1,7 @@
 "use client"
-import { useState } from "react"
 import { Icons } from "./Icons"
 import Image from 'next/image'
 import { Button } from "./ui/Button"
-import Link from "next/link"
 
 const slides = [
     {
@@ -21,12 +19,6 @@ const slides = [
 ]
 
 const Projects = () => {
-    const [selectedIndex, setSelectedIndex] = useState(0)
-
-    function classNames(...classes: string[]) {
-        return classes.filter(Boolean).join(' ')
-    }
-
     return (
         <div className="overflow-hidden bg-white py-24 sm:py-32">
             <div className="mx-auto max-w-7xl px-6 lg:px-8" id="projects">
@@ -39,10 +31,8 @@ const Projects = () => {
                                 For at sikre dig at du tager den rigtige beslutning når du skal vælge den næste medarbejder. Så er der her lige nogle eksempler på tidligere projekter og cases jeg har arbejdet med.
                             </p>
                             <div className="mt-8">
-                                <Button asChild>
-                                    <Link href="/projekter">
-                                        Se andre projekter
-                                    </Link>
+                                <Button href="/projekter">
+                                    Se andre projekter
                                 </Button>
                             </div>
                             <figure className="mt-16 border-l border-gray-200 pl-8 text-gray-600">
@@ -60,14 +50,17 @@ const Projects = () => {
                             </figure>
                         </div>
                     </div>
-                    <Image
-                        src="/images/designarchitects.jpg"
-                        title="Eksamens projekt"
-                        alt="Design Architects live preview"
-                        width={2432}
-                        height={1442}
-                        className="w-[48rem] max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem] md:-ml-4 lg:ml-0"
-                    />
+                    <div className="relative">
+                        <Image
+                            src="/images/designarchitects.jpg"
+                            title="Eksamens projekt"
+                            alt="Design Architects live preview"
+                            width={2432}
+                            height={1442}
+                            className="w-[48rem] max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem] md:-ml-4 lg:ml-0"
+                        />
+                        <a href="https://designarchitects.daniiel.dev/"><span className="sr-only">Besøg websitet</span><span className="absolute inset-0 w-[48rem] max-w-none sm:w-[57rem] md:-ml-4 lg:ml-0"></span></a>
+                    </div>
                 </div>
             </div>
         </div >

@@ -8,8 +8,8 @@ import { Mdx } from '@/components/mdx/mdxComponents'
 import Image from "next/image"
 import Link from "next/link"
 import { Shell } from '@/components/shells/Shell'
-import { Button, buttonVariants } from '@/components/ui/Button'
 import { Icons } from '@/components/Icons'
+import { BasicButton, buttonVariants } from '@/components/ui/BasicButton'
 
 interface ProjectPageProps {
   params: {
@@ -103,11 +103,11 @@ export default async function PostPage({ params }: ProjectPageProps) {
           <div>{project.readingTime}min</div>
           {project.url ? <div>•</div> : null}
           {project.url && (
-            <Button asChild variant="link">
+            <BasicButton asChild variant="link">
               <Link target='_blank' rel="nofollow" href={project.url}>
                 {project.url}
               </Link>
-            </Button>
+            </BasicButton>
           )}
 
         </div>
@@ -119,14 +119,14 @@ export default async function PostPage({ params }: ProjectPageProps) {
       {/* <Separator className="my-10" />
       <MdxPager currentItem={post} allItems={allPosts} /> */}
       <div className="flex justify-center py-5">
-        <Button asChild variant="ghost">
+        <BasicButton asChild variant="ghost">
           <Link href="/blog">
             <Icons.chevronLeft className="mr-2 h-4 w-4" aria-hidden="true" />
             Se alle indlæg
             <span className="sr-only">Se alle projekter</span>
           </Link>
 
-        </Button>
+        </BasicButton>
       </div>
     </Shell>
   )
