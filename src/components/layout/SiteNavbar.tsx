@@ -12,6 +12,10 @@ import { Icons } from '../Icons';
 import Logo from '../Logo';
 export const menuItems = [
     {
+        title: "Design",
+        href: "/design"
+    },
+    {
         title: "Blog",
         href: "/blog"
     },

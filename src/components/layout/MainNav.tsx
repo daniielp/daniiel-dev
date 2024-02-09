@@ -5,7 +5,7 @@ import Link from "next/link"
 import type { MainNavItem } from "@/types"
 
 import { siteConfig } from "@/config/site"
-import { classNames } from "@/lib/utils"
+import { cn } from "@/lib/utils"
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -14,7 +14,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
-} from "@/components/ui/NavigationMenu"
+} from "@/components/ui/navigation-menu"
 import { Icons } from "../Icons"
 
 interface MainNavProps {
@@ -100,7 +100,7 @@ export function MainNav({ items }: MainNavProps) {
                   <NavigationMenuItem key={item.title}>
                     <Link href={item.href} legacyBehavior passHref>
                       <NavigationMenuLink
-                        className={classNames(navigationMenuTriggerStyle(), "h-auto")}
+                        className={cn(navigationMenuTriggerStyle(), "h-auto")}
                       >
                         {item.title}
                       </NavigationMenuLink>

@@ -44,11 +44,11 @@ export default async function DesignDoc({ params }: DesignDocProps) {
                     <h1 className={cn("scroll-m-20 text-4xl font-bold tracking-tight")}>
                         {doc.title}
                     </h1>
-                    {/* {doc.description && (
+                    {doc.description && (
                         <p className="text-lg text-muted-foreground">
-                            <Balancer>{doc.description}</Balancer>
+                            {doc.description}
                         </p>
-                    )} */}
+                    )}
                 </div>
                 {doc.links ? (
                     <div className="flex items-center space-x-2 pt-4">

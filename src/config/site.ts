@@ -46,7 +46,11 @@ export const siteConfig = {
         {
             title: "Projekter",
             href: "/projekter",
-        }
+        },
+        {
+            title: "Design",
+            href: "/design",
+        },
         // {
         //     title: "Kontakt",
         //     href: "/kontakt"
