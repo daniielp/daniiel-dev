@@ -1,0 +1,52 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import { formatDate } from "../../lib/utils";
+
+const allPosts = await getCollection("blog");
+---
+
+<Layout
+  title="Fontend Development & Tech insights - Daniiel's blog"
+  description=""
+>
+  <main>
+    <section class="mx-auto max-w-7xl border-b border-slate-300 py-24">
+      <h2 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+        Let's make learning interactive
+      </h2>
+      <p class="mt-2 text-lg leading-8 text-gray-600">
+        Follow my journey through frontend development and UI/UX design.
+      </p>
+    </section>
+    <section
+      class="mx-auto mt-10 grid max-w-7xl grid-cols-1 gap-x-8 gap-y-16 pt-10 sm:mt-16 sm:pt-16 lg:grid-cols-3"
+    >
+      {
+        allPosts.map((post) => (
+          <article class="flex max-w-xl flex-col items-start justify-stretch">
+            <div class="flex items-center gap-x-4 text-xs">
+              <time
+                datetime={post.data.publishDate.toLocaleTimeString()}
+                class="text-gray-500"
+              >
+                {formatDate(post.data.publishDate)}
+              </time>
+            </div>
+            <div class="group relative">
+              <h3 class="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
+                <a href={`/blog/${post.slug}`}>
+                  <span class="absolute inset-0" />
+                  {post.data.title}
+                </a>
+              </h3>
+              <p class="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">
+                {post.data.description}
+              </p>
+            </div>
+          </article>
+        ))
+      }
+    </section>
+  </main>
+</Layout>
