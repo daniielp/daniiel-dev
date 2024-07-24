@@ -1,0 +1,95 @@
+---
+title: "Act on Press: The UI Design Principle for Instant Responsiveness"
+description: "Discover why you should think about using onMouseDown instead of onClick"
+isDraft: false
+publishDate: 2023-07-24
+image:
+  src: "https://docs.astro.build/assets/full-logo-light.png"
+  alt: "The Astro logo with the word One."
+tags: ["design", "ui", "ux"]
+---
+import {ActOnPress} from "../../components/blog/act-on-press.tsx";
+
+In the world of web development, creating responsive and user-friendly interfaces is crucial. One way to enhance the user experience is by using the `onMouseDown` event instead of the more common `onClick` event.
+
+## John Carmack "Act on Press"
+
+John Carmack, in a detailed post on X (formerly Twitter), strongly advocated for the "Act on Press" principle:
+
+> Almost all interaction methods have a “press” and “release” event associated with them. Whenever possible, you should “do the thing” when you get the press event instead of waiting for the release event, because it makes the interaction feel substantially more responsive ...
+
+You can read Carmack's full post here: [https://x.com/id_aa_carmack/status/1787850053912064005](https://x.com/id_aa_carmack/status/1787850053912064005)
+
+Carmack's argument aligns with the benefits of using `onMouseDown` that we'll explore in this article. However, it's important to note that while this approach can significantly enhance user experience, it also comes with accessibility considerations that developers need to address.
+
+## Try It Yourself: Interactive Example
+
+To better understand the difference between `onMouseDown` and `onClick`, I've prepared an interactive example for you to try. This example uses React and shadcn ui to create a simple counter application with two buttons: one using `onMouseDown` and another using `onClick`.
+
+<ActOnPress client:load />
+
+## Key Benefits of Using onMouseDown
+
+### 1. Improved Responsiveness
+
+The primary advantage of using `onMouseDown` is the increased responsiveness it provides. When a user interacts with an element:
+
+- `onClick` triggers when the mouse button is pressed and released.
+- `onMouseDown` triggers as soon as the mouse button is pressed.
+
+This slight difference can make the interface feel more responsive and immediate, enhancing the overall user experience.
+
+### 2. Reduced Latency
+
+By responding to the initial press rather than waiting for the release, `onMouseDown` can shave off valuable milliseconds from the interaction time. As Carmack points out, "Even a 'ballistic tap', where your finger is intentionally bouncing off the button or touch surface, involves several tens of milliseconds delay between the press and release, and most button presses have well over a hundred ms dwell time."
+
+### 3. Prevention of Accidental Actions
+
+Using `onMouseDown` allows developers to implement cancel behaviors more easily. For instance, if a user presses a button but then decides against the action, they can move the cursor away before releasing, preventing the action from occurring.
+
+### 4. Enhanced Drag and Drop Functionality
+
+For drag and drop interfaces, `onMouseDown` is essential. It allows the application to start the drag operation immediately when the user presses the mouse button, providing a more natural and responsive feel.
+
+## Accessibility Concerns
+
+While `onMouseDown` offers several benefits, it's crucial to consider its impact on accessibility:
+
+### 1. Lack of Keyboard Support
+
+The most significant drawback of `onMouseDown` is its lack of built-in keyboard support. Unlike `onClick`, which naturally works with keyboard interactions (Enter key), `onMouseDown` is specific to mouse interactions. This can exclude users who rely on keyboard navigation.
+
+### 2. Screen Reader Compatibility
+
+Screen readers typically interact with elements using keyboard commands, which may not trigger `onMouseDown` events. This can lead to a disconnect between the visual interface and the screen reader's interpretation of it.
+
+### 3. Touch Device Considerations
+
+On touch devices, the distinction between `onMouseDown` and `onClick` can be less clear, potentially leading to inconsistent behavior across different devices and platforms.
+
+## Balancing Responsiveness and Accessibility
+
+To leverage the benefits of `onMouseDown` while maintaining accessibility, consider the following approaches:
+
+1. **Use Custom Event Listeners**: Implement custom event listeners that handle both mouse and keyboard events. This allows you to respond to `onMouseDown` for mouse users while also supporting keyboard interactions.
+
+```javascript
+element.addEventListener('mousedown', handleAction);
+element.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter' || e.key === ' ') {
+    handleAction();
+  }
+});
+```
+
+2. **Provide Alternative Interaction Methods**: Ensure that all functionalities triggered by `onMouseDown` can also be accessed through other means, such as traditional buttons or keyboard shortcuts.
+
+3. **Use ARIA Attributes**: Implement appropriate ARIA (Accessible Rich Internet Applications) attributes to ensure screen readers can understand and interact with your interface correctly.
+
+4. **Test Thoroughly**: Conduct comprehensive testing across different devices, input methods, and assistive technologies to ensure a consistent and accessible experience for all users.
+
+## Conclusion
+
+While `onMouseDown` can significantly enhance the responsiveness and feel of a web application, it's crucial to implement it thoughtfully. By considering accessibility from the outset and employing strategies to support all users, developers can create interfaces that are both highly responsive and inclusively accessible. The key lies in finding the right balance between cutting-edge interactivity and universal usability.
+
+As John Carmack emphasizes, "There is a delight in interfaces that feel like they respond instantly to your wishes, and the benefit to every single user is often more important than additional niche features." However, it's our responsibility as developers to ensure that this delight is accessible to all users, regardless of their interaction method.
