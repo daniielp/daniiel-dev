@@ -3,18 +3,20 @@ import SiteFooter from "../components/global/site-footer.astro";
 import SiteHeader from "../components/global/site-header.astro";
 
 interface Props {
-  title: string;
-  description: string;
+  title?: string;
+  description?: string;
   image?: string;
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 const {
-  title,
-  description = "Jeg designer oplevelser med konsistente flows som tiltrækker nye kunder til danske forretninger. Med enestående brugeroplevelser og udvikle intuitive frontends.",
+  title = "Your Creative Frontend Developer - Daniiel",
+  description = "Working with visual design and fundamentals to bring insights and new knowledge and translate it into frontend development.",
   image = "daniiel-avatar.jpg",
 } = Astro.props;
+
+const image_url = new URL(image, Astro.url);
 ---
 
 <!doctype html>
@@ -23,7 +25,18 @@ const {
     <!-- Global Metadata -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" href="/favicon.ico" />
+    <link
+      rel="icon"
+      href="/favicon-light.svg"
+      type="image/svg"
+      media="(prefers-color-scheme: light)"
+    />
+    <link
+      rel="icon"
+      href="/favicon-dark.svg"
+      type="image/svg"
+      media="(prefers-color-scheme: dark)"
+    />
     <meta name="generator" content={Astro.generator} />
 
     <!-- Canonical URL -->
@@ -39,14 +52,14 @@ const {
     <meta property="og:url" content={Astro.url} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={new URL(image, Astro.url)} />
+    <meta property="og:image" content={image_url} />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content={Astro.url} />
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
-    <meta property="twitter:image" content={new URL(image, Astro.url)} />
+    <meta property="twitter:image" content={image_url} />
   </head>
   <body class="bg-slate-100">
     <SiteHeader />
