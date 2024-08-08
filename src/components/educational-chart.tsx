@@ -37,7 +37,7 @@ const chartConfig = {
 } satisfies ChartConfig;
 
 export function EducationalChart() {
-  const totalMonths = React.useMemo(() => {
+  const totalYears = React.useMemo(() => {
     return chartData.reduce((acc, curr) => acc + curr.studyDuration, 0);
   }, []);
 
@@ -75,7 +75,7 @@ export function EducationalChart() {
                           y={viewBox.cy}
                           className="fill-foreground text-3xl font-bold"
                         >
-                          {(totalMonths / 12).toLocaleString()}
+                          {(totalYears).toLocaleString()}
                         </tspan>
                         <tspan
                           x={viewBox.cx}
