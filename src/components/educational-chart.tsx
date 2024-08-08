@@ -13,9 +13,9 @@ import {
 } from "@/components/ui/chart";
 
 const chartData = [
-  { Degree: "frontend", studyDuration: 35, fill: "var(--color-frontend)" },
-  { Degree: "backend", studyDuration: 28, fill: "var(--color-backend)" },
-  { Degree: "design", studyDuration: 24, fill: "var(--color-design)" },
+  { Degree: "frontend", studyDuration: 2.9, fill: "var(--color-frontend)" },
+  { Degree: "backend", studyDuration: 2.5, fill: "var(--color-backend)" },
+  { Degree: "design", studyDuration: 2, fill: "var(--color-design)" },
 ];
 
 const chartConfig = {
@@ -98,7 +98,7 @@ export function EducationalChart() {
           My Educational Journey: A Slice of Life
         </div>
         <div className="text-muted-foreground leading-none">
-          Showing total months spent on each degree
+          Showing total years spent on each degree
         </div>
       </CardFooter>
     </Card>
