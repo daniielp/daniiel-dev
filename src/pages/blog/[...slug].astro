@@ -2,9 +2,10 @@
 import { getCollection } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
 import { formatDate } from "../../lib/utils";
-import { Image } from 'astro:assets';
+import { Link } from "@/components/ui/link";
 import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
+import AuthorCard from "@/blocks/author-card.astro";
 
 export async function getStaticPaths() {
   const blogEntries = await getCollection("blog");
@@ -53,27 +54,7 @@ const { Content } = await entry.render();
       </article>
       <div class="relative col-span-1 pt-8">
         <div class="sticky flex flex-col gap-4 top-8">
-          <figure class="w-full rounded-xl bg-slate-200/70 p-8">
-            <Image
-              class="h-24 w-24 rounded-full"
-              src="/daniiel-avatar.jpg"
-              alt=""
-              width="384"
-              height="512"
-            />
-            <div class="space-y-4 pt-6">
-              <blockquote>
-                <p class="text-lg font-medium">
-                  “I love building frontend applications with a strong focus on
-                  UI/UX, creating seamless and engaging user experiences.”
-                </p>
-              </blockquote>
-              <figcaption class="font-medium">
-                <div class="font-semibold text-indigo-500">Daniel Pedersen</div>
-                <div class="text-slate-700">Frontend Developer, Daniiel</div>
-              </figcaption>
-            </div>
-          </figure>
+          <AuthorCard />
           <Card className="bg-slate-200/70">
             <CardHeader>
               <CardTitle>
@@ -84,14 +65,9 @@ const { Content } = await entry.render();
               </CardDescription>
             </CardHeader>
             <CardFooter>
-              <a
-                href="https://donate.stripe.com/cN2aFG3Zg3vUcGA7ss"
-                target="_blank"
-                rel="noopener noreferrer nofollow"
-                class="inline-flex flex-1 justify-center px-4 py-2 text-white bg-indigo-600 rounded-md"
-              >
+              <Link className="w-full" href="https://donate.stripe.com/cN2aFG3Zg3vUcGA7ss" target="_blank" rel="noopener noreferrer nofollow">
                 Donate a cup of coffee
-              </a>
+              </Link>
             </CardFooter>
           </Card>
 

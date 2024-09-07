@@ -1,0 +1,47 @@
+---
+import { BorderBeam } from "@/components/ui/border-beam";
+import { Link } from "@/components/ui/link";
+import { Image } from "astro:assets";
+interface Props {
+  title: string;
+  description: string;
+  cta?: {
+    text: string;
+    link: string;
+  };
+  image?: {
+    src: string;
+    alt: string;
+  };
+}
+
+const { title, description, cta, image } = Astro.props;
+---
+
+<section class="py-24 sm:py-32">
+  <div
+    class="relative grid-flow-col mx-auto border overflow-hidden border-slate-400 grid gap-8 max-w-7xl px-6 py-16 rounded-lg sm:px-6 lg:px-8 "
+  >
+    {
+      image && (
+        <div class="col-span-1">
+          <Image class="rounded-2xl object-cover" width={200} height={200} src={image.src} alt={image.alt} />
+        </div>
+      )
+    }
+    <div class="col-span-2">
+      <h2 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+        {title}
+      </h2>
+      <p class="mt-6 text-lg leading-8 text-slate-600">{description}</p>
+      {
+        cta && (
+          <div class="mt-4 flex gap-x-6">
+            <Link href={cta.link}>{cta.text}</Link>
+          </div>
+        )
+      }
+    </div>
+    <BorderBeam client:visible />
+  </div>
+</section>
