@@ -18,14 +18,14 @@ interface Props {
 const { title, description, cta, image } = Astro.props;
 ---
 
-<section class="py-24 sm:py-32">
+<section class="py-24 sm:py-32 px-6">
   <div
-    class="relative grid-flow-col mx-auto border overflow-hidden border-slate-400 grid gap-8 max-w-7xl px-6 py-16 rounded-lg sm:px-6 lg:px-8 "
+    class="relative grid grid-flow-row md:grid-flow-col mx-auto border overflow-hidden border-slate-400  gap-8 max-w-7xl px-6 py-16 rounded-lg sm:px-6 lg:px-8 "
   >
     {
       image && (
         <div class="col-span-1">
-          <Image class="rounded-2xl object-cover" width={200} height={200} src={image.src} alt={image.alt} />
+          <Image fetchpriority="low" loading="lazy" class="rounded-2xl object-cover" width={200} height={200} src={image.src} alt={image.alt} />
         </div>
       )
     }
