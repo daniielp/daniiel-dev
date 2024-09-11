@@ -8,5 +8,7 @@ import mdx from "@astrojs/mdx";
 // https://astro.build/config
 export default defineConfig({
   site: "https://daniiel.dev",
-  integrations: [tailwind(), sitemap(), react(), mdx()]
+  integrations: [tailwind(), sitemap(), react({
+    experimentalReactChildren: true,
+  }), mdx()],
 });
