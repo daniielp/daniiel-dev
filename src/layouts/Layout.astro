@@ -62,8 +62,28 @@ const image_url = new URL(image, Astro.url);
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={image_url} />
 
+    <style is:global>
+      .shiki {
+        @apply p-4
+      }
+
+      .shiki code {
+        counter-reset: step;
+        counter-increment: step calc(var(--start, 1) - 1);
+      }
+
+      .shiki code .line::before {
+        content: counter(step);
+        counter-increment: step;
+        width: 1rem;
+        margin-right: 1.5rem;
+        display: inline-block;
+        text-align: right;
+        color: rgba(115, 138, 148, 0.4);
+      }
+    </style>
     <!-- Transitions -->
-     <ViewTransitions />
+    <ViewTransitions />
   </head>
   <body class="bg-slate-100">
     <SiteHeader />
