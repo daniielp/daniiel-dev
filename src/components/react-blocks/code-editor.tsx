@@ -102,7 +102,7 @@ function CodeEditor() {
             <div className="bg-slate-800 p-2 text-base font-semibold text-white">
               {tab.path}
             </div>
-            <Code className=" " lang={tab.lang} code={tab.code} />
+            <Code lang={tab.lang} code={tab.code} />
           </TabsContent>
         ))}
       </ScrollArea>
