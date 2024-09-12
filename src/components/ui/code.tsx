@@ -1,4 +1,3 @@
-"use client";
 import { codeToHtml } from "shiki";
 import type { CodeToHastOptions, BundledLanguage, BundledTheme } from "shiki";
 
