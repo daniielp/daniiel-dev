@@ -88,6 +88,7 @@ function CodeEditor() {
         <TabsList className="h-auto bg-transparent p-0">
           {codeTabs.map((tab) => (
             <TabsTrigger
+              key={tab.filename}
               className="rounded-t-md data-[state=active]:bg-slate-800 data-[state=active]:text-white"
               value={tab.filename}
             >
@@ -98,7 +99,7 @@ function CodeEditor() {
       </div>
       <ScrollArea className="max-h-80 overflow-y-scroll">
         {codeTabs.map((tab) => (
-          <TabsContent className="mt-0" value={tab.filename}>
+          <TabsContent key={tab.path} className="mt-0" value={tab.filename}>
             <div className="bg-slate-800 p-2 text-base font-semibold text-white">
               {tab.path}
             </div>

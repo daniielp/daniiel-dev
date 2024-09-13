@@ -17,14 +17,13 @@ import { SocialMediaIcon } from "@/components/global/social-media-icon";
 function SiteNavigation() {
   return (
     <Sheet>
-      <SheetTrigger>
+      <SheetTrigger asChild>
         <Button variant="outline" className="gap-2">
           <Menu size="24" />
           <span className="text-base font-semibold">Menu</span>
         </Button>
       </SheetTrigger>
       <SheetPortal>
-        {/* <SheetOverlay className="backdrop-blur-sm" /> */}
         <SheetContent className="flex flex-col rounded-md md:inset-y-8 md:right-8 md:h-[calc(100%-4rem)]">
           <SheetHeader className="flex-row items-center justify-between space-y-0">
             <SheetTitle>
@@ -49,7 +48,7 @@ function SiteNavigation() {
           <div className="flex-1">
             <ul role="navigation" className="space-y-2 py-8">
               {mainNavigation.map((item) => (
-                <li className="flex py-1">
+                <li key={"navigationItem-" + item.title} className="flex py-1">
                   <Button
                     className="flex-1 justify-start text-2xl"
                     variant="ghost"
@@ -67,7 +66,7 @@ function SiteNavigation() {
               <h3 className="sr-only">Socials</h3>
               <ul role="socials" className="flex items-center gap-4" id="connect-with">
                 {socials.map((social) => (
-                  <li>
+                  <li key={"socialsItem-" + social.title}>
                     <Button variant="ghost" size="icon" asChild>
                       <a
                         rel="nofollow"
