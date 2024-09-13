@@ -4,16 +4,19 @@ import CodeEditor from "../blocks/code-section.astro";
 import Layout from "../layouts/Layout.astro";
 import Promo from "@/blocks/promo.astro";
 import Projects from "@/blocks/projects.astro";
+import TestimonialSection from "@/blocks/testimonial-section.astro";
 ---
 
 <Layout title="Your Creative Frontend Developer - Daniiel">
   <main>
     <CodeEditor title="Frontend developer based in Aarhus" description="With a combination of education as a web developer and a keen eye for design and UI/UX, I create growth and enable myself to work wholeheartedly with frontend development. In this way, I strengthen the brand's position as being the best when it comes to frontend development, while simultaneously creating valuable results that ultimately lead to better sales-ready leads." />
     <Projects />
+    <TestimonialSection />
     <Promo title="Looking for your next team member?" cta={{link: "#", text: "Get in touch"}} image={{
       alt: "Daniel Pedersen also know as Daniiel where he is smiling and looking into the camera",
       src: "/images/profile-image.png"
-    }} description="With a multimedia design degree, 3 years of web development experience, and a passion for web applications, I can contribute with strong full-stack development, troubleshooting, and interactive solution skills as a self-driven, patient, and team-oriented player." />
+    }} 
+    description="With a multimedia design degree, 3 years of web development experience, and a passion for web applications, I can contribute with strong full-stack development, troubleshooting, and interactive solution skills as a self-driven, patient, and team-oriented player." />
     <FullCoverage />
   </main>
 </Layout>
