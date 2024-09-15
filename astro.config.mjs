@@ -11,4 +11,9 @@ export default defineConfig({
   integrations: [tailwind(), sitemap(), react({
     experimentalReactChildren: true,
   }), mdx()],
+  markdown: {
+    shikiConfig: {
+      theme: "dark-plus",
+    }
+  }
 });

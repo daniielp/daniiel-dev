@@ -10,7 +10,7 @@ export interface LinkProps
 
 const Link: React.FC<LinkProps> = ({ href, children, ...props }) => {
   return (
-    <Button asChild>
+    <Button variant={props.variant} asChild>
       <a {...props} href={href}>{children}</a>
     </Button>
   );
