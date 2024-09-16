@@ -147,7 +147,7 @@ function ContactForm() {
                   <CardDescription>Below you can see an example of how the email will look.</CardDescription>
                 </CardHeader>
                 <CardContent className="bg-slate-50 flex-1">
-                    <p className="py-2"><span className="font-semibold">From</span>: {form.watch("email")} <span className={cn(form.watch("name") ? "inline-flex" : "hidden")}>{`<${form.watch("name")}>`}</span></p>
+                    <p className="py-2"><span className="font-semibold">From</span>: {form.watch("name")} <span className={cn(form.watch("email") ? "inline-flex" : "hidden")}>{`<${form.watch("email")}>`}</span></p>
                     <Separator />
                     <p className="py-2"><span className="font-semibold">Subject</span>: {form.watch("category")} <span className={cn(form.watch("category") ? "inline-flex" : "hidden")}>- Request from daniiel.dev</span></p>
                     <Separator />
