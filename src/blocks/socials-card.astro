@@ -1,0 +1,20 @@
+---
+import { SocialMediaIcon } from "@/components/global/social-media-icon";
+import { Link } from "@/components/ui/link";
+import { socials } from "@/config/socials";
+---
+
+<div class="w-full rounded-xl  p-8">
+  <h3 class="text-2xl font-semibold tracking-tight text-slate-900">Let's get in touch</h3>
+  <ul class="mt-4 flex items-center gap-4">
+    {
+      socials.map((social) => (
+        <li>
+          <Link target="_blank" href={social.href}>
+            <SocialMediaIcon aria-hidden="true" type={social.type} size={24} />
+          </Link>
+        </li>
+      ))
+    }
+  </ul>
+</div>

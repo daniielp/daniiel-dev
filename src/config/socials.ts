@@ -17,7 +17,7 @@ export const socials = [
     {
         title: "Email",
         type: "email",
-        href:"mailto:email@daniiel.dev"
+        href:"mailto:mail@daniiel.dev"
     },
     {
         title: "Github",
