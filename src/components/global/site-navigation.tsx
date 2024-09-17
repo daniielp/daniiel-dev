@@ -6,13 +6,13 @@ import {
   SheetHeader,
   SheetPortal,
   SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet";
-import { Button } from "@/components/ui/button";
-import { ArrowRight, Menu, X } from "lucide-react";
-import { mainNavigation } from "@/config/navigation";
-import { socials } from "@/config/socials";
-import { SocialMediaIcon } from "@/components/global/social-media-icon";
+  SheetTrigger
+} from "@/components/ui/sheet"
+import { Button } from "@/components/ui/button"
+import { ArrowRight, Menu, X } from "lucide-react"
+import { mainNavigation } from "@/config/navigation"
+import { socials } from "@/config/socials"
+import { SocialMediaIcon } from "@/components/global/social-media-icon"
 
 function SiteNavigation() {
   return (
@@ -49,11 +49,7 @@ function SiteNavigation() {
             <ul role="navigation" className="space-y-2 py-8">
               {mainNavigation.map((item) => (
                 <li key={"navigationItem-" + item.title} className="flex py-1">
-                  <Button
-                    className="flex-1 justify-start text-2xl"
-                    variant="ghost"
-                    asChild
-                  >
+                  <Button className="flex-1 justify-start text-2xl" variant="ghost" asChild>
                     <a className="flex-1 justify-between" href={item.href}>
                       <span>{item.title}</span>
                       <ArrowRight aria-hidden="true" size={24} />
@@ -85,14 +81,13 @@ function SiteNavigation() {
           </div>
           <SheetFooter className="sm:justify-start">
             <p className="text-base text-gray-500">
-              &copy; {new Date().getFullYear()} Daniel Pedersen. All rights
-              reserved.
+              &copy; {new Date().getFullYear()} Daniel Pedersen. All rights reserved.
             </p>
           </SheetFooter>
         </SheetContent>
       </SheetPortal>
     </Sheet>
-  );
+  )
 }
 
-export { SiteNavigation };
+export { SiteNavigation }

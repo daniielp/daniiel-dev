@@ -1,7 +1,7 @@
-import { Code } from "@/components/ui/code";
-import { ScrollArea } from "@/components/ui/scroll-area";
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
-import type { BundledLanguage } from "shiki";
+import { Code } from "@/components/ui/code"
+import { ScrollArea } from "@/components/ui/scroll-area"
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"
+import type { BundledLanguage } from "shiki"
 
 const codeTabs = [
   {
@@ -21,7 +21,7 @@ const codeTabs = [
   });
 
   return form;
-}`,
+}`
   },
   {
     filename: "preview-user.tsx",
@@ -74,15 +74,15 @@ const codeTabs = [
       <SubmitButton title="Opret ønske" />
     </form>
   );
-}`,
-  },
-];
+}`
+  }
+]
 
 function CodeEditor() {
   return (
     <Tabs
       defaultValue={codeTabs[0].filename}
-      className="w-full md:w-[650px] rounded-md bg-slate-950"
+      className="w-full rounded-md bg-slate-950 md:w-[650px]"
     >
       <div className="flex">
         <TabsList className="h-auto bg-transparent p-0">
@@ -100,15 +100,13 @@ function CodeEditor() {
       <ScrollArea className="max-h-80 overflow-y-scroll">
         {codeTabs.map((tab) => (
           <TabsContent key={tab.path} className="mt-0" value={tab.filename}>
-            <div className="bg-slate-800 p-2 text-base font-semibold text-white">
-              {tab.path}
-            </div>
+            <div className="bg-slate-800 p-2 text-base font-semibold text-white">{tab.path}</div>
             <Code lang={tab.lang} code={tab.code} />
           </TabsContent>
         ))}
       </ScrollArea>
     </Tabs>
-  );
+  )
 }
 
-export { CodeEditor };
+export { CodeEditor }

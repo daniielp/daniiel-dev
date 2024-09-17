@@ -1,10 +1,13 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import SocialsCard from "@/blocks/socials-card.astro";
-import { ContactForm } from "@/components/react-blocks/contact-form";
+import Layout from "../layouts/Layout.astro"
+import SocialsCard from "@/blocks/socials-card.astro"
+import { ContactForm } from "@/components/react-blocks/contact-form"
 ---
 
-<Layout title="Contact Daniiel - Frontend Developer for interactive components" description="Get in touch with Daniiel, a specialized frontend developer creating engaging interactive components. Discuss your project needs and bring your web ideas to life.">
+<Layout
+  title="Contact Daniiel - Frontend Developer for interactive components"
+  description="Get in touch with Daniiel, a specialized frontend developer creating engaging interactive components. Discuss your project needs and bring your web ideas to life."
+>
   <main>
     <ContactForm client:load />
     <section class="bg-white px-6 py-4">

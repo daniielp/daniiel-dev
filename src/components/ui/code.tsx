@@ -1,14 +1,14 @@
-import { codeToHtml } from "shiki";
-import type { CodeToHastOptions, BundledLanguage, BundledTheme } from "shiki";
+import { codeToHtml } from "shiki"
+import type { CodeToHastOptions, BundledLanguage, BundledTheme } from "shiki"
 
-import React, { useEffect } from "react";
-import { cn } from "@/lib/utils";
+import React, { useEffect } from "react"
+import { cn } from "@/lib/utils"
 
 export interface CodeProps extends React.HTMLAttributes<HTMLDivElement> {
-  code: string;
-  lang?: BundledLanguage;
-  theme?: BundledTheme;
-  options?: Partial<CodeToHastOptions>;
+  code: string
+  lang?: BundledLanguage
+  theme?: BundledTheme
+  options?: Partial<CodeToHastOptions>
 }
 
 function Code({
@@ -19,27 +19,21 @@ function Code({
   options,
   ...props
 }: CodeProps) {
-  const [html, setHtml] = React.useState<string>('');
+  const [html, setHtml] = React.useState<string>("")
 
   useEffect(() => {
     async function renderCode() {
       const out = await codeToHtml(code, {
         lang,
         theme,
-        ...options,
-      });
-      setHtml(out);
+        ...options
+      })
+      setHtml(out)
     }
-    renderCode();
-  }, [code, lang, theme, options]);
+    renderCode()
+  }, [code, lang, theme, options])
 
-  return (
-    <div
-      className={cn(className)}
-      dangerouslySetInnerHTML={{ __html: html }}
-      {...props}
-    />
-  );
+  return <div className={cn(className)} dangerouslySetInnerHTML={{ __html: html }} {...props} />
 }
 
-export { Code };
+export { Code }

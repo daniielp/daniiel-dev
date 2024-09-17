@@ -40,13 +40,13 @@ We use session recording technology to capture your interactions with our websit
 - Maintain and improve our high standards of service delivery
 
 The session recordings may include:
+
 - Your mouse movements
 - Clicks
 - Page views
 - Text you enter into the website (excluding sensitive information like passwords)
 
 We do not use these recordings to identify you personally, and we make efforts to exclude any personal information that may appear on the screen during recording.
-
 
 ## 5. Data Security
 
@@ -82,4 +82,4 @@ If you have any questions about this Privacy Policy, please contact us at:
 
 - Email: daniiel.privat@gmail.com
 
-***Please note***: The email provided is for privacy policy inquiries only. It is not used for marketing purposes, and we do not monitor or respond to messages sent to this address. If you require assistance, please use the appropriate contact channels provided on our main website.
+**_Please note_**: The email provided is for privacy policy inquiries only. It is not used for marketing purposes, and we do not monitor or respond to messages sent to this address. If you require assistance, please use the appropriate contact channels provided on our main website.

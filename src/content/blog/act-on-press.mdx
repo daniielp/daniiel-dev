@@ -8,7 +8,8 @@ image:
   alt: "The Astro logo with the word One."
 tags: ["design", "ui", "ux"]
 ---
-import {ActOnPress} from "../../components/blog/act-on-press.tsx";
+
+import { ActOnPress } from "../../components/blog/act-on-press.tsx"
 
 In the world of web development, creating responsive and user-friendly interfaces is crucial. One way to enhance the user experience is by using the `onMouseDown` event instead of the more common `onClick` event.
 
@@ -74,12 +75,12 @@ To leverage the benefits of `onMouseDown` while maintaining accessibility, consi
 1. **Use Custom Event Listeners**: Implement custom event listeners that handle both mouse and keyboard events. This allows you to respond to `onMouseDown` for mouse users while also supporting keyboard interactions.
 
 ```javascript
-element.addEventListener('mousedown', handleAction);
-element.addEventListener('keydown', (e) => {
-  if (e.key === 'Enter' || e.key === ' ') {
-    handleAction();
+element.addEventListener("mousedown", handleAction)
+element.addEventListener("keydown", (e) => {
+  if (e.key === "Enter" || e.key === " ") {
+    handleAction()
   }
-});
+})
 ```
 
 2. **Provide Alternative Interaction Methods**: Ensure that all functionalities triggered by `onMouseDown` can also be accessed through other means, such as traditional buttons or keyboard shortcuts.

@@ -1,28 +1,27 @@
 type NavigationItem = {
-  title: string;
-  href: string;
-};
+  title: string
+  href: string
+}
 
-type Navigation = NavigationItem[];
+type Navigation = NavigationItem[]
 
-export type { NavigationItem, Navigation };
+export type { NavigationItem, Navigation }
 
 export const mainNavigation: Navigation = [
   {
+    title: "Cases",
+    href: "/cases"
+  },
+  {
     title: "About",
-    href: "/about",
+    href: "/about"
   },
   {
     title: "Contact",
-    href: "/contact",
+    href: "/contact"
   },
   {
     title: "Blog",
-    href: "/blog",
-  },
-  {
-    title: "Projects",
-    href: "/projects",
-  },
-];
-
+    href: "/blog"
+  }
+]

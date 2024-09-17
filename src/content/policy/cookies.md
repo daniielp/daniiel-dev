@@ -66,4 +66,4 @@ Note: If you turn off cookies from daniiel.dev or delete them, our service canno
 
 If you have questions or complaints regarding the use of cookies on this site, you are welcome to contact me at daniiel.privat@gmail.com
 
-***Please note***: The email provided is for privacy policy inquiries only. It is not used for marketing purposes, and we do not monitor or respond to messages sent to this address. If you require assistance, please use the appropriate contact channels provided on our main website.
+**_Please note_**: The email provided is for privacy policy inquiries only. It is not used for marketing purposes, and we do not monitor or respond to messages sent to this address. If you require assistance, please use the appropriate contact channels provided on our main website.
