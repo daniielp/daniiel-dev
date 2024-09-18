@@ -1,16 +1,17 @@
 ---
 title: "Ønskelisten - Your Comprehensive Online Wishlist"
 description: "A case study on developing a user-friendly, feature-rich online wishlist platform for the Danish market."
+publishDate: 2024-09-24
 image:
   src: "/images/oenskelisten.jpg"
   alt: "Screenshot of Ønskelisten homepage"
-productionUrl: "https://onskelisten.dk"
+productionUrl: "https://oenskelisten.dk"
 featured: true
 ---
 
-# Ønskelisten: Revolutionizing Online Wishlists in Denmark
+## Ønskelisten: Revolutionizing Online Wishlists in Denmark
 
-## Project Overview
+# Project Overview
 
 Ønskelisten is a cutting-edge online wishlist platform designed to simplify the process of creating, sharing, and managing wish lists for various occasions. This case study explores the development and features of this innovative Danish platform.
 

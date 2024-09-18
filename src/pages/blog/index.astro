@@ -4,6 +4,9 @@ import Layout from "../../layouts/Layout.astro"
 import { formatDate } from "../../lib/utils"
 
 const allPosts = await getCollection("blog")
+const sortedPosts = allPosts.sort(
+  (a, b) => new Date(b.data.publishDate).getTime() - new Date(a.data.publishDate).getTime()
+)
 ---
 
 <Layout title="Fontend Development & Tech insights - Daniiel's blog" description="">
@@ -20,7 +23,7 @@ const allPosts = await getCollection("blog")
       class="mx-auto mt-10 grid max-w-7xl grid-cols-1 gap-x-8 gap-y-16 px-6 pt-10 sm:mt-16 sm:pt-16 lg:grid-cols-3"
     >
       {
-        allPosts.map((post) => (
+        sortedPosts.map((post) => (
           <article class="flex max-w-xl flex-col items-start justify-stretch">
             <div class="flex items-center gap-x-4 text-xs">
               <time datetime={post.data.publishDate.toLocaleTimeString()} class="text-gray-500">

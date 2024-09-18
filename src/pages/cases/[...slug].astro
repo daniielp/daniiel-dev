@@ -1,0 +1,65 @@
+---
+import { getCollection } from "astro:content"
+import Layout from "../../layouts/Layout.astro"
+import { formatDate } from "../../lib/utils"
+import { Link } from "@/components/ui/link"
+import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator
+} from "@/components/ui/breadcrumb"
+import AuthorCard from "@/blocks/author-card.astro"
+
+export async function getStaticPaths() {
+  const caseEntries = await getCollection("case")
+  return caseEntries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry }
+  }))
+}
+
+const { entry } = Astro.props
+const { Content } = await entry.render()
+---
+
+<Layout title={entry.data.title} description={entry.data.description}>
+  <main>
+    <div class="mx-auto grid max-w-7xl px-4 md:my-4">
+      <Breadcrumb>
+        <BreadcrumbList>
+          <BreadcrumbItem>
+            <BreadcrumbLink href="/">Home</BreadcrumbLink>
+          </BreadcrumbItem>
+          <BreadcrumbSeparator />
+          <BreadcrumbItem>
+            <BreadcrumbLink href="/cases">Cases</BreadcrumbLink>
+          </BreadcrumbItem>
+          <BreadcrumbSeparator />
+          <BreadcrumbItem>
+            <BreadcrumbPage>{entry.data.title}</BreadcrumbPage>
+          </BreadcrumbItem>
+        </BreadcrumbList>
+      </Breadcrumb>
+    </div>
+    <div></div>
+    <div class="mx-auto my-8 grid max-w-7xl grid-cols-1 gap-24 px-4 md:my-16 md:grid-cols-3">
+      <article
+        class="prose-h1:text-xlprose-a:text-blue-600 prose col-span-1 max-w-3xl prose-h1:font-bold prose-p:text-justify prose-img:rounded-xl md:col-span-2"
+      >
+        <h1 class="mb-6 inline-block text-4xl font-bold leading-tight lg:text-5xl">
+          {entry.data.title}
+        </h1>
+        <Content />
+      </article>
+      <div class="relative col-span-1 pt-8">
+        <div class="sticky top-8 flex flex-col gap-4">
+          <AuthorCard />
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>

@@ -30,6 +30,7 @@ const caseCollection = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string(),
+    publishDate: z.date(),
     image: z
       .object({
         src: z.string(),
