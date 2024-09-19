@@ -2,6 +2,7 @@
 import { getCollection } from "astro:content"
 import Layout from "../../layouts/Layout.astro"
 import { Badge } from "@/components/ui/badge"
+import { ExternalLink } from "lucide-react"
 
 const allPosts = await getCollection("case")
 const sortedPosts = allPosts.sort(
@@ -48,9 +49,10 @@ const sortedPosts = allPosts.sort(
                   <a
                     href={post.data.productionUrl}
                     target="_blank"
-                    class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100"
+                    class="relative z-10 inline-flex items-center justify-center gap-2 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100"
                   >
-                    Gå til website
+                    Go to website
+                    <ExternalLink size={16} />
                   </a>
                 )}
               </div>

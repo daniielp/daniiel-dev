@@ -1,16 +1,26 @@
 ---
 import Safari from "@/components/ui/safari"
 import { Link } from "@/components/ui/link.tsx"
+import { Badge } from "@/components/ui/badge"
 ---
 
 <section class="py-24 sm:py-32">
   <div class="mx-auto grid max-w-7xl grid-cols-1 gap-6 px-6 md:grid-cols-2 md:gap-8">
-    <div class="flex flex-col gap-4 py-16 lg:max-w-lg lg:py-24">
-      <h2 class="text-4xl font-bold tracking-tight text-slate-900 lg:mt-6">Projects overview</h2>
+    <div class="flex flex-col gap-4 py-8 lg:max-w-lg lg:py-24">
+      <h2 class="text-4xl font-bold tracking-tight text-slate-900 lg:mt-6">Hobby Project</h2>
       <p class="mt-3 text-base text-slate-600 sm:mt-5">
         Developed a fully responsive wishlist platform that seamlessly integrates frontend and
         backend technologies to provide a smooth user experience.
       </p>
+      <div class="flex flex-wrap gap-2 py-4 pt-2">
+        <h3 class="sr-only">Tools</h3>
+        <Badge variant="outline">NextJS</Badge>
+        <Badge variant="outline">Astro</Badge>
+        <Badge variant="outline">TailwindCSS</Badge>
+        <Badge variant="outline">Turso DB</Badge>
+        <Badge variant="outline">Drizzle ORM</Badge>
+        <Badge variant="outline">Clerk</Badge>
+      </div>
       <div>
         <Link href="/cases">See all cases</Link>
       </div>
