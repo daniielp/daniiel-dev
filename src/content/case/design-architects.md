@@ -1,10 +1,10 @@
 ---
 title: "Project Case: Responsive Web Layout for Design Architects"
-description: "A case study on developing a user-friendly, feature-rich online wishlist platform for the Danish market."
+description: "A case study on developing a responsive web layout for Design Architects."
 publishDate: 2023-09-25
 image:
   src: "/images/cases/design-architects.jpg"
-  alt: "Screenshot of Ønskelisten homepage"
+  alt: "Screenshot of design architects homepage"
 productionUrl: "https://designarchitects.daniiel.dev/"
 featured: true
 ---
