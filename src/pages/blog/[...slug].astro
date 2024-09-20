@@ -49,6 +49,7 @@ const { Content } = await entry.render()
       <article
         class="prose-h1:text-xlprose-a:text-blue-600 prose col-span-1 max-w-3xl prose-h1:font-bold prose-p:text-justify prose-img:rounded-xl md:col-span-2"
       >
+        {entry.data.image && <img src={entry.data.image.src} alt={entry.data.image.alt} />}
         <time class="block" datetime={entry.data.publishDate.toString()}
           >{formatDate(entry.data.publishDate)}</time
         >

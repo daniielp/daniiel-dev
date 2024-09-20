@@ -3,9 +3,6 @@ title: "User-Centered Design Explained: Enhancing User Experience from Start to 
 description: User-centered design (UCD) is a method in product development and design that puts users at the center of the process.
 isDraft: false
 publishDate: 2023-09-03
-image:
-  src: "https://docs.astro.build/assets/full-logo-light.png"
-  alt: "The Astro logo with the word One."
 tags: ["design", "ui", "ux"]
 ---
 

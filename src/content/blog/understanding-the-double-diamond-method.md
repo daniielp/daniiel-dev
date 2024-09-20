@@ -3,9 +3,6 @@ isDraft: false
 title: "Understanding the Double Diamond Method: When and Why You Should Use It"
 description: "Discover how the Double Diamond method can streamline your design process by structuring innovation and problem-solving into four clear phases."
 tags: ["design", "ui", "ux"]
-image:
-  src: "/images/double-diamond-method.jpg"
-  alt: "Diagram of the Double Diamond Method"
 publishDate: 2024-07-18
 ---
 
