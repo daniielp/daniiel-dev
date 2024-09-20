@@ -1,6 +1,7 @@
 ---
 import SiteFooter from "../components/global/site-footer.astro"
 import SiteHeader from "../components/global/site-header.astro"
+import Posthog from "../components/posthog.astro"
 import { ViewTransitions } from "astro:transitions"
 
 interface Props {
@@ -84,6 +85,7 @@ const image_url = new URL(image, Astro.url)
     </style>
     <!-- Transitions -->
     <ViewTransitions />
+    <Posthog />
   </head>
   <body class="bg-slate-100">
     <SiteHeader />
