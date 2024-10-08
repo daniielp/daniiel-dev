@@ -1,5 +1,5 @@
 ---
-title: "Case study: Implementing Drag and Drop for wish reordering on oenskelisten.dk
+title: "Case study: Implementing Drag and Drop for reordering components
 "
 description: "A case study on developing a user-friendly, feature-rich online wishlist platform for the Danish market."
 publishDate: 2024-09-24
@@ -13,6 +13,7 @@ featured: true
 oenskelisten.dk is a website that allows users to create and manage wish lists. As the platform grew, users expressed a desire for more control over the order of their wishes.
 
 # Problem Statement
+
 Users wanted the ability to reorder their wishes easily, but the existing system did not provide this functionality. This limitation was causing user frustration and potentially impacting user engagement with the platform.
 
 # Objectives
@@ -22,17 +23,16 @@ Users wanted the ability to reorder their wishes easily, but the existing system
 3. Maintain or improve the overall user experience of the website
 
 # Solution
+
 After considering various options, the decision was made to implement a drag and drop component. This solution would allow users to intuitively reorder their wishes by simply clicking and dragging items to new positions within their list.
 
 **See the solution code in the bottom of the page**
 
-
-
 # Key Features of the Solution:
 
-* Created a reusable component for the functionality
-* Automatic saving of the new order after each change
-* Responsive design to work on both desktop and mobile devices
+- Created a reusable component for the functionality
+- Automatic saving of the new order after each change
+- Responsive design to work on both desktop and mobile devices
 
 # Implementation Process
 
