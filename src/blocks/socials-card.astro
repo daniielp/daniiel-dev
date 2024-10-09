@@ -10,7 +10,7 @@ import { socials } from "@/config/socials"
     {
       socials.map((social) => (
         <li>
-          <Link target="_blank" href={social.href}>
+          <Link variant="secondary" target="_blank" href={social.href}>
             <SocialMediaIcon aria-hidden="true" type={social.type} size={24} />
           </Link>
         </li>

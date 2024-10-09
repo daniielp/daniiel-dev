@@ -12,7 +12,6 @@ export function ToastFlow() {
   return (
     <>
       <Button
-        variant="secondary"
         onClick={() => {
           toast(
             <div className="flex flex-col gap-4">
