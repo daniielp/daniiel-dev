@@ -11,7 +11,7 @@ const legalDocuments = await getCollection("policy")
       <div class="flex space-x-6 md:order-2">
         {
           legalDocuments.map((item) => (
-            <a href={`/policies/${item.slug}`} class="text-gray-500 hover:text-gray-600">
+            <a href={`/policies/${item.id}`} class="text-gray-500 hover:text-gray-600">
               <span class="">{item.data.title}</span>
             </a>
           ))

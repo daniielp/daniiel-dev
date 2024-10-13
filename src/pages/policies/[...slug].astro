@@ -3,17 +3,18 @@ import { getCollection } from "astro:content"
 import Layout from "../../layouts/Layout.astro"
 import { formatDate } from "../../lib/utils"
 import { Image } from "astro:assets"
+import { render } from "astro:content"
 
 export async function getStaticPaths() {
   const policyEntries = await getCollection("policy")
   return policyEntries.map((entry) => ({
-    params: { slug: entry.slug },
+    params: { slug: entry.id },
     props: { entry }
   }))
 }
 
 const { entry } = Astro.props
-const { Content } = await entry.render()
+const { Content } = await render(entry)
 ---
 
 <Layout title={entry.data.title} description={entry.data.description}>

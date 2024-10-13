@@ -12,18 +12,19 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator
 } from "@/components/ui/breadcrumb"
-import AuthorCard from "@/blocks/author-card.astro"
+import AuthorCard from "@/blocks/author-card.astro";
+import { render } from "astro:content";
 
 export async function getStaticPaths() {
   const caseEntries = await getCollection("case")
   return caseEntries.map((entry) => ({
-    params: { slug: entry.slug },
+    params: { slug: entry.id },
     props: { entry }
   }))
 }
 
 const { entry } = Astro.props
-const { Content } = await entry.render()
+const { Content } = await render(entry)
 ---
 
 <Layout title={entry.data.title} description={entry.data.description}>
