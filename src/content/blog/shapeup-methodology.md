@@ -24,3 +24,5 @@ By this point I got introducted to:
 - [Hill charts](https://basecamp.com/shapeup/3.4-chapter-13) - Designed to visualize project progress and highlight risks and unknowns. Reaching the top of the hill signifies that all uncertainties have been addressed, making the development process straightforward from that point onward.
 
 ## Reflections on the process
+
+[comment]: <> (This article was created based on I will be able to work with Shape Up to streamline my workflow and work agile)
