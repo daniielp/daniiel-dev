@@ -179,11 +179,11 @@ function SearchForm() {
 
 In both cases, React Router will re-run the loader after the navigation/action completes, potentially providing new data that needs to be handled correctly in your components.
 
+## Summary
+
 While this article presents one approach to combining React Router with TanStack Query, it's worth noting that several excellent examples and patterns exist in the community. Here are some examples I found while research this:
 
 - [Tanstack Query](https://tanstack.com/query/latest/docs/framework/react/examples/react-router)
 - [Code sandbox](https://codesandbox.io/p/sandbox/fervent-dawn-h6z5h3)
-
-## Summary
 
 Combining React Router loaders with TanStack Query provides a powerful way to optimize data loading in modern web applications. Use loaders to handle data fetching, revalidate queries inside actions using queryClient, and avoid performing asynchronous operations directly within components. By following these best practices, you can deliver a faster, more responsive user experience.
