@@ -1,6 +1,6 @@
 ---
-title: "Enhancing Video Delivery with Cloudflare Streaming and ReactJS"
-description: "Learn how to integrate Cloudflare Streaming with ReactJS using VideoJS for efficient, chunked video delivery."
+title: "Enhancing Video Delivery with Cloudflare Streaming"
+description: "Learn how to integrate Cloudflare Streaming using VideoJS for efficient, chunked video delivery."
 isDraft: true
 publishDate: 2025-02-10
 tags: ["react", "cloudflare", "video", "streaming", "videoJS"]
