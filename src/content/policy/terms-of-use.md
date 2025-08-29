@@ -1,7 +1,7 @@
 ---
 title: Terms Of Use
 description: ""
-publishDate: 2025-29-08
+publishDate: 2025-08-29
 ---
 
 Welcome to Daniiel. Daniiel (“Daniiel”, “we”, “us”, or “our”) provides products and services including oenskelisten.dk, an online wishlist platform, and various SaaS tools for business owners (collectively, the “Services”).
