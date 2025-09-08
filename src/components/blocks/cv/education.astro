@@ -1,0 +1,48 @@
+---
+const educations = [
+  {
+    title: "Multimedia Designer",
+    specialization: "UI/UX Designer",
+    description: `As a multimedia designer, the work is centered around a user-centered approach to digital solutions, with a focus on creating intuitive interfaces and effective user journeys. Through work with prototyping, information architecture, usability testing, and design principles such as Gestalt and OOUX, a deeper understanding is developed of how UI and UX interact to enhance both experience and functionality.`,
+    institution: "Erhversakademi Aarhus",
+    period: "2023 - 2025"
+  },
+  {
+    title: "Multimedia Integrator",
+    specialization: "Backend Developer (C#)",
+    description: `As a multimedia integrator, the focus is on developing a deeper understanding of the principles behind website development, also known as backend. Emphasis is placed on concepts such as SOLID principles, database structure & normalization, Agile software development, and much more.`,
+    institution: "Viden Djurs",
+    period: "2020 - 2023"
+  },
+  {
+    title: "Web Developer",
+    specialization: "Frontend Developer (TypeScript + ReactJS)",
+    description: `At webIt Grenaa, we work with: Advanced CSS (FlexBox, CSS Grid, and SCSS), Interactive Frontend (React), Programming (JavaScript/TypeScript), Project Organization (Scrum), Data Services and Integration (REST APIs, MongoDB, image upload, and Async/Await).`,
+    institution: "Viden Djurs",
+    period: "2019 - 2020"
+  }
+]
+---
+
+<section class="mb-16">
+  <h2 class="mb-8 text-2xl font-semibold text-gray-900">Education</h2>
+
+  <div class="space-y-6">
+    {
+      educations.map((education) => (
+        <div class="flex flex-col gap-4">
+          <div>
+            <div class="mb-2 flex flex-col sm:flex-row sm:items-center sm:justify-between">
+              <h3 class="font-medium text-gray-900">{education.title}</h3>
+              <div class="text-sm text-gray-500">{education.period}</div>
+            </div>
+            <p class="text-sm text-gray-600">
+              {education.specialization} • {education.institution}
+            </p>
+          </div>
+          <p class="mb-4 leading-relaxed text-gray-700">{education.description}</p>
+        </div>
+      ))
+    }
+  </div>
+</section>

@@ -1,0 +1,119 @@
+---
+import Posthog from "../components/posthog.astro"
+import Hero from "../components/blocks/cv/hero.astro"
+import Experience from "../components/blocks/cv/experience.astro"
+import FeaturedProject from "../components/blocks/cv/featured-project.astro"
+import Skills from "../components/blocks/cv/skills.astro"
+import Education from "../components/blocks/cv/education.astro"
+import LanguagesAndInterests from "../components/blocks/cv/languages-and-interests.astro"
+
+interface Props {
+  title?: string
+  description?: string
+  image?: string
+}
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site)
+
+const {
+  title = "CV - Daniel Pedersen",
+  description = "Working with visual design and fundamentals to bring insights and new knowledge and translate it into frontend development.",
+  image = "daniiel-avatar.jpg"
+} = Astro.props
+
+const image_url = new URL(image, Astro.url)
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Global Metadata -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link
+      rel="icon"
+      href="/favicon-light.svg"
+      type="image/svg"
+      media="(prefers-color-scheme: light)"
+    />
+    <link
+      rel="icon"
+      href="/favicon-dark.svg"
+      type="image/svg"
+      media="(prefers-color-scheme: dark)"
+    />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Primary Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image_url} />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={Astro.url} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={image_url} />
+
+    <style is:global>
+      .shiki {
+        @apply p-4;
+      }
+
+      .shiki code {
+        counter-reset: step;
+        counter-increment: step calc(var(--start, 1) - 1);
+      }
+
+      .shiki code .line::before {
+        content: counter(step);
+        counter-increment: step;
+        width: 1rem;
+        margin-right: 1.5rem;
+        display: inline-block;
+        text-align: right;
+        color: rgba(115, 138, 148, 0.4);
+      }
+    </style>
+    <Posthog />
+  </head>
+  <body>
+    <main>
+      <div class="min-h-screen bg-white">
+        {/* Print Disclaimer */}
+        <!-- <div class="hidden border-b border-blue-100 bg-blue-50 print:block">
+          <div class="mx-auto max-w-4xl px-6 py-3">
+            <div class="flex items-center gap-2 text-sm text-indigo-700">
+              <ExternalLink className="h-4 w-4" />
+              <span>
+                For a more interactive experience, visit{" "}
+                <a href="https://daniiel.dev/cv" class="font-medium"> daniiel.dev/cv </a>
+              </span>
+            </div>
+          </div>
+        </div> -->
+
+        {/* Main Content */}
+        <div class="mx-auto max-w-4xl px-6 py-12">
+          <Hero />
+          <Experience />
+          <FeaturedProject />
+          <Skills />
+          <Education />
+          <LanguagesAndInterests />
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

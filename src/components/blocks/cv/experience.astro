@@ -1,0 +1,69 @@
+---
+import { Badge } from "@/components/ui/badge"
+
+const experiences = [
+  {
+    title: "Product Engineer, React",
+    company: "Understory",
+    period: "Oct 2024 - Aug 2025",
+    description:
+      "Developing frontend solutions in React and Next.js with focus on product-led growth and user experience. Close collaboration with product team to create features that drive real user and business value.",
+    responsibilities: [
+      "Built flexible payment solution with Stripe integration supporting B2B and B2C scenarios",
+      "Implemented Markdown-based rich text editor designed to match user input patterns",
+      "Developed reusable component library with MUI ensuring consistency across products"
+    ],
+    technologies: ["React", "Next.js", "TypeScript", "MUI", "Stripe", "AWS"]
+  },
+  {
+    title: "Web Developer, C#/.NET",
+    company: "Admill",
+    period: "Dec 2020 - Apr 2023",
+    description:
+      "Full-stack development with focus on React applications and performance optimization. Worked from design to production with emphasis on user experience and organic traffic growth.",
+    responsibilities: [
+      "Optimized React application performance and implemented SEO best practices",
+      "Developed responsive interfaces with focus on conversion optimization"
+    ],
+    technologies: ["React", "ASP.NET", "C#", "JavaScript", "CSS"]
+  }
+]
+---
+
+<section class="mb-16">
+  <h2 class="mb-8 text-2xl font-semibold text-gray-900">Experience</h2>
+  <div class="space-y-12">
+    {
+      experiences.map((experience) => (
+        <div class="group">
+          <div class="mb-4 flex flex-col sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <h3 class="text-lg font-medium text-gray-900">{experience.title}</h3>
+              <p class="text-gray-600">{experience.company}</p>
+            </div>
+            <div class="mt-1 text-sm text-gray-500 sm:mt-0">{experience.period}</div>
+          </div>
+
+          <p class="mb-4 leading-relaxed text-gray-700">{experience.description}</p>
+
+          <ul class="mb-4 space-y-2 text-gray-700">
+            {experience.responsibilities.map((responsibility) => (
+              <li class="flex items-start gap-3">
+                <div class="text-gray-400">•</div>
+                <span>{responsibility}</span>
+              </li>
+            ))}
+          </ul>
+
+          <div class="flex flex-wrap gap-2">
+            {experience.technologies.map((tech) => (
+              <Badge variant="secondary" className="text-xs font-normal">
+                {tech}
+              </Badge>
+            ))}
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</section>

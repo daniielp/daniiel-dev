@@ -36,7 +36,7 @@ const sortedPosts = allPosts.sort(
                 <img
                   src={post.data.image.src}
                   alt={post.data.image.alt}
-                  class="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
+                  class="aspect-[16/9] w-full rounded-2xl bg-white object-contain sm:aspect-[2/1] lg:aspect-[3/2]"
                 />
               )}
               <a href={`/cases/${post.id}`} class="absolute inset-0 z-10" />

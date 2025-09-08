@@ -1,0 +1,57 @@
+---
+import { Card, CardContent } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { ArrowUpRight } from "lucide-react"
+---
+
+<section class="mb-16">
+  <h2 class="mb-8 text-2xl font-semibold text-gray-900">Featured Project</h2>
+
+  <Card className="border border-gray-200 transition-colors hover:border-gray-300">
+    <CardContent className="p-8">
+      <div class="mb-4 flex items-center justify-between">
+        <a href="https://oenskelisten.dk/">
+          <h3 class="text-lg font-medium text-gray-900">oenskelisten.dk</h3>
+        </a>
+        <a
+          href="https://oenskelisten.dk/"
+          class="flex items-center gap-1 text-sm text-gray-600 transition-colors hover:text-gray-900"
+        >
+          Visit site
+          <ArrowUpRight className="h-3 w-3" />
+        </a>
+      </div>
+
+      <p class="mb-4 leading-relaxed text-gray-700">
+        Self-developed SaaS platform demonstrating modern frontend architecture and conversion
+        optimization. Focus on user experience and technical implementation showcasing product
+        development skills.
+      </p>
+
+      <ul class="mb-6 space-y-2 text-gray-700">
+        <li class="flex items-start gap-3">
+          <div class="text-gray-400">•</div>
+          <span>A/B tested user flows resulting in improved conversion rates</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <div class="text-gray-400">•</div>
+          <span>Optimized Core Web Vitals and loading performance</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <div class="text-gray-400">•</div>
+          <span>Mobile-first responsive design with focus on accessibility</span>
+        </li>
+      </ul>
+
+      <div class="flex flex-wrap gap-2">
+        {
+          ["Next.js", "TRPC", "TailwindCSS", "TypeScript"].map((tech) => (
+            <Badge variant="secondary" className="text-xs font-normal">
+              {tech}
+            </Badge>
+          ))
+        }
+      </div>
+    </CardContent>
+  </Card>
+</section>

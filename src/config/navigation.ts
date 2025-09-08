@@ -9,6 +9,10 @@ export type { NavigationItem, Navigation }
 
 export const mainNavigation: Navigation = [
   {
+    title: "CV",
+    href: "/cv"
+  },
+  {
     title: "Cases",
     href: "/cases"
   },

@@ -1,9 +1,6 @@
 ---
 import { getCollection } from "astro:content"
 import Layout from "../../layouts/Layout.astro"
-import { formatDate } from "../../lib/utils"
-import { Link } from "@/components/ui/link"
-import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -12,8 +9,8 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator
 } from "@/components/ui/breadcrumb"
-import AuthorCard from "@/blocks/author-card.astro";
-import { render } from "astro:content";
+import AuthorCard from "@/blocks/author-card.astro"
+import { render } from "astro:content"
 
 export async function getStaticPaths() {
   const caseEntries = await getCollection("case")
