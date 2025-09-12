@@ -3,7 +3,7 @@ title: "Case Study: Building a Responsive Rich Text Editor at Understory"
 description: "A case study on developing a responsive web layout for Design Architects."
 publishDate: 2025-07-01
 image:
-  src: "/images/cases/editor.jpg"
+  src: "/images/cases/text-editor.png"
   alt: "A clean and minimalistic user interface for creating a new experience listing."
 productionUrl: "https://understory.io/"
 featured: true

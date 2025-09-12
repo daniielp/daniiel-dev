@@ -2,12 +2,12 @@ import type { SVGProps } from "react"
 
 export interface SafariProps extends SVGProps<SVGSVGElement> {
   url?: string
-  src?: string
+  image_url?: string
   width?: number
   height?: number
 }
 
-export default function Safari({ src, url, width = 1203, height = 753, ...props }: SafariProps) {
+export default function Safari({ image_url, url, width = 1203, height = 753, ...props }: SafariProps) {
   return (
     <svg
       width={width}
@@ -101,7 +101,7 @@ export default function Safari({ src, url, width = 1203, height = 753, ...props 
           />
         </g>
         <image
-          href={src}
+          href={image_url}
           width="1200"
           height="700"
           x="1"

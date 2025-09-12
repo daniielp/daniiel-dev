@@ -3,7 +3,7 @@ title: "Case Study: Simplifying the experience creation flow at understory"
 description: "A case study on developing a responsive web layout for Design Architects."
 publishDate: 2025-02-21
 image:
-  src: "/images/cases/create-experience.jpeg"
+  src: "/images/cases/create-experience.png"
   alt: "A clean and minimalistic user interface for creating a new experience listing."
 productionUrl: "https://understory.io/"
 featured: true
