@@ -68,6 +68,8 @@ From a UX perspective, this is a huge win:
 
 - **Accessibility friendly** — with focus trapping inside the modal.
 
+![creating a manual wish](/images/cases/intercepting-routes-v2.png)
+
 ## Technical Considerations
 
 ### State Management
